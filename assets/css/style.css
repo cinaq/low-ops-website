@@ -125,8 +125,6 @@ h6 {
   padding: 0;
   line-height: 1;
   font-weight: 500;
-  letter-spacing: 2px;
-  text-transform: uppercase;
 }
 
 #header .logo a {
@@ -409,7 +407,7 @@ h6 {
 }
 
 #hero .btn-get-started {
-  font-family: "Jost", sans-serif;
+  font-family: "Roboto", sans-serif;
   font-weight: 500;
   font-size: 16px;
   letter-spacing: 1px;
