@@ -56,6 +56,9 @@ body > main {
       padding: 2rem;
     }
   }
+  #hero {
+    background-color: #2563eb !important;
+  }
   
   /* Nav */
   summary[role="link"].secondary:is([aria-current],:hover,:active,:focus) {
@@ -66,7 +69,7 @@ body > main {
   /* Hero Image */
   article div:nth-of-type(2) {
     display: none;
-    background-color: #374956;
+    background-color: #2563eb;
     background-image: url("../images/bg.jpg");
     background-position: center;
     background-size: cover;
