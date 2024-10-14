@@ -1,15 +1,31 @@
+import tailwindTypography from '@tailwindcss/typography';
 import type { Config } from 'tailwindcss';
 import tailwindAnimate from 'tailwindcss-animate';
+import { fontFamily } from 'tailwindcss/defaultTheme';
 
 const config: Config = {
   darkMode: ['class'],
   content: [
-    './src/sections/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/sections/*.{js,ts,jsx,tsx,mdx}',
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
     extend: {
+      typography: {
+        DEFAULT: {
+          css: {
+            maxWidth: '100%',
+            h1: {
+              fontSize: '60px',
+              marginBottom: 0,
+            },
+          },
+        },
+      },
+      fontFamily: {
+        sans: ['var(--font-sans)', ...fontFamily.sans],
+      },
       container: {
         center: true,
         padding: '16px',
@@ -63,6 +79,6 @@ const config: Config = {
       },
     },
   },
-  plugins: [tailwindAnimate],
+  plugins: [tailwindTypography, tailwindAnimate],
 };
 export default config;
