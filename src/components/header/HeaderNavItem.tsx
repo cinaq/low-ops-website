@@ -12,7 +12,7 @@ const HeaderNavItem: FC<TProps> = (props) => {
     <li>
       <a
         href={href}
-        className="text-gray-500 hover:text-gray-800 transition-colors font-semibold text-base"
+        className="text-gray-600 hover:text-gray-900 transition-colors font-medium text-base"
       >
         {children}
       </a>

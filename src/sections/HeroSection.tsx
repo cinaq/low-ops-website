@@ -18,7 +18,7 @@ const HeroSection: FC = () => {
           <h1 className="text-center max-w-[856px]">
             Private Cloud Infrastructure for Mendix
           </h1>
-          <p className="text-center max-w-[564px] text-xl">
+          <p className="text-center max-w-[564px] text-xl text-gray-600 font-light">
             Low-Ops is an Internal Developer Platform (IDP) for private clouds,
             managing Mendix app development, deployment, scaling, and security,
             so you can focus on building.
@@ -26,11 +26,11 @@ const HeroSection: FC = () => {
         </div>
 
         <div className="flex items-center justify-center gap-4 mb-14">
-          <Button variant="secondary">
-            <LinkExternal02 width={14} height={14} className="mr-2" />
+          <Button variant="secondary" size="lg">
+            <LinkExternal02 width={18} height={18} className="mr-2" />
             Demo
           </Button>
-          <Button>Contact us</Button>
+          <Button size="lg">Contact us</Button>
         </div>
 
         <Image src={heroImage} alt="lowops-portal-screen" />
