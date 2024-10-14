@@ -1,8 +1,13 @@
+import Header from '@/components/header';
+import HeroSection from '@/sections/HeroSection';
 
 const Home = () => {
   return (
-    <div>Only test</div>
+    <>
+      <Header />
+      <HeroSection />
+    </>
   );
-}
+};
 
-export default Home
+export default Home;
