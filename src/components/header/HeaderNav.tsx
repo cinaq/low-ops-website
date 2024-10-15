@@ -20,7 +20,7 @@ const HeaderNav: React.FC = () => {
   };
 
   return (
-    <nav>
+    <nav className="hidden md:block">
       <ul className="flex items-center justify-end gap-7">{renderMenu()}</ul>
     </nav>
   );

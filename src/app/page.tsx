@@ -1,4 +1,5 @@
 import Header from '@/components/header';
+import ContactSection from '@/sections/contact/ContactSection';
 import FaqSection from '@/sections/faq/FaqSection';
 import FeaturesSection from '@/sections/features/FeaturesSection';
 import HeroSection from '@/sections/hero/HeroSection';
@@ -14,6 +15,7 @@ const Home = () => {
       <TestimonialsSection />
       <ProblemsSection />
       <FaqSection />
+      <ContactSection />
     </>
   );
 };

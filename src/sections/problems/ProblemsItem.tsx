@@ -22,7 +22,7 @@ const ProblemsItem: FC<TProps> = (props) => {
     return solutions.map((item) => (
       <li key={item} className="flex gap-2">
         <CheckCircle className="text-blue-500 leading-none w-auto mt-0.5" />
-        <span className="flex-1 text-lg font-light">{item}</span>
+        <span className="flex-1 text-base font-light">{item}</span>
       </li>
     ));
   };
