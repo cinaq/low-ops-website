@@ -22,7 +22,7 @@ const FaqSection: React.FC = () => {
   };
 
   return (
-    <section className="py-28">
+    <section className="py-28" id="faq">
       <div className="container flex flex-col items-center gap-20 border-gray-100">
         <SectionTitle
           title="Frequently asked questions"

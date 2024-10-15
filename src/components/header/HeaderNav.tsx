@@ -2,18 +2,18 @@ import React from 'react';
 import HeaderNavItem from './HeaderNavItem';
 
 const menu = [
-  { name: 'Features', href: '#features' },
-  { name: 'Testimonials', href: '#testimonials' },
-  { name: 'Problems we solve', href: '#problemsolve' },
-  { name: 'FAQ', href: '#faq' },
-  { name: 'Contact', href: '#contact' },
+  { name: 'Features', id: 'features' },
+  { name: 'Testimonials', id: 'testimonials' },
+  { name: 'Problems we solve', id: 'problems' },
+  { name: 'FAQ', id: 'faq' },
+  { name: 'Contact', id: 'contact' },
 ];
 
 const HeaderNav: React.FC = () => {
   // Renders
   const renderMenu = () => {
     return menu.map((item) => (
-      <HeaderNavItem key={item.name} href={item.href}>
+      <HeaderNavItem key={item.name} href={`#${item.id}`}>
         {item.name}
       </HeaderNavItem>
     ));

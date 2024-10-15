@@ -4,7 +4,7 @@ import TestimonialsCarousel from './TestimonialsCarousel';
 
 const TestimonialsSection: React.FC = () => {
   return (
-    <section className="py-28 bg-gray-50">
+    <section className="py-28 bg-gray-50" id="testimonials">
       <div className="container flex flex-col items-center gap-20">
         <SectionTitle
           title="Testimonials"

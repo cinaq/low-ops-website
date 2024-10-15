@@ -13,7 +13,7 @@ const FeaturesSection: React.FC = () => {
   };
 
   return (
-    <section className="py-28">
+    <section className="py-28" id="features">
       <div className="container flex flex-col items-center gap-20">
         <SectionTitle
           title="Features"

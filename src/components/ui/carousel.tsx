@@ -257,8 +257,6 @@ const CarouselDots = React.forwardRef<
   { className?: string; items?: unknown[] }
 >(({ className, items = [], ...props }, ref) => {
   const { api } = useCarousel();
-  console.log(api?.selectedScrollSnap());
-
   if (!api) return null;
 
   return (

@@ -7,7 +7,7 @@ import ContactItem from './ContactItem';
 const ContactSection: React.FC = () => {
   // Renders
   return (
-    <section className="py-28">
+    <section className="py-28" id="contact">
       <div className="container flex flex-col items-center gap-20">
         <SectionTitle title="Contact" description="Our contact information" />
 

@@ -25,7 +25,7 @@ const FormSection: React.FC = () => {
 
   // Renders
   return (
-    <section className="py-28 bg-gray-50">
+    <section className="py-28 bg-gray-50" id="form">
       <div className="container flex flex-col items-center gap-20">
         <SectionTitle description="We’d love to hear from you" />
 
@@ -58,7 +58,7 @@ const FormSection: React.FC = () => {
           <div className="grid w-full gap-1.5 max-w-md">
             <Label htmlFor="message">Your message</Label>
             <Textarea
-              placeholder="Type your message here."
+              placeholder="Type your message here"
               id="message"
               value={data.message}
               onChange={(e) => handleDataChange(e, 'message')}

@@ -12,7 +12,7 @@ const ProblemsSection: React.FC = () => {
   };
 
   return (
-    <section className="py-28 max-w-full overflow-hidden">
+    <section className="py-28 max-w-full overflow-hidden" id="problems">
       <div className="container flex flex-col items-center gap-20">
         <SectionTitle
           title="Problems we solve"

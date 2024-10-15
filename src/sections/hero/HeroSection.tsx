@@ -12,6 +12,7 @@ const HeroSection: FC = () => {
         'hero-section w-full pt-[170px] min-h-screen bg-no-repeat bg-center',
         `bg-[url('../assets/hero-bg.svg')]`
       )}
+      id="hero"
     >
       <div className="container flex flex-col items-center justify-center">
         <div className="prose mb-10 flex flex-col items-center justify-center">

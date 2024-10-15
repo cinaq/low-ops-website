@@ -1,4 +1,5 @@
 import Divider from '@/components/Divider';
+import Footer from '@/components/footer';
 import Header from '@/components/header';
 import ContactSection from '@/sections/contact/ContactSection';
 import FaqSection from '@/sections/faq/FaqSection';
@@ -21,6 +22,7 @@ const Home = () => {
       <Divider />
       <ContactSection />
       <FormSection />
+      <Footer />
     </>
   );
 };
