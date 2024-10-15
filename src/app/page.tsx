@@ -1,4 +1,5 @@
 import Header from '@/components/header';
+import FeaturesSection from '@/sections/FeaturesSection';
 import HeroSection from '@/sections/HeroSection';
 
 const Home = () => {
@@ -6,6 +7,7 @@ const Home = () => {
     <>
       <Header />
       <HeroSection />
+      <FeaturesSection />
     </>
   );
 };

@@ -18,7 +18,21 @@ const config: Config = {
             maxWidth: '100%',
             h1: {
               fontSize: '60px',
-              marginBottom: 0,
+              lineHeight: '72px',
+              margin: 0,
+              fontWeight: 700,
+            },
+            h2: {
+              fontSize: '16px',
+              lineHeight: '24px',
+              margin: 0,
+              fontWeight: 500,
+            },
+            h3: {
+              fontSize: '30px',
+              lineHeight: '38px',
+              margin: 0,
+              fontWeight: 600,
             },
           },
         },
