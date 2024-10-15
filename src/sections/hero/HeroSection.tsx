@@ -33,7 +33,13 @@ const HeroSection: FC = () => {
           <Button size="lg">Contact us</Button>
         </div>
 
-        <Image src={heroImage} alt="lowops-portal-screen" />
+        <Image
+          src={heroImage}
+          alt="lowops-portal-screen"
+          quality={100}
+          objectFit="cover"
+          priority
+        />
       </div>
     </section>
   );
