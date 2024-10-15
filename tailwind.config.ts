@@ -7,6 +7,7 @@ const config: Config = {
   darkMode: ['class'],
   content: [
     './src/sections/*.{js,ts,jsx,tsx,mdx}',
+    './src/sections/**/*.{js,ts,jsx,tsx,mdx}',
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
@@ -33,6 +34,12 @@ const config: Config = {
               lineHeight: '38px',
               margin: 0,
               fontWeight: 600,
+            },
+            h4: {
+              margin: 0,
+            },
+            h5: {
+              margin: 0,
             },
           },
         },

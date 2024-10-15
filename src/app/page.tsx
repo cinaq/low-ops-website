@@ -1,6 +1,7 @@
 import Header from '@/components/header';
-import FeaturesSection from '@/sections/FeaturesSection';
-import HeroSection from '@/sections/HeroSection';
+import FeaturesSection from '@/sections/features/FeaturesSection';
+import HeroSection from '@/sections/hero/HeroSection';
+import TestimonialsSection from '@/sections/testimonials/TestimonialsSection';
 
 const Home = () => {
   return (
@@ -8,6 +9,7 @@ const Home = () => {
       <Header />
       <HeroSection />
       <FeaturesSection />
+      <TestimonialsSection />
     </>
   );
 };
