@@ -1,12 +1,12 @@
 import IconWrapper from '@/components/IconWrapper';
 import { cn } from '@/lib/utils';
 import { CheckCircle } from '@untitled-ui/icons-react';
-import Image from 'next/image';
+import Image, { StaticImageData } from 'next/image';
 import { FC, ReactNode } from 'react';
 
 type TProps = {
   title: string;
-  imagePath: string;
+  imagePath: StaticImageData;
   icon: ReactNode;
   solutions: string[];
   index: number;

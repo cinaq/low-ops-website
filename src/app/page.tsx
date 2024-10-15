@@ -1,4 +1,5 @@
 import Header from '@/components/header';
+import FaqSection from '@/sections/faq/FaqSection';
 import FeaturesSection from '@/sections/features/FeaturesSection';
 import HeroSection from '@/sections/hero/HeroSection';
 import ProblemsSection from '@/sections/problems/ProblemsSection';
@@ -12,6 +13,7 @@ const Home = () => {
       <FeaturesSection />
       <TestimonialsSection />
       <ProblemsSection />
+      <FaqSection />
     </>
   );
 };
