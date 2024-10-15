@@ -23,7 +23,7 @@ const FaqSection: React.FC = () => {
 
   return (
     <section className="py-28">
-      <div className="container flex flex-col items-center gap-20">
+      <div className="container flex flex-col items-center gap-20 border-gray-100">
         <SectionTitle
           title="Frequently asked questions"
           description="All you need to know about our solution"
