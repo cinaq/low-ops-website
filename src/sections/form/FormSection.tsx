@@ -27,7 +27,10 @@ const FormSection: React.FC = () => {
   return (
     <section className="py-28 bg-gray-50" id="form">
       <div className="container flex flex-col items-center gap-20">
-        <SectionTitle description="We’d love to hear from you" />
+        <SectionTitle
+          title="Contact us"
+          description="We’d love to hear from you"
+        />
 
         <form
           className="w-full max-w-md flex flex-col gap-6"
@@ -36,7 +39,7 @@ const FormSection: React.FC = () => {
           <div className="grid w-full max-w-md items-center gap-1.5">
             <Label htmlFor="name">Name</Label>
             <Input
-              type="name"
+              type="text"
               id="name"
               placeholder="Name"
               value={data.name}
