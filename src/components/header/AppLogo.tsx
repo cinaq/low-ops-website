@@ -1,8 +1,12 @@
-import logo from '@/assets/logo.png';
+import logo from '@/assets/logo.webp';
 import Image from 'next/image';
 
 const AppLogo = () => {
-  return <Image src={logo} alt="lowops-logo w-[88px] h-[32px]" />;
+  return (
+    <a href="#hero">
+      <Image src={logo} alt="lowops-logo" width={110} height={32} />
+    </a>
+  );
 };
 
 export default AppLogo;
