@@ -42,6 +42,7 @@ const MobileHeaderNav = () => {
         variant="ghost"
         size="icon"
         className="flex md:hidden"
+        aria-label="Open menu"
       >
         <Menu01 width={28} height={28} />
       </Button>
@@ -54,7 +55,12 @@ const MobileHeaderNav = () => {
         <div>
           <div className="flex items-center justify-between p-4">
             <AppLogo />
-            <Button variant="ghost" size="icon" onClick={handleToggle}>
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={handleToggle}
+              aria-label="Close menu"
+            >
               <XClose />
             </Button>
           </div>

@@ -208,8 +208,7 @@ const CarouselDots = React.forwardRef<
     >
       {items.map((_, i) => (
         <Button
-          title="Carousel dots"
-          aria-label="Carousel dots"
+          aria-label="Testimonials switch"
           key={i}
           className={cn(
             'w-[10px] h-[10px] rounded-full block shadow-none p-0',

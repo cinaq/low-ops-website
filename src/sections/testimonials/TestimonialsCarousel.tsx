@@ -31,8 +31,8 @@ const TestimonialsCarousel = () => {
                 <User01 width={28} height={28} className="text-gray-500" />
               </AvatarFallback>
             </Avatar>
-            <h4>{testimonial.author}</h4>
-            <h5 className="text-sm font-light">{testimonial.company}</h5>
+            <p className="font-semibold m-0 text-base">{testimonial.author}</p>
+            <p className="text-sm font-light m-0">{testimonial.company}</p>
           </div>
         </div>
       </CarouselItem>

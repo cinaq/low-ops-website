@@ -1,8 +1,7 @@
-import heroImage from '@/assets/hero.webp';
 import HeroButtons from '@/components/HeroButtons';
 import { cn } from '@/lib/utils';
-import Image from 'next/image';
 import { FC } from 'react';
+import HeroImage from './HeroImage';
 
 const HeroSection: FC = () => {
   return (
@@ -27,14 +26,8 @@ const HeroSection: FC = () => {
 
         <HeroButtons className="mb-10 md:mb-20" />
       </div>
-      <Image
-        src={heroImage}
-        alt="lowops-portal-screen"
-        quality={100}
-        objectFit="cover"
-        priority
-        className="max-w-[1400px] w-full mx-auto"
-      />
+
+      <HeroImage />
     </section>
   );
 };

@@ -68,7 +68,9 @@ const FormSection: React.FC = () => {
             />
           </div>
 
-          <Button type="submit">Send message</Button>
+          <Button type="submit" aria-label="Send message">
+            Send message
+          </Button>
         </form>
       </div>
     </section>

@@ -16,17 +16,22 @@ const HeroButtons: FC<TProps> = (props) => {
       className={cn('flex items-center justify-center gap-4 w-full', className)}
     >
       <a
-        href="https://portal.trial.low-ops.com/"
+        href="https://hub.cinaq.com/low-ops-trial"
         target="_blank"
         rel="noopener noreferrer"
       >
-        <Button variant="secondary" size="lg" onClick={onClick}>
+        <Button
+          variant="secondary"
+          size="lg"
+          onClick={onClick}
+          aria-label="Show demo"
+        >
           <LinkExternal02 width={18} height={18} className="mr-2" />
           Demo
         </Button>
       </a>
       <a href="#contact-us">
-        <Button size="lg" onClick={onClick}>
+        <Button size="lg" onClick={onClick} aria-label="Contact us">
           Contact us
         </Button>
       </a>
