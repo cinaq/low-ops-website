@@ -30,11 +30,11 @@ const ProblemsItem: FC<TProps> = (props) => {
   return (
     <div
       className={cn(
-        'flex prose items-stretch min-h-auto md:min-h-[500px] gap-0 md:gap-10',
+        'flex prose items-stretch min-h-auto md:min-h-[520px] gap-0 md:gap-10',
         isEven ? 'flex-row' : 'flex-row-reverse'
       )}
     >
-      <div className="flex-1 flex flex-col gap-4 max-w-1/2">
+      <div className="flex-1 flex flex-col justify-center gap-4 max-w-1/2">
         <IconWrapper icon={icon} />
         <h3>{title}</h3>
         <ul className="flex flex-col p-0 m-0 gap-2 md:gap-4">
