@@ -18,20 +18,20 @@ const config: Config = {
           css: {
             maxWidth: '100%',
             h1: {
-              fontSize: '60px',
-              lineHeight: '72px',
+              fontSize: '48px',
+              lineHeight: '54px',
               margin: '0',
               fontWeight: '700',
             },
             h2: {
-              fontSize: '16px',
-              lineHeight: '24px',
+              fontSize: '14px',
+              lineHeight: '20px',
               margin: '0',
               fontWeight: '500',
             },
             h3: {
-              fontSize: '30px',
-              lineHeight: '38px',
+              fontSize: '26px',
+              lineHeight: '32px',
               margin: '0',
               fontWeight: '600',
             },
@@ -40,6 +40,18 @@ const config: Config = {
             },
             h5: {
               margin: '0',
+            },
+          },
+        },
+        md: {
+          css: {
+            h1: {
+              fontSize: '60px',
+              lineHeight: '72px',
+            },
+            h3: {
+              fontSize: '30px',
+              lineHeight: '38px',
             },
           },
         },

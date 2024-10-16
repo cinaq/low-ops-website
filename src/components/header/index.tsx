@@ -4,6 +4,7 @@ import { cn } from '@/lib/utils';
 import { useEffect, useState } from 'react';
 import AppLogo from './AppLogo';
 import HeaderNav from './HeaderNav';
+import MobileHeaderNav from './MobileHeaderNav';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -26,6 +27,7 @@ const Header = () => {
         <div className="w-full flex items-center justify-between py-6">
           <AppLogo />
           <HeaderNav />
+          <MobileHeaderNav />
         </div>
       </div>
     </header>

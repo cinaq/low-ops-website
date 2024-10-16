@@ -16,8 +16,12 @@ const TestimonialsCarousel = () => {
     return testimonials.map((testimonial, index) => (
       <CarouselItem key={index}>
         <div className="p-1 prose flex flex-col items-center select-none">
-          <Image src={quoteSvg} alt="quote-icon" className="m-0" />
-          <p className="text-center text-2xl font-semibold text-gray-500">
+          <Image
+            src={quoteSvg}
+            alt="quote-icon"
+            className="m-0 w-10 md:w-auto"
+          />
+          <p className="text-center text-xl md:text-2xl font-semibold text-gray-500">
             {testimonial.text}
           </p>
 

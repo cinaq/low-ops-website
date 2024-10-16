@@ -15,15 +15,15 @@ const FaqSection: React.FC = () => {
   const renderFaqItems = () => {
     return faq.map((item) => (
       <AccordionItem key={item.title} value={item.title}>
-        <AccordionTrigger className="text-left">{item.title}</AccordionTrigger>
+        <AccordionTrigger>{item.title}</AccordionTrigger>
         <AccordionContent>{item.description}</AccordionContent>
       </AccordionItem>
     ));
   };
 
   return (
-    <section className="py-28" id="faq">
-      <div className="container flex flex-col items-center gap-20 border-gray-100">
+    <section className="py-20 md:py-28" id="faq">
+      <div className="container flex flex-col items-center gap-12 md:gap-20 border-gray-100">
         <SectionTitle
           title="Frequently asked questions"
           description="All you need to know about our solution"
@@ -38,9 +38,11 @@ const FaqSection: React.FC = () => {
           <p className="font-light text-sm">
             Can’t find the answer you’re looking for?
           </p>
-          <Button className="w-fit" size="default">
-            Contact us
-          </Button>
+          <a href="#contact-us">
+            <Button className="w-fit" size="default">
+              Contact us
+            </Button>
+          </a>
         </div>
       </div>
     </section>

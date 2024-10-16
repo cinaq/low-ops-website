@@ -37,9 +37,11 @@ const ProblemsItem: FC<TProps> = (props) => {
       <div className="flex-1 flex flex-col gap-4 max-w-1/2">
         <IconWrapper icon={icon} />
         <h3>{title}</h3>
-        <ul className="flex flex-col p-0 m-0 gap-4">{renderSolutions()}</ul>
+        <ul className="flex flex-col p-0 m-0 gap-2 md:gap-4">
+          {renderSolutions()}
+        </ul>
       </div>
-      <div className="flex-1 relative">
+      <div className="hidden md:block flex-1 relative">
         <div className={cn('absolute inset-0', isEven ? '-mr-60' : '-ml-60')}>
           <Image
             src={imagePath}
