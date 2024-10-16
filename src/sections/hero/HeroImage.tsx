@@ -8,25 +8,17 @@ import Image from 'next/image';
 const HeroImage = () => {
   const isDesktop = useMediaQuery('(min-width: 768px)');
 
-  return isDesktop ? (
+  return (
     <Image
-      src={heroImage}
+      src={isDesktop ? heroImage : heroMobileImage}
       alt="lowops-portal-screen"
       quality={80}
-      width={1400}
-      height={788}
+      width={isDesktop ? 1200 : 800}
+      height={isDesktop ? 788 : 450}
+      className="w-full max-w-[1200px] mx-auto"
       priority
-      className="w-full mx-auto hidden md:block"
-    />
-  ) : (
-    <Image
-      src={heroMobileImage}
-      alt="lowops-portal-screen"
-      quality={80}
-      width={800}
-      height={450}
-      priority
-      className="w-full mx-auto block md:hidden"
+      placeholder="blur"
+      blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAACklEQVR4nGMAAQAABQABDQottAAAAABJRU5ErkJggg=="
     />
   );
 };

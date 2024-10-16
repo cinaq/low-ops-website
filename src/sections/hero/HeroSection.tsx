@@ -1,4 +1,5 @@
 import HeroButtons from '@/components/HeroButtons';
+import { hero } from '@/data/hero';
 import { cn } from '@/lib/utils';
 import { FC } from 'react';
 import HeroImage from './HeroImage';
@@ -14,13 +15,9 @@ const HeroSection: FC = () => {
     >
       <div className="container flex flex-col items-center justify-center">
         <div className="prose md:prose-md mb-6 md:mb-10 flex flex-col items-center justify-center">
-          <h1 className="text-center max-w-[856px]">
-            Private Cloud Infrastructure for Mendix
-          </h1>
+          <h1 className="text-center max-w-[856px]">{hero.title}</h1>
           <p className="text-center max-w-[564px] text-base md:text-xl text-gray-600 font-light">
-            Low-Ops is an Internal Developer Platform (IDP) for private clouds,
-            managing Mendix app development, deployment, scaling, and security,
-            so you can focus on building.
+            {hero.description}
           </p>
         </div>
 

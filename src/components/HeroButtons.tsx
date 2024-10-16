@@ -1,3 +1,4 @@
+import { hero } from '@/data/hero';
 import { cn } from '@/lib/utils';
 import { LinkExternal02 } from '@untitled-ui/icons-react';
 import { FC } from 'react';
@@ -27,12 +28,12 @@ const HeroButtons: FC<TProps> = (props) => {
           aria-label="Show demo"
         >
           <LinkExternal02 width={18} height={18} className="mr-2" />
-          Demo
+          {hero.demoButton}
         </Button>
       </a>
       <a href="#contact-us">
         <Button size="lg" onClick={onClick} aria-label="Contact us">
-          Contact us
+          {hero.contactUsButton}
         </Button>
       </a>
     </div>

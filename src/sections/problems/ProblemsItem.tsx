@@ -1,4 +1,7 @@
+'use client';
+
 import IconWrapper from '@/components/IconWrapper';
+import { useMediaQuery } from '@/hooks/useMediaQuery';
 import { cn } from '@/lib/utils';
 import { CheckCircle } from '@untitled-ui/icons-react';
 import Image, { StaticImageData } from 'next/image';
@@ -14,6 +17,9 @@ type TProps = {
 
 const ProblemsItem: FC<TProps> = (props) => {
   const { title, imagePath, icon, solutions, index } = props;
+
+  // Hooks
+  const isDesktop = useMediaQuery('(min-width: 768px)');
 
   const isEven = index % 2 === 0;
 
@@ -41,19 +47,25 @@ const ProblemsItem: FC<TProps> = (props) => {
           {renderSolutions()}
         </ul>
       </div>
-      <div className="hidden md:block flex-1 relative">
-        <div className={cn('absolute inset-0', isEven ? '-mr-60' : '-ml-60')}>
-          <Image
-            src={imagePath}
-            alt="lowops-portal"
-            className={cn(
-              'm-0 object-cover',
-              isEven ? 'object-left-top' : 'object-right-top'
-            )}
-            fill
-          />
+      {isDesktop && (
+        <div className="hidden md:block flex-1 relative">
+          <div className={cn('absolute inset-0', isEven ? '-mr-60' : '-ml-60')}>
+            <Image
+              src={imagePath}
+              alt="lowops-portal"
+              quality={80}
+              className={cn(
+                'm-0 object-cover',
+                isEven ? 'object-left-top' : 'object-right-top'
+              )}
+              fill
+              loading="lazy"
+              placeholder="blur"
+              blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAACklEQVR4nGMAAQAABQABDQottAAAAABJRU5ErkJggg=="
+            />
+          </div>
         </div>
-      </div>
+      )}
     </div>
   );
 };
