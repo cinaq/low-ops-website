@@ -30,7 +30,7 @@ const ProblemsItem: FC<TProps> = (props) => {
   return (
     <div
       className={cn(
-        'flex prose items-stretch min-h-full',
+        'flex prose items-stretch min-h-auto md:min-h-[500px] gap-0 md:gap-10',
         isEven ? 'flex-row' : 'flex-row-reverse'
       )}
     >

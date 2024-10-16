@@ -47,7 +47,7 @@ const MobileHeaderNav = () => {
       </Button>
       <div
         className={cn(
-          'flex flex-col justify-between md:hidden fixed z-50 w-screen h-screen overflow-hidden left-0 top-0 border bg-white transition-transform duration-500',
+          'flex flex-col justify-between md:hidden fixed z-50 w-screen h-full max-h-screen overflow-hidden left-0 top-0 border bg-white transition-transform duration-500',
           open ? 'translate-y-0' : '-translate-y-[1200px]'
         )}
       >

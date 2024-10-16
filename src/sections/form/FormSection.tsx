@@ -41,7 +41,7 @@ const FormSection: React.FC = () => {
             <Input
               type="text"
               id="name"
-              placeholder="Name"
+              placeholder="Your name"
               value={data.name}
               onChange={(e) => handleDataChange(e, 'name')}
             />
@@ -52,7 +52,7 @@ const FormSection: React.FC = () => {
             <Input
               type="email"
               id="email"
-              placeholder="Email"
+              placeholder="Your email"
               value={data.email}
               onChange={(e) => handleDataChange(e, 'email')}
             />
