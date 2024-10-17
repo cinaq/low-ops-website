@@ -1,8 +1,16 @@
-import linkedinIcon from '@/assets/linkedin.svg';
-import xIcon from '@/assets/x.svg';
+import { socials } from '@/data/socials';
 import Image from 'next/image';
 
 const Footer = () => {
+  // Renders
+  const renderSocials = () => {
+    return socials.map(({ alt, link, iconPath }) => (
+      <a key={alt} href={link} target="_blank" rel="noopener noreferrer">
+        <Image src={iconPath} alt={alt} />
+      </a>
+    ));
+  };
+
   return (
     <footer className="w-full h-[108px] sm:h-[88px] flex items-center justify-center">
       <div className="container flex flex-col-reverse sm:flex-row items-center justify-between gap-5">
@@ -10,20 +18,7 @@ const Footer = () => {
           © Copyright Low-Ops. All rights Reserved
         </span>
         <div className="flex items-center justify-end gap-6">
-          <a
-            href="https://x.com/cinaq_com"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image src={xIcon} alt="X (Twitter) icon" />
-          </a>
-          <a
-            href="https://www.linkedin.com/company/cinaq"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image src={linkedinIcon} alt="LinkedIn icon" />
-          </a>
+          {renderSocials()}
         </div>
       </div>
     </footer>

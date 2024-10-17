@@ -1,6 +1,5 @@
 import SectionTitle from '@/components/SectionTitle';
-
-import { contact } from '@/data/contact';
+import { contactInfo } from '@/data/contactInfo';
 import React from 'react';
 import ContactItem from './ContactItem';
 
@@ -12,8 +11,8 @@ const ContactSection: React.FC = () => {
         <SectionTitle title="Contact" description="Our contact information" />
 
         <div className="flex flex-col lg:flex-row items-center justify-between gap-10 w-full prose">
-          <ContactItem {...contact[0]} />
-          <ContactItem {...contact[1]} />
+          <ContactItem {...contactInfo[0]} />
+          <ContactItem {...contactInfo[1]} />
         </div>
       </div>
     </section>
