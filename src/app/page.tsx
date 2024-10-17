@@ -1,6 +1,7 @@
 import Divider from '@/components/Divider';
 import Footer from '@/components/footer';
 import Header from '@/components/header';
+import { Toaster } from '@/components/ui/toaster';
 import ContactSection from '@/sections/contact/ContactSection';
 import FaqSection from '@/sections/faq/FaqSection';
 import FeaturesSection from '@/sections/features/FeaturesSection';
@@ -23,6 +24,7 @@ const Home = () => {
       <ContactSection />
       <FormSection />
       <Footer />
+      <Toaster />
     </>
   );
 };

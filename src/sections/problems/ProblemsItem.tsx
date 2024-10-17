@@ -59,6 +59,7 @@ const ProblemsItem: FC<TProps> = (props) => {
                 isEven ? 'object-left-top' : 'object-right-top'
               )}
               fill
+              sizes="auto"
               loading="lazy"
               placeholder="blur"
               blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAACklEQVR4nGMAAQAABQABDQottAAAAABJRU5ErkJggg=="
