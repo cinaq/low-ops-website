@@ -4,6 +4,7 @@ import IconWrapper from '@/components/IconWrapper';
 import { useMediaQuery } from '@/hooks/useMediaQuery';
 import { cn } from '@/lib/utils';
 import { CheckCircle } from '@untitled-ui/icons-react';
+import { motion } from 'framer-motion';
 import Image, { StaticImageData } from 'next/image';
 import { FC, ReactNode } from 'react';
 
@@ -49,7 +50,12 @@ const ProblemsItem: FC<TProps> = (props) => {
       </div>
       {isDesktop && (
         <div className="hidden md:block flex-1 relative">
-          <div className={cn('absolute inset-0', isEven ? '-mr-60' : '-ml-60')}>
+          <motion.div
+            initial={{ opacity: 0, x: isEven ? 100 : -100 }}
+            transition={{ duration: 0.8 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            className={cn('absolute inset-0', isEven ? '-mr-60' : '-ml-60')}
+          >
             <Image
               src={imagePath}
               alt="lowops-portal"
@@ -64,7 +70,7 @@ const ProblemsItem: FC<TProps> = (props) => {
               placeholder="blur"
               blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAACklEQVR4nGMAAQAABQABDQottAAAAABJRU5ErkJggg=="
             />
-          </div>
+          </motion.div>
         </div>
       )}
     </div>

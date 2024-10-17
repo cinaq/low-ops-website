@@ -1,3 +1,5 @@
+'use client';
+
 import { hero } from '@/data/hero';
 import { cn } from '@/lib/utils';
 import { LinkExternal02 } from '@untitled-ui/icons-react';
