@@ -16,8 +16,12 @@ const TestimonialsCarousel = () => {
     return testimonials.map((testimonial, index) => (
       <CarouselItem key={index}>
         <div className="p-1 prose flex flex-col items-center select-none">
-          <Image src={quoteSvg} alt="quote-icon" className="m-0" />
-          <p className="text-center text-2xl font-semibold text-gray-500">
+          <Image
+            src={quoteSvg}
+            alt="quote-icon"
+            className="m-0 w-10 md:w-auto"
+          />
+          <p className="text-center text-xl md:text-2xl font-semibold text-gray-500">
             {testimonial.text}
           </p>
 
@@ -27,8 +31,8 @@ const TestimonialsCarousel = () => {
                 <User01 width={28} height={28} className="text-gray-500" />
               </AvatarFallback>
             </Avatar>
-            <h4>{testimonial.author}</h4>
-            <h5 className="text-sm font-light">{testimonial.company}</h5>
+            <p className="font-semibold m-0 text-base">{testimonial.author}</p>
+            <p className="text-sm font-light m-0">{testimonial.company}</p>
           </div>
         </div>
       </CarouselItem>

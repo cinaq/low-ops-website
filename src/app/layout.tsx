@@ -1,11 +1,9 @@
+import { nextMetadata, structuredData } from '@/data/seo';
 import type { Metadata } from 'next';
 import { ReactNode } from 'react';
 import './globals.css';
 
-export const metadata: Metadata = {
-  title: 'Low-Ops',
-  description: 'Private Cloud Infrastructure for Mendix',
-};
+export const metadata: Metadata = nextMetadata;
 
 type TProps = Readonly<{ children: ReactNode }>;
 
@@ -14,7 +12,14 @@ const RootLayout = (props: TProps) => {
 
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        {children}
+
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+        />
+      </body>
     </html>
   );
 };

@@ -13,14 +13,14 @@ const FeaturesSection: React.FC = () => {
   };
 
   return (
-    <section className="py-28" id="features">
-      <div className="container flex flex-col items-center gap-20">
+    <section className="py-20 md:py-28" id="features">
+      <div className="container flex flex-col items-center gap-12 md:gap-20">
         <SectionTitle
           title="Features"
           description="Seamless Mendix Management Made Easy"
         />
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-12 md:gap-y-20">
           {renderFeatures()}
         </div>
       </div>

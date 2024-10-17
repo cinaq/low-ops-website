@@ -4,8 +4,8 @@ import Image from 'next/image';
 
 const Footer = () => {
   return (
-    <footer className="w-full h-[88px] flex items-center justify-center">
-      <div className="container flex items-center justify-between">
+    <footer className="w-full h-[108px] sm:h-[88px] flex items-center justify-center">
+      <div className="container flex flex-col-reverse sm:flex-row items-center justify-between gap-5">
         <span className="text-sm text-gray-500 font-light">
           © Copyright Low-Ops. All rights Reserved
         </span>

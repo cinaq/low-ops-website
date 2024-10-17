@@ -1,10 +1,12 @@
-import heroImage from '@/assets/hero-image.png';
+import screen1 from '@/assets/screen1.webp';
+import screen2 from '@/assets/screen2.webp';
+import screen3 from '@/assets/screen3.webp';
 import { Expand06, Lightning01, Shield01 } from '@untitled-ui/icons-react';
 
 export const problemsWeSolve = [
   {
     title: 'Speed and Control',
-    imagePath: heroImage,
+    imagePath: screen1,
     icon: Lightning01({}),
     solutions: [
       `Low-Ops reduces private cloud setup time from months to just 10 minutes. It installs seamlessly on your existing infrastructure without sacrificing long-term platform maturity.`,
@@ -14,7 +16,7 @@ export const problemsWeSolve = [
   },
   {
     title: 'Focus',
-    imagePath: heroImage,
+    imagePath: screen2,
     icon: Shield01({}),
     solutions: [
       `Low-Ops speeds up application onboarding, enabling faster deployment and reducing delays, helping you reach the market quicker and gain a competitive edge.`,
@@ -24,7 +26,7 @@ export const problemsWeSolve = [
   },
   {
     title: 'Flexibility',
-    imagePath: heroImage,
+    imagePath: screen3,
     icon: Expand06({}),
     solutions: [
       `Low-Ops automates repetitive tasks, freeing your team to focus on strategic, value-added activities.`,

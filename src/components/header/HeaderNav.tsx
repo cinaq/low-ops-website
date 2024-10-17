@@ -1,13 +1,8 @@
+import { menu } from '@/data/header';
 import React from 'react';
 import HeaderNavItem from './HeaderNavItem';
 
-const menu = [
-  { name: 'Features', id: 'features' },
-  { name: 'Testimonials', id: 'testimonials' },
-  { name: 'Problems we solve', id: 'problems' },
-  { name: 'FAQ', id: 'faq' },
-  { name: 'Contact', id: 'contact' },
-];
+
 
 const HeaderNav: React.FC = () => {
   // Renders
