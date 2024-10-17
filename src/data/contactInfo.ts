@@ -1,6 +1,6 @@
 import { Mail03, MarkerPin02 } from '@untitled-ui/icons-react';
 
-export const contact = [
+export const contactInfo = [
   {
     title: 'Location',
     description: 'Cinaq HQ (Appointment only)',
