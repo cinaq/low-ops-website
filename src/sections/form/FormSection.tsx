@@ -11,7 +11,13 @@ import email from '@emailjs/browser';
 import { Loader } from 'lucide-react';
 import React, { ChangeEvent, FormEvent, useEffect, useState } from 'react';
 
-const initialData = { name: '', email: '', message: '' };
+const initialData = {
+  name: '',
+  email: '',
+  message: '',
+  username: '',
+  gender: '',
+};
 
 const FormSection: React.FC = () => {
   // States
@@ -57,7 +63,15 @@ const FormSection: React.FC = () => {
     const serviceId = process.env.NEXT_PUBLIC_EMAIL_SERVICE_ID;
     const templateId = process.env.NEXT_PUBLIC_EMAIL_TEMPLATE_ID;
 
-    if (!serviceId || !templateId) return;
+    if (!serviceId || !templateId) {
+      console.log(`serviceId or templateId is undefined`);
+      return;
+    }
+
+    if (!!data.username || !!data.gender) {
+      console.log('Unvisible fields are not empty');
+      return;
+    }
 
     setLoading(true);
 
@@ -122,6 +136,23 @@ const FormSection: React.FC = () => {
               onChange={(e) => handleDataChange(e, 'message')}
               disabled={loading}
             />
+          </div>
+
+          <div style={{ display: 'none' }}>
+            <label>
+              <input
+                type="text"
+                value={data.username}
+                onChange={(e) => handleDataChange(e, 'username')}
+              />
+            </label>
+            <label>
+              <input
+                type="text"
+                value={data.gender}
+                onChange={(e) => handleDataChange(e, 'gender')}
+              />
+            </label>
           </div>
 
           <Button type="submit" aria-label="Send message" disabled={loading}>
