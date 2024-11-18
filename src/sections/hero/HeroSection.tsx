@@ -8,8 +8,7 @@ const HeroSection: FC = () => {
   return (
     <section
       className={cn(
-        'hero-section w-full pt-[140px] md:pt-[170px] bg-no-repeat bg-top',
-        `bg-[url('../assets/hero-bg.svg')]`
+        "hero-section w-full pt-[140px] md:pt-[170px] bg-no-repeat bg-top bg-[url('../assets/hero-bg.svg')]"
       )}
       id="hero"
     >

@@ -7,7 +7,7 @@ name: Deploy Next.js site to Pages
 on:
   # Runs on pushes targeting the default branch
   push:
-    branches: ['new-landing']
+    branches: ['main']
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -28,6 +28,10 @@ jobs:
   # Build job
   build:
     runs-on: ubuntu-latest
+    env:
+      NEXT_PUBLIC_EMAIL_PUBLIC_KEY: ${{ secrets.NEXT_PUBLIC_EMAIL_PUBLIC_KEY }}
+      NEXT_PUBLIC_EMAIL_SERVICE_ID: ${{ secrets.NEXT_PUBLIC_EMAIL_SERVICE_ID }}
+      NEXT_PUBLIC_EMAIL_TEMPLATE_ID: ${{ secrets.NEXT_PUBLIC_EMAIL_TEMPLATE_ID }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
