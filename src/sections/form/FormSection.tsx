@@ -31,7 +31,11 @@ const FormSection: React.FC = () => {
 
   // Effects
   useEffect(() => {
-    if (!process.env.NEXT_PUBLIC_EMAIL_PUBLIC_KEY) return;
+    console.log('public key', process.env.NEXT_PUBLIC_EMAIL_PUBLIC_KEY);
+    if (!process.env.NEXT_PUBLIC_EMAIL_PUBLIC_KEY) {
+      console.log('public key is undefined');
+      return;
+    }
     email.init(process.env.NEXT_PUBLIC_EMAIL_PUBLIC_KEY);
   }, []);
 
