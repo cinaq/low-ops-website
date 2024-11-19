@@ -28,10 +28,6 @@ jobs:
   # Build job
   build:
     runs-on: ubuntu-latest
-    env:
-      NEXT_PUBLIC_EMAIL_PUBLIC_KEY: ${{ secrets.NEXT_PUBLIC_EMAIL_PUBLIC_KEY }}
-      NEXT_PUBLIC_EMAIL_SERVICE_ID: ${{ secrets.NEXT_PUBLIC_EMAIL_SERVICE_ID }}
-      NEXT_PUBLIC_EMAIL_TEMPLATE_ID: ${{ secrets.NEXT_PUBLIC_EMAIL_TEMPLATE_ID }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -41,6 +37,7 @@ jobs:
           echo "NEXT_PUBLIC_EMAIL_PUBLIC_KEY=${{ secrets.NEXT_PUBLIC_EMAIL_PUBLIC_KEY }}" >> .env
           echo "NEXT_PUBLIC_EMAIL_SERVICE_ID=${{ secrets.NEXT_PUBLIC_EMAIL_SERVICE_ID }}" >> .env
           echo "NEXT_PUBLIC_EMAIL_TEMPLATE_ID=${{ secrets.NEXT_PUBLIC_EMAIL_TEMPLATE_ID }}" >> .env
+          echo "NEXT_PUBLIC_RECAPTCHA_SITE_KEY=${{ secrets.NEXT_PUBLIC_RECAPTCHA_SITE_KEY }}" >> .env
       - name: Detect package manager
         id: detect-package-manager
         run: |
