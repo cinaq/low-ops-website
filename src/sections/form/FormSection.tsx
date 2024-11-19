@@ -10,6 +10,7 @@ import { cn } from '@/lib/utils';
 import email from '@emailjs/browser';
 import { Loader } from 'lucide-react';
 import React, { ChangeEvent, FormEvent, useEffect, useState } from 'react';
+import ReCAPTCHA from 'react-google-recaptcha';
 
 const initialData = {
   name: '',
@@ -23,6 +24,7 @@ const FormSection: React.FC = () => {
   // States
   const [loading, setLoading] = useState(false);
   const [data, setData] = useState(initialData);
+  const [recaptchaToken, setRecaptchaToken] = useState<string | null>(null);
 
   // Hooks
   const { toast } = useToast();
@@ -57,6 +59,10 @@ const FormSection: React.FC = () => {
     setData(initialData);
   };
 
+  const handleRecaptchaChange = (token: string | null) => {
+    setRecaptchaToken(token);
+  };
+
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
@@ -76,11 +82,20 @@ const FormSection: React.FC = () => {
     setLoading(true);
 
     try {
-      const { name: from_name, email: from_email, message } = data;
-      const formData = { from_name, from_email, message: message };
+      const formData = {
+        from_name: data.name,
+        from_email: data.email,
+        message: data.message,
+        'g-recaptcha-response': recaptchaToken,
+      };
+
       const res = await email.send(serviceId, templateId, formData);
+
       handleResponse(res.status);
-    } catch (error) {
+    } catch (error: any) {
+      if (error?.status) {
+        handleResponse(error?.status);
+      }
       console.error(error);
     }
 
@@ -155,7 +170,20 @@ const FormSection: React.FC = () => {
             </label>
           </div>
 
-          <Button type="submit" aria-label="Send message" disabled={loading}>
+          <div className="flex items-center justify-center">
+            {!!process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY && (
+              <ReCAPTCHA
+                sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
+                onChange={handleRecaptchaChange}
+              />
+            )}
+          </div>
+
+          <Button
+            type="submit"
+            aria-label="Send message"
+            disabled={loading || !recaptchaToken}
+          >
             <Loader
               className={cn('mr-2 h-4 w-4 animate-spin hidden', {
                 block: loading,
