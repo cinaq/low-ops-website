@@ -92,9 +92,9 @@ const FormSection: React.FC = () => {
       const res = await email.send(serviceId, templateId, formData);
 
       handleResponse(res.status);
-    } catch (error: any) {
-      if (error?.status) {
-        handleResponse(error?.status);
+    } catch (error: unknown) {
+      if ((error as { status?: number })?.status) {
+        handleResponse((error as { status: number }).status);
       }
       console.error(error);
     }
