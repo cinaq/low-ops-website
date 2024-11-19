@@ -31,7 +31,8 @@ const FormSection: React.FC = () => {
 
   // Effects
   useEffect(() => {
-    console.log('public key', process.env.NEXT_PUBLIC_EMAIL_PUBLIC_KEY);
+    console.log('env -> ', process.env);
+
     if (!process.env.NEXT_PUBLIC_EMAIL_PUBLIC_KEY) {
       console.log('public key is undefined');
       return;
