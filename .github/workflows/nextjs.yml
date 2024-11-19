@@ -38,11 +38,6 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Set env variables
-        env:
-          NEXT_PUBLIC_EMAIL_PUBLIC_KEY: ${{ secrets.NEXT_PUBLIC_EMAIL_PUBLIC_KEY }}
-          NEXT_PUBLIC_EMAIL_SERVICE_ID: ${{ secrets.NEXT_PUBLIC_EMAIL_SERVICE_ID }}
-          NEXT_PUBLIC_EMAIL_TEMPLATE_ID: ${{ secrets.NEXT_PUBLIC_EMAIL_TEMPLATE_ID }}
-          NEXT_PUBLIC_RECAPTCHA_SITE_KEY: ${{ secrets.NEXT_PUBLIC_RECAPTCHA_SITE_KEY }}
         run: |
           echo "NEXT_PUBLIC_EMAIL_PUBLIC_KEY=${{ secrets.NEXT_PUBLIC_EMAIL_PUBLIC_KEY }}" >> .env
           echo "NEXT_PUBLIC_EMAIL_SERVICE_ID=${{ secrets.NEXT_PUBLIC_EMAIL_SERVICE_ID }}" >> .env
