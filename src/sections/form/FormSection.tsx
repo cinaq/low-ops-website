@@ -8,9 +8,9 @@ import { Textarea } from '@/components/ui/textarea';
 import { useToast } from '@/hooks/use-toast';
 import { cn } from '@/lib/utils';
 import email from '@emailjs/browser';
+import HCaptcha from '@hcaptcha/react-hcaptcha';
 import { Loader } from 'lucide-react';
 import React, { ChangeEvent, FormEvent, useEffect, useState } from 'react';
-import ReCAPTCHA from 'react-google-recaptcha';
 
 const initialData = {
   name: '',
@@ -31,10 +31,8 @@ const FormSection: React.FC = () => {
 
   // Effects
   useEffect(() => {
-    console.log('env -> ', process.env);
-
     if (!process.env.NEXT_PUBLIC_EMAIL_PUBLIC_KEY) {
-      console.log('public key is undefined');
+      console.warn('public key is undefined');
       return;
     }
     email.init(process.env.NEXT_PUBLIC_EMAIL_PUBLIC_KEY);
@@ -177,9 +175,10 @@ const FormSection: React.FC = () => {
 
           <div className="flex items-center justify-center">
             {!!process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY && (
-              <ReCAPTCHA
+              <HCaptcha
+                size="normal"
                 sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
-                onChange={handleRecaptchaChange}
+                onVerify={handleRecaptchaChange}
               />
             )}
           </div>
