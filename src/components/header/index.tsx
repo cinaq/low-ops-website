@@ -2,30 +2,23 @@
 
 import { useMediaQuery } from '@/hooks/useMediaQuery';
 import { cn } from '@/lib/utils';
+import { FC } from 'react';
 import AppLogo from './AppLogo';
 import HeaderNav from './HeaderNav';
 import MobileHeaderNav from './MobileHeaderNav';
 
-const Header = () => {
+type TProps = {
+  classes?: string;
+};
+
+const Header: FC<TProps> = (props) => {
+  const { classes } = props;
   const isDesktop = useMediaQuery('(min-width: 768px)');
-  // const [isScrolled, setIsScrolled] = useState(false);
-
-  // useEffect(() => {
-  //   const handleScroll = () => {
-  //     setIsScrolled(window.scrollY > 100);
-  //   };
-
-  //   window.addEventListener('scroll', handleScroll);
-
-  //   return () => {
-  //     window.removeEventListener('scroll', handleScroll);
-  //   };
-  // }, []);
 
   return (
-    <header className={cn('absolute top-0 w-full')}>
+    <header className={cn('absolute top-0 w-full', classes)}>
       <div className="container">
-        <div className="w-full flex items-center justify-between py-6">
+        <div className="w-full flex items-center justify-between py-4">
           <AppLogo />
           <HeaderNav />
           {!isDesktop && <MobileHeaderNav />}
