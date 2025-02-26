@@ -1,9 +1,10 @@
 import logoDark from '@/assets/logo-dark.svg';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const AppLogo = () => {
   return (
-    <a href="#hero" className="w-full max-w-[120px] relative aspect-[5/2]">
+    <Link href="/" className="w-full max-w-[120px] relative aspect-[5/2]">
       <Image
         src={logoDark}
         alt="lowops-logo"
@@ -15,7 +16,7 @@ const AppLogo = () => {
         placeholder="blur"
         blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAACklEQVR4nGMAAQAABQABDQottAAAAABJRU5ErkJggg=="
       />
-    </a>
+    </Link>
   );
 };
 
