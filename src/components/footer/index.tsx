@@ -1,7 +1,15 @@
 import { socials } from '@/data/socials';
+import { cn } from '@/lib/utils';
 import Image from 'next/image';
+import { FC } from 'react';
 
-const Footer = () => {
+type TProps = {
+  classes?: string;
+};
+
+const Footer: FC<TProps> = (props) => {
+  const { classes } = props;
+
   // Renders
   const renderSocials = () => {
     return socials.map(({ alt, link, iconPath }) => (
@@ -12,7 +20,12 @@ const Footer = () => {
   };
 
   return (
-    <footer className="w-full h-[68px] flex items-center justify-center">
+    <footer
+      className={cn(
+        'w-full h-[108px] sm:h-[68px] flex items-center justify-center',
+        classes
+      )}
+    >
       <div className="container flex flex-col-reverse sm:flex-row items-center justify-between gap-5">
         <span className="text-sm text-gray-500 font-light">
           © Copyright Low-Ops. All rights Reserved

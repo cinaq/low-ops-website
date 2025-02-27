@@ -1,21 +1,22 @@
-import logo from '@/assets/logo.webp';
+import logoDark from '@/assets/logo-dark.svg';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const AppLogo = () => {
   return (
-    <a href="#hero" className="w-full max-w-[110px] relative aspect-[5/2]">
+    <Link href="/" className="w-full max-w-[120px] relative aspect-[5/2]">
       <Image
-        src={logo}
+        src={logoDark}
         alt="lowops-logo"
         quality={90}
         fill
         priority
         sizes="110px"
-        className="object-contain object-top"
+        className="object-contain object-center"
         placeholder="blur"
         blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAACklEQVR4nGMAAQAABQABDQottAAAAABJRU5ErkJggg=="
       />
-    </a>
+    </Link>
   );
 };
 
