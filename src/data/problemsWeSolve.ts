@@ -1,6 +1,6 @@
-import screen1 from '@/assets/screen1.webp';
-import screen2 from '@/assets/screen2.webp';
-import screen3 from '@/assets/screen3.webp';
+import screen1 from '@/assets/screen1.svg';
+import screen2 from '@/assets/screen2.svg';
+import screen3 from '@/assets/screen3.svg';
 import { Expand06, Lightning01, Shield01 } from '@untitled-ui/icons-react';
 
 export const problemsWeSolve = [

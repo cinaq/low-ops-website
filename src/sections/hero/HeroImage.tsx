@@ -1,7 +1,7 @@
 'use client';
 
-import heroMobileImage from '@/assets/hero-mobile.webp';
-import heroImage from '@/assets/hero.webp';
+import heroMobileImage from '@/assets/hero-mobile.svg';
+import heroImage from '@/assets/hero.svg';
 import { useMediaQuery } from '@/hooks/useMediaQuery';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
