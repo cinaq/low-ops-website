@@ -2,8 +2,6 @@ import { menu } from '@/data/header';
 import React from 'react';
 import HeaderNavItem from './HeaderNavItem';
 
-
-
 const HeaderNav: React.FC = () => {
   // Renders
   const renderMenu = () => {

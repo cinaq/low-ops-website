@@ -22,7 +22,7 @@ const ProblemsItem: FC<TProps> = (props) => {
   // Hooks
   const isDesktop = useMediaQuery('(min-width: 768px)');
 
-  const isEven = index % 2 === 0;
+  const isEven = isDesktop ? index % 2 === 0 : true;
 
   // Renders
   const renderSolutions = () => {
@@ -41,7 +41,7 @@ const ProblemsItem: FC<TProps> = (props) => {
         isEven ? 'flex-row' : 'flex-row-reverse'
       )}
     >
-      <div className="flex-1 flex flex-col justify-center gap-4 max-w-1/2">
+      <div className="flex-1 flex flex-col justify-center gap-4 max-w-full md:max-w-1/2">
         <IconWrapper icon={icon} />
         <h3>{title}</h3>
         <ul className="flex flex-col p-0 m-0 gap-2 md:gap-4">

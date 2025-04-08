@@ -1,7 +1,7 @@
 'use client';
 
-import heroMobileImage from '@/assets/hero-mobile.webp';
-import heroImage from '@/assets/hero.webp';
+import heroMobileImage from '@/assets/hero-mobile.svg';
+import heroImage from '@/assets/hero.svg';
 import { useMediaQuery } from '@/hooks/useMediaQuery';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
@@ -15,7 +15,7 @@ const HeroImage = () => {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
       viewport={{ once: true }}
-      className="w-full max-w-[1200px] mx-auto relative aspect-[5/2]"
+      className="w-full max-w-[1200px] mx-auto relative aspect-5/2"
     >
       <Image
         src={isDesktop ? heroImage : heroMobileImage}

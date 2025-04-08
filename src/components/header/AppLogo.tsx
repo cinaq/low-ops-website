@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 const AppLogo = () => {
   return (
-    <Link href="/" className="w-full max-w-[120px] relative aspect-[5/2]">
+    <Link href="/" className="w-[120px] relative aspect-5/2">
       <Image
         src={logoDark}
         alt="lowops-logo"
