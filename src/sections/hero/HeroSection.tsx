@@ -11,10 +11,10 @@ const HeroSection: FC = () => {
       )}
       id="hero"
     >
-      <div className="container flex flex-col flex-start items-stretch justify-between lg:flex-row overflow-hidden gap-10">
+      <div className="container flex flex-col flex-center items-center justify-between overflow-hidden gap-10">
         <div className="flex flex-col items-center lg:items-start justify-center">
           <HeroContent />
-          <HeroButtons className="mb-10" />
+          <HeroButtons className="mb-6 md:mb-10" />
         </div>
         <div className="max-w-[768px] h-full">
           <video

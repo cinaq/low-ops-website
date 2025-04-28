@@ -16,10 +16,7 @@ const HeroButtons: FC<TProps> = (props) => {
 
   return (
     <div
-      className={cn(
-        'flex items-start justify-center lg:justify-start gap-4 w-full',
-        className
-      )}
+      className={cn('flex items-start justify-center gap-4 w-full', className)}
     >
       <a
         href="https://hub.cinaq.com/low-ops-trial"
