@@ -2,7 +2,7 @@ export const faq = [
   {
     title: 'Who is Low-Ops for?',
     description:
-      'Low-Ops is meant for organizations that need flexibility and control over their Mendix applications and infrastructure. Some industries that can benefit from Low-Ops are: financial services, government, healthcare, education, and manufacturing.',
+      'Low-Ops is meant for organizations that need flexibility and control over their applications and infrastructure. Some industries that can benefit from Low-Ops are: financial services, government, healthcare, education, and manufacturing.',
   },
   {
     title: 'What are system requirements?',

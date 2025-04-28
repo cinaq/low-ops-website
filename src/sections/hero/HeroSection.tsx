@@ -2,7 +2,6 @@ import HeroButtons from '@/components/HeroButtons';
 import { cn } from '@/lib/utils';
 import { FC } from 'react';
 import HeroContent from './HeroContent';
-import HeroImage from './HeroImage';
 
 const HeroSection: FC = () => {
   return (
@@ -12,12 +11,23 @@ const HeroSection: FC = () => {
       )}
       id="hero"
     >
-      <div className="container flex flex-col items-center justify-center">
-        <HeroContent />
-        <HeroButtons className="mb-10 md:mb-20" />
+      <div className="container flex flex-col flex-start items-stretch justify-between lg:flex-row overflow-hidden gap-10">
+        <div className="flex flex-col items-center lg:items-start justify-center">
+          <HeroContent />
+          <HeroButtons className="mb-10" />
+        </div>
+        <div className="max-w-[768px] h-full">
+          <video
+            src="/lowops-demo.mov"
+            autoPlay
+            muted
+            loop
+            className="w-full h-full object-cover rounded-md md:rounded-xl"
+          />
+        </div>
       </div>
 
-      <HeroImage />
+      {/* <HeroImage /> */}
     </section>
   );
 };

@@ -1,9 +1,9 @@
 import type { Metadata } from 'next';
 
 export const nextMetadata: Metadata = {
-  title: 'Mendix Private Cloud Infrastructure | Low-Ops',
+  title: 'Private Cloud Infrastructure | Low-Ops',
   description:
-    'Deploy and manage your Mendix applications on a secure, scalable private cloud infrastructure. Custom solutions for enterprise Mendix hosting and deployment.',
+    'Deploy and manage your applications on a secure, scalable private cloud infrastructure. Custom solutions for enterprise hosting and deployment.',
   keywords: [
     'mendix',
     'private',
@@ -27,9 +27,9 @@ export const nextMetadata: Metadata = {
     canonical: `https://low-ops.com`,
   },
   openGraph: {
-    title: 'Low-Ops: Private Cloud Infrastructure for Mendix',
+    title: 'Low-Ops: Private Cloud Infrastructure',
     description:
-      'Manage Mendix app development, deployment, scaling, and security with Low-Ops IDP for private clouds.',
+      'Manage applications development, deployment, scaling, and security with Low-Ops IDP for private clouds.',
     url: 'https://low-ops.com',
     siteName: 'Low-Ops',
     type: 'website',
@@ -38,9 +38,9 @@ export const nextMetadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Low-Ops: Private Cloud Infrastructure for Mendix',
+    title: 'Low-Ops: Private Cloud Infrastructure',
     description:
-      'Manage Mendix app development, deployment, scaling, and security with Low-Ops IDP for private clouds.',
+      'Manage applications development, deployment, scaling, and security with Low-Ops IDP for private clouds.',
     images: ['https://low-ops.com/preview.webp'],
   },
 };
@@ -58,9 +58,9 @@ export const structuredData = {
     description: 'Free trial available',
   },
   description:
-    'Low-Ops is an Internal Developer Platform (IDP) for private clouds, managing Mendix app development, deployment, scaling, and security. Set up your private cloud in 10 minutes.',
+    'Low-Ops is an Internal Developer Platform (IDP) for private clouds, managing applications development, deployment, scaling, and security. Set up your private cloud in 10 minutes.',
   featureList:
-    'Mendix app management, Private cloud infrastructure, Automated deployment, Scaling, Security',
+    'Application management, Private cloud infrastructure, Automated deployment, Scaling, Security, Mendix',
   screenshot: 'https://low-ops.com/preview.wepb',
   softwareVersion: '3.5',
 };

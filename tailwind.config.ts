@@ -43,13 +43,9 @@ const config: Config = {
         },
         md: {
           css: {
-            h1: {
-              fontSize: '60px',
-              lineHeight: '72px',
-            },
             h3: {
-              fontSize: '30px',
-              lineHeight: '38px',
+              fontSize: '24px',
+              lineHeight: '32px',
             },
           },
         },
