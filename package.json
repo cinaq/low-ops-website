@@ -36,7 +36,7 @@
     "vaul": "1.1.0"
   },
   "devDependencies": {
-    "@babel/runtime": "7.25.7",
+    "@babel/runtime": "^7.27.1",
     "@tailwindcss/postcss": "^4.0.17",
     "@types/node": "20",
     "@types/react": "18",
