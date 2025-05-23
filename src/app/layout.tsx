@@ -1,4 +1,5 @@
 import { nextMetadata, structuredData } from '@/data/seo';
+import { GoogleAnalytics } from '@next/third-parties/google';
 import type { Metadata } from 'next';
 import { ReactNode } from 'react';
 import './globals.css';
@@ -19,7 +20,7 @@ const RootLayout = (props: TProps) => {
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
         />
-
+        <GoogleAnalytics gaId="G-8HTDC4DGP8" />
       </body>
     </html>
   );
