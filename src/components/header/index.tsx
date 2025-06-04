@@ -17,7 +17,7 @@ const Header: FC<TProps> = (props) => {
 
   // Renders
   return (
-    <header className={cn('absolute top-0 w-full', classes)}>
+    <header className={cn('absolute top-0 w-full z-50', classes)}>
       <div className="container">
         <div className="flex items-center justify-between py-4">
           <div className="flex items-center gap-6">

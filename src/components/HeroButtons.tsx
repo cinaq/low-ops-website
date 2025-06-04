@@ -3,6 +3,7 @@
 import { hero } from '@/data/hero';
 import { cn } from '@/lib/utils';
 import { LinkExternal02 } from '@untitled-ui/icons-react';
+import { motion } from 'framer-motion';
 import { FC } from 'react';
 import { Button } from './ui/button';
 
@@ -16,12 +17,18 @@ const HeroButtons: FC<TProps> = (props) => {
 
   return (
     <div
-      className={cn('flex items-start justify-center gap-4 w-full', className)}
+      className={cn(
+        'flex items-center justify-center xl:justify-start gap-4 w-full',
+        className
+      )}
     >
-      <a
+      <motion.a
         href="https://hub.cinaq.com/low-ops-trial"
         target="_blank"
         rel="noopener noreferrer"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.2, delay: 0.4 }}
       >
         <Button
           variant="secondary"
@@ -32,12 +39,17 @@ const HeroButtons: FC<TProps> = (props) => {
           <LinkExternal02 width={18} height={18} className="mr-2" />
           {hero.demoButton}
         </Button>
-      </a>
-      <a href="#contact-us">
+      </motion.a>
+      <motion.a
+        href="#contact-us"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.2, delay: 0.6 }}
+      >
         <Button size="lg" onClick={onClick} aria-label="Contact us">
           {hero.contactUsButton}
         </Button>
-      </a>
+      </motion.a>
     </div>
   );
 };
