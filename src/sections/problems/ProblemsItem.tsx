@@ -17,7 +17,7 @@ type TProps = {
 };
 
 const ProblemsItem: FC<TProps> = (props) => {
-  const { title, imagePath, icon, solutions, index } = props;
+  const { title, description,imagePath, icon, solutions, index } = props;
 
   // Hooks
   const isDesktop = useMediaQuery('(min-width: 768px)');
@@ -44,6 +44,7 @@ const ProblemsItem: FC<TProps> = (props) => {
       <div className="flex-1 flex flex-col justify-center gap-4 max-w-full md:max-w-1/2">
         <IconWrapper icon={icon} />
         <h3>{title}</h3>
+        <p className="text-base font-light">{description}</p>
         <ul className="flex flex-col p-0 m-0 gap-2 md:gap-4">
           {renderSolutions()}
         </ul>

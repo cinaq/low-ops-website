@@ -28,7 +28,7 @@ const Footer: FC<TProps> = (props) => {
     >
       <div className="container flex flex-col-reverse sm:flex-row items-center justify-between gap-5">
         <span className="text-sm text-gray-500 font-light">
-          © Copyright Low-Ops. All rights Reserved
+          © Copyright 2025 Low-Ops, a product of CINAQ. All rights Reserved
         </span>
         <div className="flex items-center justify-end gap-6">
           {renderSocials()}

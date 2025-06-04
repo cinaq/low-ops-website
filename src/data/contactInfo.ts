@@ -3,8 +3,8 @@ import { Mail03, MarkerPin02 } from '@untitled-ui/icons-react';
 export const contactInfo = [
   {
     title: 'Location',
-    description: 'Cinaq HQ (Appointment only)',
-    linkText: 'Bajonetstraat 50 3014 ZK, Rotterdam The Netherlands',
+    description: 'CINAQ HQ (Appointment only)',
+    linkText: 'Bajonetstraat 50 3014 ZK, Rotterdam, The Netherlands',
     link: 'https://www.google.com/maps/search/?api=1&query=Bajonetstraat+50+3014+ZK+Rotterdam+Netherlands',
     icon: MarkerPin02({}),
   },

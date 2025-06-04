@@ -1,9 +1,9 @@
 import type { Metadata } from 'next';
 
 export const nextMetadata: Metadata = {
-  title: 'Private Cloud Infrastructure | Low-Ops',
+  title: 'Private Cloud App Platform | Low-Ops',
   description:
-    'Deploy and manage your applications on a secure, scalable private cloud infrastructure. Custom solutions for enterprise hosting and deployment.',
+    'Deploy and manage your applications on a secure, scalable private cloud infrastructure. Perfect for medium to large enterprises.',
   keywords: [
     'mendix',
     'private',
