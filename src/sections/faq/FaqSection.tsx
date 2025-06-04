@@ -33,7 +33,7 @@ const FaqSection: React.FC = () => {
           {renderFaqItems()}
         </Accordion>
 
-        <div className="w-full rounded-lg bg-gray-50 p-8 flex flex-col items-center justify-center gap-2 prose">
+        <div className="w-full rounded-lg bg-secondary p-8 flex flex-col items-center justify-center gap-2 prose">
           <h4 className="text-lg">Still have questions?</h4>
           <p className="font-light text-sm">
             Can’t find the answer you’re looking for?

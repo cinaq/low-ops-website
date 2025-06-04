@@ -8,7 +8,7 @@ import HeroContent from './HeroContent';
 const HeroSection: FC = () => {
   return (
     <section
-      className="hero-section w-full bg-no-repeat pt-[140px] xl:pt-[170px] xl:pb-[20px] pb-[50px] min-h-[calc(100vh-180px)] relative bg-secondary"
+      className="hero-section w-full bg-no-repeat pt-[140px] pb-[60px] min-h-[calc(100vh-180px)] relative bg-secondary"
       id="hero"
     >
       <div className="container flex flex-col xl:flex-row items-center justify-between overflow-hidden gap-10 h-full">

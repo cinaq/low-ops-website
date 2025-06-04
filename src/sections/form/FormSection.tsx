@@ -107,7 +107,7 @@ const FormSection: React.FC = () => {
 
   // Renders
   return (
-    <section className="py-20 md:py-28 bg-gray-50" id="contact-us">
+    <section className="py-20 md:py-28 bg-secondary" id="contact-us">
       <div className="container flex flex-col items-center gap-12 md:gap-20">
         <SectionTitle
           title="Contact us"
