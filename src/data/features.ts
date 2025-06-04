@@ -1,6 +1,5 @@
 import {
   Bank,
-  Brackets,
   Building01,
   CoinsStacked01,
   Database01,
@@ -8,6 +7,7 @@ import {
   LineChartUp01,
   Lock01,
   Package,
+  User01,
 } from '@untitled-ui/icons-react';
 
 export const metadata = {
@@ -38,7 +38,7 @@ export const features = [
     title: 'Self-Service',
     description:
       'Developers can deploy and manage their applications in your private cloud or on-premises with a few clicks.',
-    icon: Brackets({}),
+    icon: User01({}),
   },
   {
     title: 'Monitoring & Logging',

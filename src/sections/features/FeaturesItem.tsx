@@ -14,7 +14,7 @@ const FeaturesItem: FC<TProps> = (props) => {
     <div className="flex flex-col items-center gap-3 md:gap-4 prose group">
       <IconWrapper
         icon={icon}
-        className="group-hover:rotate-6 transition-transform duration-500"
+        className="group-hover:rotate-6 transition-transform duration-500 text-blue-700"
       />
       <h3 className="text-center leading-none text-xl">{title}</h3>
       <p className="text-center text-base font-light">{description}</p>
