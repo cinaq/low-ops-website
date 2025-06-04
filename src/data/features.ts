@@ -1,20 +1,13 @@
 import {
-  Activity,
   Bank,
-  Bell02,
   Brackets,
   Building01,
   CoinsStacked01,
   Database01,
-  Diamond01,
   Grid01,
   LineChartUp01,
-  List,
   Lock01,
   Package,
-  Settings01,
-  Shield01,
-  ShieldTick,
 } from '@untitled-ui/icons-react';
 
 export const metadata = {

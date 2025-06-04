@@ -1,5 +1,4 @@
 import linkedinIcon from '@/assets/linkedin.svg';
-import xIcon from '@/assets/x.svg';
 
 export const socials = [
   {
