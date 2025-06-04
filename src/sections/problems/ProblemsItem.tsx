@@ -10,6 +10,7 @@ import { FC, ReactNode } from 'react';
 
 type TProps = {
   title: string;
+  description: string;
   imagePath: StaticImageData;
   icon: ReactNode;
   solutions: string[];
@@ -17,7 +18,7 @@ type TProps = {
 };
 
 const ProblemsItem: FC<TProps> = (props) => {
-  const { title, description,imagePath, icon, solutions, index } = props;
+  const { title, description, imagePath, icon, solutions, index } = props;
 
   // Hooks
   const isDesktop = useMediaQuery('(min-width: 768px)');
