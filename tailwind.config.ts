@@ -16,8 +16,8 @@ const config: Config = {
           css: {
             maxWidth: '100%',
             h1: {
-              fontSize: '48px',
-              lineHeight: '54px',
+              fontSize: '42px',
+              lineHeight: '48px',
               margin: '0',
               fontWeight: '700',
             },

@@ -24,7 +24,9 @@ const HeroSection: FC = () => {
             className="max-w-[768px] mx-auto h-full"
           >
             <video
-              src="/lowops-demo.mov"
+              src="/lowops-demo.mp4"
+              controls
+              preload="metadata"
               autoPlay
               muted
               loop
