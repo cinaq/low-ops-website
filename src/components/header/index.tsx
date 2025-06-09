@@ -4,6 +4,7 @@ import { useMediaQuery } from '@/hooks/useMediaQuery';
 import { cn } from '@/lib/utils';
 import { FC } from 'react';
 import AppLogo from './AppLogo';
+import DocsLink from './DocsLink';
 import HeaderNav from './HeaderNav';
 import MobileHeaderNav from './MobileHeaderNav';
 
@@ -25,6 +26,7 @@ const Header: FC<TProps> = (props) => {
           </div>
           <HeaderNav />
           {!isDesktop && <MobileHeaderNav />}
+          <DocsLink />
         </div>
       </div>
     </header>

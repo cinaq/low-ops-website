@@ -17,10 +17,7 @@ const HeroButtons: FC<TProps> = (props) => {
 
   return (
     <div
-      className={cn(
-        'flex items-center justify-center xl:justify-start gap-4 w-full',
-        className
-      )}
+      className={cn('flex items-center justify-center gap-4 w-full', className)}
     >
       <motion.a
         href="https://hub.cinaq.com/low-ops-trial"

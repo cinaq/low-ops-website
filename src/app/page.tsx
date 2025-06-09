@@ -18,7 +18,6 @@ const Home = () => {
       <ProblemsSection />
       <FeaturesSection />
       <TestimonialsSection />
-      <Divider />
       <FaqSection />
       <Divider />
       <ContactSection />

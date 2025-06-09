@@ -4,24 +4,25 @@ import HeroButtons from '@/components/HeroButtons';
 import { motion } from 'framer-motion';
 import { FC } from 'react';
 import HeroContent from './HeroContent';
+import HeroPattern from './HeroPattern';
 
 const HeroSection: FC = () => {
   return (
     <section
-      className="hero-section w-full bg-no-repeat pt-[140px] pb-[60px] min-h-[calc(100vh-180px)] relative bg-secondary"
+      className="w-full pt-[120px] md:pt-[160px] pb-[60px] min-h-[calc(100vh-150px)] relative bg-primary-800 overflow-hidden"
       id="hero"
     >
-      <div className="container flex flex-col xl:flex-row items-center justify-between overflow-hidden gap-10 h-full">
-        <div className="flex flex-col w-full xl:w-[40%]">
+      <div className="container flex flex-col gap-10 h-full">
+        <div className="flex flex-col w-full items-center justify-center relative z-40">
           <HeroContent />
-          <HeroButtons className="mb-6 md:mb-10" />
+          <HeroButtons className="mb-6" />
         </div>
-        <div className="w-full xl:w-[60%]">
+        <div className="relative max-w-full">
           <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.4 }}
-            className="max-w-[768px] mx-auto h-full"
+            initial={{ opacity: 0, y: 100 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4, delay: 1.3 }}
+            className="w-full max-w-[850px] mx-auto h-full border-[8px] md:border-[12px] border-black relative rounded-lg md:rounded-xl z-40 drop-shadow-xl"
           >
             <video
               src="/lowops-demo.mp4"
@@ -30,9 +31,10 @@ const HeroSection: FC = () => {
               autoPlay
               muted
               loop
-              className="w-full h-full object-cover rounded-md md:rounded-xl"
+              className="w-full h-full object-cover"
             />
           </motion.div>
+          <HeroPattern />
         </div>
       </div>
     </section>

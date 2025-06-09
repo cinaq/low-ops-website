@@ -41,7 +41,7 @@ const MobileHeaderNav = () => {
         onClick={handleToggle}
         variant="ghost"
         size="icon"
-        className="flex md:hidden"
+        className="flex md:hidden text-white"
         aria-label="Open menu"
       >
         <Menu01 width={28} height={28} />
