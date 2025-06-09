@@ -9,37 +9,30 @@ const HeroPattern = () => {
           initial={{ width: '0%' }}
           animate={{ width: '100%' }}
           transition={{ duration: 0.3 }}
-          className="h-full w-full flex"
-        >
-          <div className="bg-primary-700 h-full w-1/3" />
-          <div className="bg-primary-700 h-full w-2/3" />
-        </motion.div>
+          className="h-full w-full flex bg-primary-700"
+        />
       </div>
       <div className="h-[70px] -rotate-5 -translate-x-[10px] -translate-y-[3px] w-full relative z-30">
         <motion.div
           initial={{ width: '0%' }}
           animate={{ width: '100%' }}
           transition={{ delay: 0.3, duration: 0.5 }}
-          className="h-full w-full flex"
-        >
-          <div className="bg-primary-500 h-full w-1/3" />
-          <div className="bg-primary-500 h-full w-2/3" />
-        </motion.div>
+          className="h-full w-full flex bg-primary-500"
+        />
       </div>
       <div className="h-[70px] -rotate-5 -translate-x-[10px] -translate-y-[3px] w-full relative z-30">
         <motion.div
           initial={{ width: '0%' }}
           animate={{ width: '100%' }}
           transition={{ delay: 0.6, duration: 0.3 }}
-          className="w-full h-full relative"
+          className="w-full h-full relative bg-primary-300 border-none"
         >
           <motion.div
             initial={{ opacity: 0, y: 100 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.8, duration: 0.5 }}
-            className="bg-white h-full w-[28%] absolute left-[23%] z-20"
+            className="bg-white h-[75px] w-[28%] absolute left-[23%] z-20"
           />
-          <div className="bg-primary-300 h-full w-full absolute z-10" />
         </motion.div>
       </div>
       <div className="bg-white h-[600px] -rotate-5 translate-x-[-50px] -translate-y-[3px] w-full" />
