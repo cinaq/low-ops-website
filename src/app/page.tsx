@@ -1,4 +1,3 @@
-import Divider from '@/components/Divider';
 import Footer from '@/components/footer';
 import Header from '@/components/header';
 import { Toaster } from '@/components/ui/toaster';
@@ -8,6 +7,7 @@ import FeaturesSection from '@/sections/features/FeaturesSection';
 import FormSection from '@/sections/form/FormSection';
 import HeroSection from '@/sections/hero/HeroSection';
 import ProblemsSection from '@/sections/problems/ProblemsSection';
+import StartTrialSection from '@/sections/start-trial/StartTrialSection';
 import TestimonialsSection from '@/sections/testimonials/TestimonialsSection';
 
 const Home = () => {
@@ -16,12 +16,12 @@ const Home = () => {
       <Header />
       <HeroSection />
       <ProblemsSection />
-      <FeaturesSection />
       <TestimonialsSection />
+      <FeaturesSection />
+      <StartTrialSection />
       <FaqSection />
-      <Divider />
-      <ContactSection />
       <FormSection />
+      <ContactSection />
       <Footer />
       <Toaster />
     </>

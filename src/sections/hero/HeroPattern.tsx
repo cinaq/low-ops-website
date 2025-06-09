@@ -31,7 +31,7 @@ const HeroPattern = () => {
             initial={{ opacity: 0, y: 100 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.8, duration: 0.5 }}
-            className="bg-white h-[75px] w-[28%] absolute left-[23%] z-20"
+            className="bg-white h-[70.1px] w-[28%] absolute left-[23%] z-20"
           />
         </motion.div>
       </div>

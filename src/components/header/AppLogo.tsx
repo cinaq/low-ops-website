@@ -1,12 +1,22 @@
+import logoDark from '@/assets/logo-dark.svg';
 import logoLight from '@/assets/logo-light.svg';
 import Image from 'next/image';
 import Link from 'next/link';
+import { FC } from 'react';
 
-const AppLogo = () => {
+type TProps = {
+  isDark?: boolean;
+};
+
+const AppLogo: FC<TProps> = (props) => {
+  const { isDark = false } = props;
+
+  const logo = isDark ? logoDark : logoLight;
+
   return (
     <Link href="/" className="w-[130px] relative aspect-5/2">
       <Image
-        src={logoLight}
+        src={logo}
         alt="Low-Ops Platform"
         quality={90}
         fill

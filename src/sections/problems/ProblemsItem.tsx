@@ -54,16 +54,19 @@ const ProblemsItem: FC<TProps> = (props) => {
         <div className="hidden md:block flex-1 relative">
           <motion.div
             initial={{ opacity: 0, x: isEven ? 100 : -100 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.5 }}
             whileInView={{ opacity: 1, x: 0 }}
-            className={cn('absolute inset-0', isEven ? '-mr-60' : '-ml-60')}
+            className={cn(
+              'absolute inset-0 border-6 border-black rounded-xl',
+              isEven ? '-mr-60' : '-ml-60'
+            )}
           >
             <Image
               src={imagePath}
               alt="lowops-portal"
               quality={80}
               className={cn(
-                'm-0 object-cover',
+                'm-0 object-cover rounded-xl',
                 isEven ? 'object-left-top' : 'object-right-top'
               )}
               fill
