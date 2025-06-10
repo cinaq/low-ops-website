@@ -6,7 +6,10 @@ const HeaderNav: React.FC = () => {
   // Renders
   const renderMenu = () => {
     return menu.map((item) => (
-      <HeaderNavItem key={item.name} href={`#${item.id}`}>
+      <HeaderNavItem
+        key={item.name}
+        href={item.isPage ? `/${item?.href}` : `/#${item?.id}`}
+      >
         {item.name}
       </HeaderNavItem>
     ));

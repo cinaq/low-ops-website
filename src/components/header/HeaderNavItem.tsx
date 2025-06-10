@@ -1,4 +1,5 @@
 import { cn } from '@/lib/utils';
+import Link from 'next/link';
 import { FC, ReactNode } from 'react';
 
 type TProps = {
@@ -13,16 +14,16 @@ const HeaderNavItem: FC<TProps> = (props) => {
 
   return (
     <li>
-      <a
+      <Link
         href={href}
         className={cn(
-          'text-white hover:text-gray-200 transition-colors font-medium text-base duration-400',
+          'text-white hover:text-primary-25 transition-colors font-medium text-base duration-400',
           className
         )}
         onClick={onClick}
       >
         {children}
-      </a>
+      </Link>
     </li>
   );
 };

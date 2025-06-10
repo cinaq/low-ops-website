@@ -12,6 +12,8 @@ export const plans = [
       support: 'best effort',
     },
     subPrice: 'free first year',
+    isPopular: false,
+    description: 'For test apps and MVP`s',
   },
   {
     value: 'professional',
@@ -23,6 +25,8 @@ export const plans = [
       commercial: 'yes',
       support: 'standard',
     },
+    isPopular: true,
+    description: 'For growing teams and businesses',
   },
   {
     value: 'enterprise',
@@ -34,5 +38,7 @@ export const plans = [
       commercial: 'yes',
       support: 'premium',
     },
+    isPopular: false,
+    description: 'For large teams and enterprises',
   },
 ];
