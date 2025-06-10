@@ -34,14 +34,14 @@ export const nextMetadata: Metadata = {
     siteName: 'Low-Ops',
     type: 'website',
     locale: 'en_US',
-    images: [{ url: 'https://low-ops.com/preview.webp' }],
+    images: [{ url: 'https://low-ops.com/preview.png' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Low-Ops: Private Cloud Infrastructure',
     description:
       'Manage applications development, deployment, scaling, and security with Low-Ops IDP for private clouds.',
-    images: ['https://low-ops.com/preview.webp'],
+    images: ['https://low-ops.com/preview.png'],
   },
 };
 

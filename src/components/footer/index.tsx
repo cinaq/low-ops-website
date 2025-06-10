@@ -40,7 +40,7 @@ const Footer: FC<TProps> = (props) => {
             Let’s get started on something great
           </h3>
           <p className="text-center text-base text-gray-200 font-light">
-            Join over 10 companies already growing with Low-Ops.
+            Join over 10+ companies already growing with Low-Ops.
           </p>
           <HeroButtons />
         </div>
@@ -52,7 +52,7 @@ const Footer: FC<TProps> = (props) => {
           <div className="items-center justify-end gap-6 flex sm:hidden">
             {renderSocials()}
           </div>
-          <span className="text-xs text-gray-200 font-light">
+          <span className="text-xs text-gray-300 font-light text-center">
             © Copyright 2025 Low-Ops, a product of CINAQ. All rights Reserved
           </span>
           <div className="items-center justify-end gap-6 hidden sm:flex">

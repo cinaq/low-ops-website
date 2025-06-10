@@ -15,9 +15,9 @@ const StartTrialSection = () => {
           their operations
         </p>
 
-        <HeroButtons className="mb-10" />
+        <HeroButtons className="mb-6 md:mb-10" />
 
-        <div className="w-full max-h-[450px] overflow-hidden">
+        <div className="w-full max-h-[150px] sm:max-h-[300px] md:max-h-[450px] overflow-hidden">
           <motion.img
             src={logsImage.src}
             alt="low-ops-metrics"
@@ -26,16 +26,6 @@ const StartTrialSection = () => {
             whileInView={{ opacity: 1, y: 0 }}
             className="flex flex-col items-center gap-4 border-2 md:border-6 border-black rounded-xl relative overflow-hidden w-full h-auto"
           />
-          {/* <Image
-              src={logsImage}
-              alt="low-ops-metrics"
-              quality={80}
-              fill
-              loading="lazy"
-              placeholder="blur"
-              blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAACklEQVR4nGMAAQAABQABDQottAAAAABJRU5ErkJggg=="
-            /> */}
-          {/* </motion.img> */}
         </div>
       </div>
     </section>
