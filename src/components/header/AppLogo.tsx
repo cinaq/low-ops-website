@@ -10,7 +10,6 @@ type TProps = {
 
 const AppLogo: FC<TProps> = (props) => {
   const { isDark = false } = props;
-
   const logo = isDark ? logoDark : logoLight;
 
   return (

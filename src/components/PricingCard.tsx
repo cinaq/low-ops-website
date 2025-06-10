@@ -1,14 +1,6 @@
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipTrigger,
-} from '@/components/ui/tooltip';
-import {
-  Check,
-  CheckCircleBroken,
-  InfoCircle,
-  X,
-} from '@untitled-ui/icons-react';
+'use client';
+
+import { Check, CheckCircleBroken, X } from '@untitled-ui/icons-react';
 import { FC, useMemo } from 'react';
 import { Badge } from './ui/badge';
 import { Button } from './ui/button';
@@ -46,10 +38,10 @@ const PricingCard: FC<TProps> = (props) => {
       className="flex flex-col gap-2 items-center justify-between p-5"
     >
       <div className="flex flex-col items-center gap-2 w-full mb-4">
-        <div className="rounded-lg border-[1px] border-gray-100 py-1 px-1.5 flex items-center gap-2">
+        <div className="rounded-lg border-[1px] border-gray-100 py-1 px-1.5 flex items-center gap-2 mb-4">
           <Badge
             variant="outline"
-            className="flex items-center text-xs font-normal gap-1"
+            className="flex items-center text-xs font-medium gap-1"
           >
             <span className="w-[10px] h-[10px] rounded-full bg-primary-200 flex items-center justify-center">
               <span className="w-[5px] h-[5px] rounded-full bg-primary-500" />
@@ -60,14 +52,14 @@ const PricingCard: FC<TProps> = (props) => {
         </div>
         <div className="flex items-start gap-1">
           <h1 className="text-3xl font-bold">{plan.price}</h1>
-          <Tooltip>
+          {/* <Tooltip>
             <TooltipTrigger>
               <InfoCircle width={16} height={16} />
             </TooltipTrigger>
             <TooltipContent>
               <p>Billed annually</p>
             </TooltipContent>
-          </Tooltip>
+          </Tooltip> */}
         </div>
         <p className="text-sm font-light text-gray-500">{plan.description}</p>
         {!!plan.subPrice && (
@@ -87,7 +79,10 @@ const PricingCard: FC<TProps> = (props) => {
             {Object.entries(plan.items).map(([key, value]) => (
               <>
                 {key === 'support' && (
-                  <div className="flex items-center gap-2 capitalize text-sm">
+                  <div
+                    key={key}
+                    className="flex items-center gap-2 capitalize text-sm"
+                  >
                     {valueIcon['yes']}
                     {value} support
                   </div>
@@ -108,9 +103,11 @@ const PricingCard: FC<TProps> = (props) => {
           <div className="h-[1px] bg-gray-100 w-full" />
         </div>
         <Button className="w-full">Choose license</Button>
-        <Button variant="outline" className="w-full">
-          Compare licenses
-        </Button>
+        <a href="#compare">
+          <Button variant="outline" className="w-full">
+            Compare licenses
+          </Button>
+        </a>
       </div>
     </Card>
   );
