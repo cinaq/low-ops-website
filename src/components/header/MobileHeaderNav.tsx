@@ -26,7 +26,7 @@ const MobileHeaderNav = () => {
     return menu.map((item) => (
       <HeaderNavItem
         key={item.name}
-        href={`#${item.id}`}
+        href={item.isPage ? `/${item.href}` : `/#${item.id}`}
         className="flex items-center px-5 py-6 hover:bg-gray-50 active:bg-gray-50 text-lg text-gray-700 font-semibold"
         onClick={handleClose}
       >
