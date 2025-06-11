@@ -1,3 +1,5 @@
+'use client';
+
 import quoteSvg from '@/assets/quote.svg';
 import { Avatar, AvatarFallback } from '@/components/ui/avatar';
 import {
@@ -8,6 +10,7 @@ import {
 } from '@/components/ui/carousel';
 import { testimonials } from '@/data/testimonials';
 import { User01 } from '@untitled-ui/icons-react';
+import Autoplay from 'embla-carousel-autoplay';
 import Image from 'next/image';
 
 const TestimonialsCarousel = () => {
@@ -40,7 +43,11 @@ const TestimonialsCarousel = () => {
   };
 
   return (
-    <Carousel className="w-full relative">
+    <Carousel
+      className="w-full relative"
+      plugins={[Autoplay({ delay: 3000 })]}
+      opts={{ loop: true }}
+    >
       <CarouselContent>{renderItems()}</CarouselContent>
       <CarouselDot items={testimonials} />
     </Carousel>

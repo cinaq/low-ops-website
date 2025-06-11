@@ -1,127 +1,147 @@
-import {
-  Table,
-  TableBody,
-  TableCell,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from '@/components/ui/table';
-import { Check, Circle, X } from 'lucide-react';
+'use client';
+
+import { plans } from '@/data/plans';
+import { capitalize, cn } from '@/lib/utils';
+import { Check, X } from 'lucide-react';
+import { Fragment, useMemo } from 'react';
 import { Badge } from './ui/badge';
-import { Card } from './ui/card';
+import { Button } from './ui/button';
 
 const LicenseComparisonTable = () => {
+  const allKeys = Array.from(
+    new Set(plans.flatMap((plan) => Object.keys(plan.items)))
+  );
+
+  // Hooks
+  const valuesWithIcon = useMemo(() => {
+    return {
+      yes: (
+        <>
+          <Check className="w-4 h-4 text-green-500" />
+          Yes
+        </>
+      ),
+      no: (
+        <>
+          <X className="w-4 h-4 text-red-500" />
+          No
+        </>
+      ),
+    };
+  }, []);
+
+  // Renders
+  const renderPlans = () => {
+    return (
+      <>
+        <div />
+        {plans.map((plan, index) => (
+          <div
+            key={index}
+            className="flex flex-col justify-between gap-1 items-stretch h-full px-6"
+          >
+            <div className="w-full">
+              <h3 className="flex items-center gap-4 text-md font-normal border-b mb-5 pb-2 w-full">
+                {plan.label}
+                {plan.isPopular && (
+                  <Badge variant="primaryOutline">Popular</Badge>
+                )}
+              </h3>
+            </div>
+            <h1 className="text-3xl font-bold mb-3">{plan.price}</h1>
+            <p className="font-light text-md text-gray-600 mb-3">
+              {plan.description}
+            </p>
+            <Button className="mb-2">Get Started</Button>
+          </div>
+        ))}
+      </>
+    );
+  };
+
+  const renderItems = () => {
+    return allKeys.map((key, index) => (
+      <Fragment key={key}>
+        <div
+          className={cn(
+            'font-light border-b py-3 border-gray-100 text-gray-700',
+            index % 2 === 0 ? 'bg-gray-50' : 'bg-white'
+          )}
+        >
+          {capitalize(key)}
+        </div>
+        {plans.map((plan) => {
+          const value = plan.items[key as keyof typeof plan.items] || '-';
+          const resultValue =
+            valuesWithIcon[
+              value.toLowerCase() as keyof typeof valuesWithIcon
+            ] ?? value;
+
+          return (
+            <div
+              key={`${plan.value}-${key}`}
+              className={cn(
+                'text-center border-b py-3 border-gray-100 text-gray-900 font-medium flex items-center justify-center gap-2',
+                index % 2 === 0 ? 'bg-gray-50' : 'bg-white'
+              )}
+            >
+              {resultValue}
+            </div>
+          );
+        })}
+      </Fragment>
+    ));
+  };
+
   return (
-    <Card className="w-full overflow-hidden">
-      <Table>
-        <TableHeader>
-          <TableRow className="bg-gray-50">
-            <TableHead></TableHead>
-            <TableHead className="font-bold text-xl py-3 text-center">
-              Starter
-            </TableHead>
-            <TableHead className="font-bold text-xl py-3 text-center">
-              Professional
-            </TableHead>
-            <TableHead className="font-bold text-xl py-3 text-center">
-              Enterprise
-            </TableHead>
-          </TableRow>
-        </TableHeader>
-        <TableBody>
-          <TableRow>
-            <TableCell className="p-3 font-medium max-w-[70px] text-md">
-              Support
-            </TableCell>
-            <TableCell className="py-3">
-              <Badge
-                variant="secondaryOutline"
-                className="flex items-center justify-center gap-1 w-fit mx-auto"
-              >
-                <Circle
-                  width={10}
-                  height={10}
-                  className="text-gray-400 fill-gray-300"
-                />
-                Best effort
-              </Badge>
-            </TableCell>
-            <TableCell className="py-3">
-              <Badge
-                variant="secondaryOutline"
-                className="flex items-center justify-center gap-1 w-fit mx-auto"
-              >
-                <Circle
-                  width={10}
-                  height={10}
-                  className="text-orange-400 fill-orange-300"
-                />
-                Standard
-              </Badge>
-            </TableCell>
-            <TableCell className="py-3">
-              <Badge
-                variant="secondaryOutline"
-                className="flex items-center justify-center gap-1 w-fit mx-auto"
-              >
-                <Circle
-                  width={10}
-                  height={10}
-                  className="text-primary-400 fill-primary-300"
-                />
-                Premium
-              </Badge>
-            </TableCell>
-          </TableRow>
-          <TableRow>
-            <TableCell className="p-3 font-medium max-w-[70px] text-md">
-              Highly available
-            </TableCell>
-            <TableCell className="py-3 text-center">
-              <div className="flex items-center justify-center gap-1">
-                <X width={15} height={15} className="text-red-500" />
-                No
+    <div className="flex flex-col gap-8">
+      <div className="hidden lg:grid grid-cols-4">{renderPlans()}</div>
+      <div className="hidden lg:grid grid-cols-4">{renderItems()}</div>
+      <div className="flex flex-col gap-20 lg:hidden">
+        {plans.map((plan, index) => (
+          <div key={index} className="flex flex-col gap-6">
+            <div className="flex flex-col justify-between gap-1 items-stretch h-full">
+              <div className="w-full">
+                <h3 className="flex items-center gap-4 text-md font-normal border-b mb-5 pb-2 w-full">
+                  {plan.label}
+                  {plan.isPopular && (
+                    <Badge variant="primaryOutline">Popular</Badge>
+                  )}
+                </h3>
               </div>
-            </TableCell>
-            <TableCell className="py-3 text-center">
-              <div className="flex items-center justify-center gap-1">
-                <X width={15} height={15} className="text-red-500" />
-                No
-              </div>
-            </TableCell>
-            <TableCell className="py-3 text-center">
-              <div className="flex items-center justify-center gap-1">
-                <Check width={16} height={16} className="text-green-500" />
-                Yes
-              </div>
-            </TableCell>
-          </TableRow>
-          <TableRow>
-            <TableCell className="p-3 font-medium max-w-[70px] text-md">
-              Commercial
-            </TableCell>
-            <TableCell className="py-3 text-center">
-              <div className="flex items-center justify-center gap-1">
-                <X width={15} height={15} className="text-red-500" />
-                No
-              </div>
-            </TableCell>
-            <TableCell className="py-3 text-center">
-              <div className="flex items-center justify-center gap-1">
-                <Check width={16} height={16} className="text-green-500" />
-                Yes
-              </div>
-            </TableCell>
-            <TableCell className="py-3 text-center">
-              <div className="flex items-center justify-center gap-1">
-                <Check width={16} height={16} className="text-green-500" />
-                Yes
-              </div>
-            </TableCell>
-          </TableRow>
-        </TableBody>
-      </Table>
-    </Card>
+              <h1 className="text-3xl font-bold mb-3">{plan.price}</h1>
+              <p className="font-light text-md text-gray-600 mb-3">
+                {plan.description}
+              </p>
+              <Button className="mb-2 max-w-[200px]">Get Started</Button>
+            </div>
+            <div className="">
+              {Object.entries(plan.items).map(([key, value], i) => (
+                <div
+                  key={`${key}-${plan.value}`}
+                  className={cn(
+                    'flex items-center justify-between p-3 border-b border-gray-100',
+                    i % 2 === 0 ? 'bg-gray-50' : 'bg-white'
+                  )}
+                >
+                  <div className="text-gray-700 font-light">
+                    {capitalize(key)}
+                  </div>
+                  <div
+                    key={`${plan.value}-${key}`}
+                    className="text-gray-900 font-medium flex items-center justify-center gap-2"
+                  >
+                    {valuesWithIcon[
+                      value.toLowerCase() as keyof typeof valuesWithIcon
+                    ] ?? value}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
   );
 };
 

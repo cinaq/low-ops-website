@@ -195,10 +195,19 @@ CarouselItem.displayName = 'CarouselItem';
 
 const CarouselDots = React.forwardRef<
   HTMLDivElement,
-  { className?: string; items?: unknown[] }
+  { className?: string; items?: unknown[]; activeIndex?: number }
 >(({ className, items = [], ...props }, ref) => {
+  const [activeIndex, setActiveIndex] = React.useState(0);
+
   const { api } = useCarousel();
-  if (!api) return null;
+
+  React.useEffect(() => {
+    if (!api) return;
+
+    api.on('select', () => {
+      setActiveIndex(api.selectedScrollSnap());
+    });
+  }, [api]);
 
   return (
     <div
@@ -212,10 +221,10 @@ const CarouselDots = React.forwardRef<
           key={i}
           className={cn(
             'w-[10px] h-[10px] rounded-full block shadow-none p-0',
-            api.selectedScrollSnap() === i ? 'bg-blue-500' : 'bg-gray-300',
+            activeIndex === i ? 'bg-blue-500' : 'bg-gray-300',
             className
           )}
-          onClick={() => api.scrollTo(i)}
+          onClick={() => api?.scrollTo(i)}
         />
       ))}
     </div>
@@ -228,5 +237,6 @@ export {
   CarouselContent,
   CarouselDots as CarouselDot,
   CarouselItem,
+  useCarousel,
   type CarouselApi,
 };

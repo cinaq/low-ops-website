@@ -14,7 +14,6 @@ export const testimonials = [
     company: 'Startup',
     author: 'Technical Director',
   },
-
   {
     text: 'We host Mendix in a private cloud environment, and Low Ops has made our Infrastructure and DevOps experience probably a 100% better than using standard Kubernetes.  You don’t have to be a Kubernetes expert to run Mendix in a private cloud environment',
     company: 'Efficient Group',
