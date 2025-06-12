@@ -15,7 +15,7 @@ const PricingPage = () => {
               description="Licenses for all sizes"
               className="mb-2"
             />
-            <p className="text-center text-gray-500 font-light text-md mb-20">
+            <p className="text-center text-gray-500 font-normal text-md mb-20">
               Prices reflect a 12-month subscription period.
             </p>
             <LicenseComparisonTable />
