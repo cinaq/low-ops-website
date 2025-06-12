@@ -64,7 +64,7 @@ const LicenseComparisonTable = () => {
       <Fragment key={key}>
         <div
           className={cn(
-            'font-light border-b py-3 border-gray-100 text-gray-700 pl-2',
+            'font-normal border-b py-3 border-gray-100 text-gray-700 pl-2',
             index % 2 === 0 ? 'bg-gray-50' : 'bg-white'
           )}
         >
