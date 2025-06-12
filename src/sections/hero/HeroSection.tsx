@@ -22,7 +22,7 @@ const HeroSection: FC = () => {
             initial={{ opacity: 0, y: 100 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4, delay: 1.3 }}
-            className="w-full max-w-[850px] mx-auto h-full border-[8px] md:border-[10px] border-black relative rounded-lg md:rounded-xl z-40 drop-shadow-xl"
+            className="w-full max-w-[1200px] mx-auto h-full border-[8px] md:border-[10px] border-black relative rounded-lg md:rounded-xl z-40 drop-shadow-xl"
           >
             <video
               src="/lowops-demo.mp4"
