@@ -16,7 +16,7 @@ export const plans = [
     },
     subPrice: 'free first year',
     isPopular: false,
-    description: 'For test apps and MVP`s',
+    description: 'For small teams and startups',
   },
   {
     value: 'professional',

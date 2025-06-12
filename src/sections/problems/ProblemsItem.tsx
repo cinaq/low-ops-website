@@ -30,7 +30,7 @@ const ProblemsItem: FC<TProps> = (props) => {
     return solutions.map((item) => (
       <li key={item} className="flex gap-2">
         <CheckCircle className="text-blue-500 leading-none w-auto mt-0.5" />
-        <span className="flex-1 text-base font-light">{item}</span>
+        <span className="flex-1 text-md  font-normal">{item}</span>
       </li>
     ));
   };
@@ -45,7 +45,7 @@ const ProblemsItem: FC<TProps> = (props) => {
       <div className="flex-1 flex flex-col justify-center gap-4 max-w-full md:max-w-1/2">
         <IconWrapper icon={icon} />
         <h3>{title}</h3>
-        <p className="text-base font-light">{description}</p>
+        <p className="text-base font-normal">{description}</p>
         <ul className="flex flex-col p-0 m-0 gap-2 md:gap-4">
           {renderSolutions()}
         </ul>

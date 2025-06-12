@@ -17,7 +17,7 @@ const FeaturesItem: FC<TProps> = (props) => {
         className="group-hover:rotate-6 transition-transform duration-500"
       />
       <h3 className="text-center leading-none text-xl">{title}</h3>
-      <p className="text-center text-base font-light">{description}</p>
+      <p className="text-center text-[14px] font-normal">{description}</p>
     </div>
   );
 };
