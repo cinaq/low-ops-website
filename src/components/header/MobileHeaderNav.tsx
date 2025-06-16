@@ -27,7 +27,9 @@ const MobileHeaderNav = () => {
       <HeaderNavItem
         key={item.name}
         href={item.isPage ? `/${item.href}` : `/#${item.id}`}
-        className="flex items-center px-5 py-6 hover:bg-gray-50 active:bg-gray-50 text-lg text-gray-700 font-semibold"
+        className={cn(
+          'flex items-center px-5 py-6 hover:bg-gray-50 hover:text-gray-700 active:bg-gray-50 text-lg text-gray-700 font-semibold'
+        )}
         onClick={handleClose}
       >
         {item.name}
@@ -41,14 +43,14 @@ const MobileHeaderNav = () => {
         onClick={handleToggle}
         variant="ghost"
         size="icon"
-        className="flex md:hidden text-white"
+        className="flex lg:hidden text-white"
         aria-label="Open menu"
       >
         <Menu01 width={28} height={28} />
       </Button>
       <div
         className={cn(
-          'flex flex-col justify-between md:hidden fixed z-50 w-screen h-full max-h-screen overflow-hidden left-0 top-0 border bg-white transition-transform duration-500',
+          'flex flex-col justify-between lg:hidden fixed z-50 w-screen h-full max-h-screen overflow-hidden left-0 top-0 border bg-white transition-transform duration-500',
           open ? 'translate-y-0' : '-translate-y-[1800px] -z-1'
         )}
       >

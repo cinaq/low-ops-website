@@ -17,7 +17,7 @@ const HeaderNav: React.FC = () => {
   };
 
   return (
-    <nav className="hidden md:block">
+    <nav className="hidden lg:block">
       <motion.ul
         initial={{ opacity: 0, y: -10 }}
         animate={{ opacity: 1, y: 0 }}

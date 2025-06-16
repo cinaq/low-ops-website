@@ -1,6 +1,5 @@
 'use client';
 
-import { useMediaQuery } from '@/hooks/useMediaQuery';
 import { cn } from '@/lib/utils';
 import { motion } from 'framer-motion';
 import { FC } from 'react';
@@ -15,7 +14,6 @@ type TProps = {
 
 const Header: FC<TProps> = (props) => {
   const { classes } = props;
-  const isDesktop = useMediaQuery('(min-width: 768px)');
 
   // Renders
   return (
@@ -32,12 +30,15 @@ const Header: FC<TProps> = (props) => {
           >
             <AppLogo />
           </motion.div>
+
           <HeaderNav />
-          {!isDesktop && <MobileHeaderNav />}
+          <MobileHeaderNav />
+
           <motion.div
             initial={{ opacity: 0, x: 10 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.3, ease: 'easeInOut' }}
+            className="hidden lg:block"
           >
             <DocsLink />
           </motion.div>
