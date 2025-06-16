@@ -2,6 +2,7 @@
 
 import { useMediaQuery } from '@/hooks/useMediaQuery';
 import { cn } from '@/lib/utils';
+import { motion } from 'framer-motion';
 import { FC } from 'react';
 import AppLogo from './AppLogo';
 import DocsLink from './DocsLink';
@@ -22,13 +23,24 @@ const Header: FC<TProps> = (props) => {
       className={cn('absolute top-0 w-full z-50 bg-primary-800', classes)}
     >
       <div className="container">
-        <div className="flex items-center justify-between py-2">
-          <div className="flex items-center gap-6">
+        <div className="flex items-center justify-between py-3">
+          <motion.div
+            initial={{ opacity: 0, x: -10 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.3, ease: 'easeInOut' }}
+            className="flex items-center gap-6"
+          >
             <AppLogo />
-          </div>
+          </motion.div>
           <HeaderNav />
           {!isDesktop && <MobileHeaderNav />}
-          <DocsLink />
+          <motion.div
+            initial={{ opacity: 0, x: 10 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.3, ease: 'easeInOut' }}
+          >
+            <DocsLink />
+          </motion.div>
         </div>
       </div>
     </header>
