@@ -52,7 +52,9 @@ const LicenseComparisonTable = () => {
             <p className="font-light text-md text-gray-600 mb-3">
               {plan.description}
             </p>
-            <Button className="mb-2">Get Started</Button>
+            <a href="/contact-us">
+              <Button className="mb-2">Get Started</Button>
+            </a>
           </div>
         ))}
       </>

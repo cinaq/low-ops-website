@@ -5,6 +5,9 @@ import { motion } from 'framer-motion';
 import { FC } from 'react';
 import AppLogo from './AppLogo';
 import DocsLink from './DocsLink';
+import GithubLink from './GithubLink';
+import LinkedinLink from './LinkedinLink';
+import YoutubeLink from './YoutubeLink';
 import HeaderNav from './HeaderNav';
 import MobileHeaderNav from './MobileHeaderNav';
 
@@ -40,7 +43,12 @@ const Header: FC<TProps> = (props) => {
             transition={{ duration: 0.3, ease: 'easeInOut' }}
             className="hidden lg:block"
           >
-            <DocsLink />
+            <div className="flex items-center gap-2">
+              <LinkedinLink />
+              <YoutubeLink />
+              <GithubLink />
+              <DocsLink />
+            </div>
           </motion.div>
         </div>
       </div>

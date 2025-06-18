@@ -38,7 +38,7 @@ const FaqSection: React.FC = () => {
           <p className="font-light text-sm">
             Can’t find the answer you’re looking for?
           </p>
-          <a href="#contact-us">
+          <a href="/contact-us">
             <Button className="w-fit" size="default" aria-label="Contact us">
               Contact us
             </Button>

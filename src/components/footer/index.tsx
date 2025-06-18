@@ -1,6 +1,4 @@
-import { socials } from '@/data/socials';
 import { cn } from '@/lib/utils';
-import Image from 'next/image';
 import { FC } from 'react';
 import AppLogo from '../header/AppLogo';
 import HeroButtons from '../HeroButtons';
@@ -12,21 +10,6 @@ type TProps = {
 const Footer: FC<TProps> = (props) => {
   const { classes } = props;
 
-  // Renders
-  const renderSocials = () => {
-    return socials.map(({ alt, link, iconPath }) => (
-      <a
-        key={alt}
-        href={link}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="hover:opacity-90 transition-opacity duration-300"
-      >
-        <Image width={35} height={35} src={iconPath} alt={alt} />
-      </a>
-    ));
-  };
-
   return (
     <footer
       className={cn(
@@ -37,10 +20,10 @@ const Footer: FC<TProps> = (props) => {
       <div className="container">
         <div className="flex flex-col items-center justify-center gap-4 mb-16">
           <h3 className="text-center text-3xl md:text-4xl font-semibold leading-[32px] md:leading-[44px] text-white">
-            Let’s get started on something great
+            Having your own private application platform is easier than you think
           </h3>
           <p className="text-center text-base text-gray-200 font-light">
-            Join over 10+ companies already growing with Low-Ops.
+          Start delivering apps in minutes
           </p>
           <HeroButtons />
         </div>
@@ -50,13 +33,11 @@ const Footer: FC<TProps> = (props) => {
         <div className="flex flex-col sm:flex-row items-center justify-between gap-5">
           <AppLogo />
           <div className="items-center justify-end gap-6 flex sm:hidden">
-            {renderSocials()}
           </div>
           <span className="text-xs text-gray-300 font-light text-center">
-            © Copyright 2025 Low-Ops, a product of CINAQ. All rights Reserved
+            © Copyright 2025 Low-Ops, a product of <a href="https://cinaq.com" target="_blank" rel="noopener noreferrer" className="text-white hover:text-blue-400 transition-colors">CINAQ</a>. All rights Reserved
           </span>
           <div className="items-center justify-end gap-6 hidden sm:flex">
-            {renderSocials()}
           </div>
         </div>
       </div>

@@ -13,12 +13,12 @@ type TProps = {
   description: string;
   imagePath: StaticImageData;
   icon: ReactNode;
-  solutions: string[];
+  subitems: string[];
   index: number;
 };
 
-const ProblemsItem: FC<TProps> = (props) => {
-  const { title, description, imagePath, icon, solutions, index } = props;
+const Item: FC<TProps> = (props) => {
+  const { title, description, imagePath, icon, subitems, index } = props;
 
   // Hooks
   const isDesktop = useMediaQuery('(min-width: 768px)');
@@ -27,7 +27,7 @@ const ProblemsItem: FC<TProps> = (props) => {
 
   // Renders
   const renderSolutions = () => {
-    return solutions.map((item) => (
+    return subitems.map((item) => (
       <li key={item} className="flex gap-2">
         <CheckCircle className="text-blue-500 leading-none w-auto mt-0.5" />
         <span className="flex-1 text-md  font-normal">{item}</span>
@@ -82,4 +82,4 @@ const ProblemsItem: FC<TProps> = (props) => {
   );
 };
 
-export default ProblemsItem;
+export default Item;

@@ -1,8 +1,6 @@
 export const menu = [
-  { name: 'Why', id: 'problems', isPage: false },
-  { name: 'How', id: 'features', isPage: false },
-  { name: 'Testimonials', id: 'testimonials', isPage: false },
-  { name: 'FAQ', id: 'faq', isPage: false },
-  { name: 'Contact', id: 'contact', isPage: false },
+
+  { name: 'Home', id: 'home', href: '', isPage: true },
   { name: 'Pricing', id: 'pricing', href: 'pricing', isPage: true },
+  { name: 'Contact Us', id: 'contact-us', href: 'contact-us', isPage: true },
 ];

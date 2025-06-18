@@ -1,12 +1,11 @@
 import Footer from '@/components/footer';
 import Header from '@/components/header';
 import { Toaster } from '@/components/ui/toaster';
-import ContactSection from '@/sections/contact/ContactSection';
+import HowSection from '@/sections/how/Section';
 import FaqSection from '@/sections/faq/FaqSection';
 import FeaturesSection from '@/sections/features/FeaturesSection';
-import FormSection from '@/sections/form/FormSection';
 import HeroSection from '@/sections/hero/HeroSection';
-import ProblemsSection from '@/sections/problems/ProblemsSection';
+import WhySection from '@/sections/why/Section';
 import StartTrialSection from '@/sections/start-trial/StartTrialSection';
 import TestimonialsSection from '@/sections/testimonials/TestimonialsSection';
 
@@ -15,13 +14,12 @@ const Home = () => {
     <>
       <Header />
       <HeroSection />
-      <ProblemsSection />
+      <WhySection />
+      <HowSection />
       <TestimonialsSection />
       <FeaturesSection />
       <StartTrialSection />
       <FaqSection />
-      <FormSection />
-      <ContactSection />
       <Footer />
       <Toaster />
     </>

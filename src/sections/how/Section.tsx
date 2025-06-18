@@ -1,13 +1,14 @@
 import SectionTitle from '@/components/SectionTitle';
-import { problemsWeSolve, metadata } from '@/data/problemsWeSolve';
-import React from 'react';
-import ProblemsItem from './ProblemsItem';
+import { items, metadata } from '@/data/how';
+import Item from './Item';
 
-const ProblemsSection: React.FC = () => {
+import React from 'react';
+
+const Section: React.FC = () => {
   // Renders
-  const renderSubsections = () => {
-    return problemsWeSolve.map((problem, index) => (
-      <ProblemsItem key={problem.title} index={index} {...problem} />
+  const renderItems = () => {
+    return items.map((item, index) => (
+      <Item key={item.title} index={index} {...item} />
     ));
   };
 
@@ -21,10 +22,10 @@ const ProblemsSection: React.FC = () => {
           title={metadata.title}
           description={metadata.description}
         />
-        <div className="flex flex-col gap-12 md:gap-20">{renderSubsections()}</div>
+        <div className="flex flex-col gap-12 md:gap-20">{renderItems()}</div>
       </div>
     </section>
   );
 };
 
-export default ProblemsSection;
+export default Section;

@@ -1,12 +1,11 @@
 import { cn } from '@/lib/utils';
-import { BookOpen01 } from '@untitled-ui/icons-react';
+import { GitPullRequest } from '@untitled-ui/icons-react';
 
-const DOCS_URL = process.env.NEXT_PUBLIC_DOCS_URL ?? 'https://docs.low-ops.com';
 
-const DocsLink = () => {
+const GithubLink = () => {
   return (
     <a
-      href={DOCS_URL}
+      href="https://github.com/low-ops/"
       rel="noopener noreferrer"
       target="_blank"
       className={cn(
@@ -14,10 +13,10 @@ const DocsLink = () => {
         'hidden lg:flex'
       )}
     >
-      Docs
-      <BookOpen01 width={16} height={16} />
+      Github
+      <GitPullRequest width={16} height={16} />
     </a>
   );
 };
 
-export default DocsLink;
+export default GithubLink;
