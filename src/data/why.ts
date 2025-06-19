@@ -1,6 +1,6 @@
 import operationalCostImage from '@/assets/operationalcost.jpg';
 import manualProvisioningImage from '@/assets/manualprovisioning.jpg';
-import { Expand06, Lightning01, Shield01 } from '@untitled-ui/icons-react';
+import { Lightning01, Shield01 } from '@untitled-ui/icons-react';
 
 export const metadata = {
   title: 'Challenges with Data Sovereignty',
