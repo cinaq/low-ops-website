@@ -48,7 +48,7 @@ const Item: FC<TProps> = (props) => {
           >
             <Image
               src={imagePath}
-              alt="lowops-portal"
+              alt={title}
               quality={100}
               className={cn(
                 'm-0 object-cover rounded-xl',

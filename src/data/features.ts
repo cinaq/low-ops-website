@@ -11,8 +11,8 @@ import {
 } from '@untitled-ui/icons-react';
 
 export const metadata = {
-  title: 'Enterprise-Ready Platform',
-  description: 'Streamline your private cloud operations with our comprehensive platform for secure, scalable application deployment and management.',
+  title: 'Features',
+  description: 'Streamline your private cloud operations with your own comprehensive private app platform for secure, scalable deployment and management.',
 };
 
 export const features = [

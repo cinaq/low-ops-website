@@ -1,36 +1,48 @@
 import operationalCostImage from '@/assets/operationalcost.jpg';
 import manualProvisioningImage from '@/assets/manualprovisioning.jpg';
-import { Lightning01, Shield01 } from '@untitled-ui/icons-react';
+import { ShieldDollar, Lightning02, Building01 } from '@untitled-ui/icons-react';
 
 export const metadata = {
-  title: 'Challenges with Data Sovereignty',
+  title: 'Inefficient Application Delivery',
   description:
-    'Data sovereignty is a critical concern for organizations, especially those operating in regulated industries like financial services, healthcare, manufacturing, and government.',
+    'Are you developers struggling to deliver applications on time and within budget? Often the bottleneck is related to developers not being able to deploy applications quickly and easily.',
 };
 
 export const items = [
   {
-    title: 'Increased operational cost',
+    title: 'High Infrastructure Costs & Complexity',
     description:
-      'Having to build your own private cloud or on-premise infrastructure is expensive and time-consuming. It also requires a lot of expertise and resources.',
+      'Building and maintaining private cloud or on-premise infrastructure requires significant investment in specialized teams and resources, driving up operational costs.',
     imagePath: operationalCostImage,
-    icon: Lightning01({}),
+    icon: ShieldDollar({}),
     subitems: [
-      `Large platform teams are required to build and maintain private cloud or on-premise infrastructure.`,
-      `With limited resources, it is difficult to keep up with the latest technologies and best practices.`,
-      `It is difficult to scale your platform team to meet the needs of your business.`,
+      `Requires dedicated platform engineering teams to build and maintain infrastructure.`,
+      `Limited resources make it challenging to adopt latest technologies and best practices.`,
+      `Scaling platform teams becomes increasingly difficult as business grows.`,
     ],
   },
   {
-    title: 'Slow Innovation & Deployment Bottlenecks',
+    title: 'Developer Productivity Bottlenecks',
     description:
-      'Decreased developer experience and productivity resulting in missed deadlines.',
+      'Developers spend excessive time on infrastructure management instead of building features, leading to delayed delivery and missed deadlines.',
     imagePath: manualProvisioningImage,
-    icon: Shield01({}),
+    icon: Lightning02({}),
     subitems: [
-      `Developers are often burdened with managing infrastructure, which takes away from their ability to focus on building new features and products.`,
-      `It is difficult to onboard new developers.`,
-      `App developers are not able to deploy their applications quickly and easily.`,
+      `Developers waste time on infrastructure tasks instead of focusing on core product development.`,
+      `Complex onboarding process slows down team expansion and productivity.`,
+      `Manual deployment processes prevent quick and easy application releases.`,
+    ],
+  },
+  {
+    title: 'Delayed Time-to-Market',
+    description:
+      'Slow deployment cycles and infrastructure bottlenecks prevent teams from delivering applications on time and within budget constraints.',
+    imagePath: operationalCostImage,
+    icon: Building01({}),
+    subitems: [
+      `Manual provisioning and configuration delays application deployment by days or weeks.`,
+      `Lack of standardized deployment processes leads to inconsistent delivery times.`,
+      `Infrastructure dependencies create bottlenecks that block multiple development teams.`,
     ],
   },
 ];
