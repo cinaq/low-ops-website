@@ -69,8 +69,8 @@ const Item: FC<TProps> = (props) => {
 };
 
 const renderItems = () => {
-  return items.map((item, index) => (
-    <Item key={item.title} index={index} {...item} />
+  return items.map((item) => (
+    <Item key={item.title}  {...item} />
   ));
 };
 
