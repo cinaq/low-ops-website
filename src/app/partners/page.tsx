@@ -15,17 +15,14 @@ type TProps = {
   title: string;
   description: string;
   imagePath: StaticImageData;
-  index: number;
+  link: string;
 };
 
 const Item: FC<TProps> = (props) => {
-  const { title, description, imagePath, index, link } = props;
+  const { title, description, imagePath, link } = props;
 
   // Hooks
   const isDesktop = useMediaQuery('(min-width: 768px)');
-
-  const isEven = isDesktop ? index % 2 === 0 : true;
-
 
   return (
     <div
