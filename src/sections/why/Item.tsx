@@ -66,7 +66,7 @@ const Item: FC<TProps> = (props) => {
               alt={title}
               quality={80}
               className={cn(
-                'm-0 object-cover rounded-xl',
+                'm-0 object-cover object-bottom rounded-sm',
                 isEven ? 'object-left-top' : 'object-right-top'
               )}
               fill

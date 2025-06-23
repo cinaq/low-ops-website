@@ -4,7 +4,6 @@ import { menu } from '@/data/header';
 import { cn } from '@/lib/utils';
 import { Menu01, XClose } from '@untitled-ui/icons-react';
 import { useState } from 'react';
-import HeroButtons from '../HeroButtons';
 import { Button } from '../ui/button';
 import AppLogo from './AppLogo';
 import HeaderNavItem from './HeaderNavItem';
@@ -50,7 +49,7 @@ const MobileHeaderNav = () => {
       </Button>
       <div
         className={cn(
-          'flex flex-col justify-between lg:hidden fixed z-50 w-screen h-full max-h-screen overflow-hidden left-0 top-0 border bg-white transition-transform duration-500',
+          'flex flex-col justify-between lg:hidden fixed z-50 w-screen h-screen max-h-screen overflow-hidden left-0 top-0 border bg-white transition-transform duration-500',
           open ? 'translate-y-0' : '-translate-y-[1800px] -z-1'
         )}
       >
@@ -69,9 +68,8 @@ const MobileHeaderNav = () => {
           <nav className="py-4">
             <ul className="flex flex-col">{renderMenu()}</ul>
           </nav>
+          {/* <Socials /> */}
         </div>
-
-        <HeroButtons className="justify-self-end p-4" onClick={handleClose} />
       </div>
     </>
   );

@@ -26,12 +26,7 @@ const HeroButtons: FC<TProps> = (props) => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.2, delay: 0.4 }}
       >
-        <Button
-          variant="secondary"
-          size="lg"
-          onClick={onClick}
-          aria-label="Show demo"
-        >
+        <Button size="lg" onClick={onClick} aria-label="Show demo">
           {hero.demoButton}
         </Button>
       </motion.a>

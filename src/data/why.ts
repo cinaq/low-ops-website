@@ -1,6 +1,11 @@
-import operationalCostImage from '@/assets/operationalcost.jpg';
-import manualProvisioningImage from '@/assets/manualprovisioning.jpg';
-import { ShieldDollar, Lightning02, Building01 } from '@untitled-ui/icons-react';
+import lateToMarket from '@/assets/late.png';
+import manualProvisioningImage from '@/assets/manualprovisioning2.jpg';
+import operationalCostImage from '@/assets/operationalcost2.jpg';
+import {
+  Building01,
+  Lightning02,
+  ShieldDollar,
+} from '@untitled-ui/icons-react';
 
 export const metadata = {
   title: 'Inefficient Application Delivery',
@@ -37,7 +42,7 @@ export const items = [
     title: 'Delayed Time-to-Market',
     description:
       'Slow deployment cycles and infrastructure bottlenecks prevent teams from delivering applications on time and within budget constraints.',
-    imagePath: operationalCostImage,
+    imagePath: lateToMarket,
     icon: Building01({}),
     subitems: [
       `Manual provisioning and configuration delays application deployment by days or weeks.`,
