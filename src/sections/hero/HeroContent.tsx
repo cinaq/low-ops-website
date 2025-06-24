@@ -10,15 +10,16 @@ const HeroContent = () => {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.2 }}
-        className="text-center text-white max-w-[850px] text-3xl md:text-5xl font-bold leading-tight"
+        className="text-center text-white max-w-[850px] text-5xl lg:text-7xl font-bold leading-tight"
       >
-        {hero.title}
+        {hero.title} <br />{' '}
+        <span className="text-primary-400">{hero.titleHighlight}</span>
       </motion.h1>
       <motion.p
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.2, duration: 0.2 }}
-        className="max-w-full md:max-w-[750px] w-full text-center text-sm md:text-base font-light md:text-md text-gray-50 leading-normal"
+        className="max-w-full lg:max-w-[850px] w-full text-center text-sm lg:text-xl font-light text-gray-50 leading-normal"
       >
         {hero.description}
       </motion.p>

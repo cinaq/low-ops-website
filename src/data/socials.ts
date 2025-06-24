@@ -1,6 +1,6 @@
 import docsIcon from '@/assets/docs.svg';
-import githubIcon from '@/assets/github.svg';
-import linkedinIcon from '@/assets/linkedin.svg';
+import githubIcon from '@/assets/github2.svg';
+import linkedinIcon from '@/assets/linkedin2.svg';
 import youtubeIcon from '@/assets/youtube.svg';
 
 const DOCS_URL = process.env.NEXT_PUBLIC_DOCS_URL ?? 'https://docs.low-ops.com';
