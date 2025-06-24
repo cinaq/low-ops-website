@@ -25,7 +25,11 @@ const HeroSection: FC = () => {
             className="w-full max-w-[1200px] mx-auto h-full border-[8px] md:border-[10px] border-black relative rounded-lg md:rounded-xl z-40 drop-shadow-xl"
           >
             <video
+<<<<<<< HEAD
               src="/lowops-vimeo.mp4"
+=======
+              src="/lowops-demo.mp4"
+>>>>>>> a68a8f911c4d103ad221b3ef38c449f1e04adc19
               controls
               preload="metadata"
               autoPlay
