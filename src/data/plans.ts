@@ -1,0 +1,56 @@
+import { Briefcase02, Building07, Rocket02 } from '@untitled-ui/icons-react';
+
+export const plans = [
+  {
+    value: 'starter',
+    label: 'Starter',
+    icon: Rocket02({ width: 24, height: 24 }),
+    price: '3,960 EUR',
+    items: {
+      'deployment model': 'Single (Virtual) Machine',
+      scalability: 'Vertical',
+      'high availability': 'No',
+      'platform upgrades': 'Yes',
+      'number of apps': '3',
+      'app memory': '10GB',
+      'subscription model': 'Annual',
+    },
+    subPrice: 'free first year',
+    isPopular: false,
+    description: 'For small teams and startups',
+  },
+  {
+    value: 'professional',
+    label: 'Professional',
+    icon: Briefcase02({ width: 24, height: 24 }),
+    price: '19,200+ EUR',
+    items: {
+      'deployment model': 'Multi-node Kubernetes',
+      scalability: 'Horizontal',
+      'high availability': 'Yes',
+      'platform upgrades': 'Yes',
+      'number of apps': 'Unlimited',
+      'app memory': '40-100GB',
+      'subscription model': 'Annual',
+    },
+    isPopular: true,
+    description: 'For growing teams and businesses',
+  },
+  {
+    value: 'enterprise',
+    label: 'Enterprise',
+    icon: Building07({ width: 24, height: 24 }),
+    price: 'Quote',
+    items: {
+      'deployment model': 'Multi-node Kubernetes',
+      scalability: 'Horizontal',
+      'high availability': 'Yes',
+      'platform upgrades': 'Yes',
+      'number of apps': 'Unlimited',
+      'app memory': 'Unlimited',
+      'subscription model': 'Custom',
+    },
+    isPopular: false,
+    description: 'For large teams and enterprises',
+  },
+];
