@@ -1,5 +1,6 @@
 'use client';
 
+import videoBg from '@/assets/video-bg.png';
 import HeroButtons from '@/components/HeroButtons';
 import { motion } from 'framer-motion';
 import { FC } from 'react';
@@ -32,6 +33,7 @@ const HeroSection: FC = () => {
               muted
               loop
               className="w-full h-full object-cover"
+              poster={videoBg.src}
             />
           </motion.div>
           <HeroPattern />
