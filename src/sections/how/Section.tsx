@@ -8,7 +8,7 @@ const Section: React.FC = () => {
   // Renders
   const renderItems = () => {
     return items.map((item) => (
-      <Card key={item.title} className="flex flex-col gap-4 flex-1 mb-4">
+      <Card key={item.title} className="flex flex-col gap-4">
         <div
           className="relative max-w-full w-full h-[250px] bg-cover bg-center bg-no-repeat rounded-t-xl"
           style={{ backgroundImage: `url(${item.imagePath.src})` }}
@@ -31,7 +31,7 @@ const Section: React.FC = () => {
           title={metadata.title}
           description={metadata.description}
         />
-        <div className="flex flex-col md:flex-row justify-between gap-4 w-full">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full">
           {renderItems()}
         </div>
       </div>
