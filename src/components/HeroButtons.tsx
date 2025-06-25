@@ -29,7 +29,7 @@ const HeroButtons: FC<TProps> = (props) => {
       >
         <Button
           size="lg"
-          variant="secondary"
+          // variant="secondary"
           onClick={onClick}
           aria-label="Show demo"
           className="min-w-[200px] flex items-center gap-2 "

@@ -22,7 +22,6 @@ const Item: FC<TProps> = (props) => {
 
   // Hooks
   const isDesktop = useMediaQuery('(min-width: 768px)');
-
   const isEven = isDesktop ? index % 2 === 0 : true;
 
   // Renders
