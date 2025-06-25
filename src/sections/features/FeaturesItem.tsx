@@ -11,7 +11,7 @@ const FeaturesItem: FC<TProps> = (props) => {
   const { title, description, icon } = props;
 
   return (
-    <div className="flex flex-col items-center gap-3 md:gap-4 prose group">
+    <div className="flex flex-col items-center gap-3 md:gap-4 prose shadow-none group hover:shadow-md transition-all duration-300 rounded-lg p-4">
       <IconWrapper
         icon={icon}
         className="group-hover:rotate-6 transition-transform duration-500"
