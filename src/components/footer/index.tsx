@@ -35,7 +35,7 @@ const Footer: FC<TProps> = (props) => {
         <div className="flex flex-col sm:flex-row items-center justify-between gap-5">
           <AppLogo />
           <span className="text-xs text-gray-300 font-light text-center">
-            © Copyright 2025 Low-Ops, a product of
+            © Copyright 2025 Low-Ops, a product of 
             <a
               href="https://cinaq.com"
               target="_blank"
