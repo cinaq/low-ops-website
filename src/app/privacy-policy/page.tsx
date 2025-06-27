@@ -79,7 +79,7 @@ const PrivacyPolicyPage = () => {
             </section>
 
             <section className="mb-8">
-              <h2 className="text-2xl font-medium mb-4">Children's Privacy</h2>
+              <h2 className="text-2xl font-medium mb-4">Children Privacy</h2>
               <p>
                 Our service is not intended for use by children under the age of 13. We do not knowingly collect personally identifiable information from children under 13.
                 If we discover that a child under 13 has provided us with personal information, we will delete such information from our servers immediately.
@@ -89,7 +89,7 @@ const PrivacyPolicyPage = () => {
             <section className="mb-8">
               <h2 className="text-2xl font-medium mb-4">Changes to This Privacy Policy</h2>
               <p>
-                We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the "Last Updated" date.
+                We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the <strong>Last Updated date</strong>.
                 You are advised to review this Privacy Policy periodically for any changes.
               </p>
             </section>
