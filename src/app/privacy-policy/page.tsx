@@ -12,7 +12,7 @@ const PrivacyPolicyPage = () => {
           </h1>
           
           <div className="max-w-4xl mx-auto prose prose-gray">
-            <p className="text-gray-600">Last Updated: {new Date().toLocaleDateString()}</p>
+            <p className="text-gray-600">Last Updated: <strong>27th June 2025</strong></p>
             
             <section className="mb-8">
               <h2 className="text-2xl font-medium mb-4">Introduction</h2>
@@ -100,8 +100,8 @@ const PrivacyPolicyPage = () => {
                 If you have any questions about this Privacy Policy, please contact us at:
               </p>
               <p className="mt-2">
-                <strong>Email:</strong> privacy@example.com<br />
-                <strong>Address:</strong> 123 Privacy Street, Tech City, TC 12345
+                <strong>Email:</strong> privacy@cinaq.com<br />
+                <strong>Address:</strong> Bajonetstraat 50, 3014 ZK, Rotterdam, The Netherlands
               </p>
             </section>
           </div>
