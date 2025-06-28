@@ -53,7 +53,7 @@ const LicenseComparisonTable = () => {
               <>
                 <h1 className="text-3xl font-bold mb-3"><span className="line-through">{plan.price}</span> Free</h1>
                 <p className="font-light text-md text-gray-600 mb-3">
-                  Limited time offer. Free for first year.
+                  Limited time offer: Free for first 3 months.
                 </p>
               </>
             ) : (
