@@ -49,12 +49,23 @@ const LicenseComparisonTable = () => {
               </h3>
             </div>
             <h1 className="text-3xl font-bold mb-3">{plan.price}</h1>
+            {plan.subPrice && (
+              <p className="font-light text-md text-gray-600 mb-3">
+                {plan.subPrice}
+              </p>
+            )}
             <p className="font-light text-md text-gray-600 mb-3">
               {plan.description}
             </p>
-            <a href="/contact-us">
-              <Button className="mb-2">Get Started</Button>
-            </a>
+            { plan.link ? (
+              <a href={plan.link}>
+                <Button className="mb-2">Install Now</Button>
+              </a>
+            ) : (
+              <a href="/contact-us">
+                <Button className="mb-2">Contact Us</Button>
+              </a>
+            )}
           </div>
         ))}
       </>

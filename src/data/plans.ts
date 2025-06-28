@@ -15,9 +15,10 @@ export const plans = [
       'app memory': '10GB',
       'subscription model': 'Annual',
     },
-    subPrice: 'free first year',
+    subPrice: 'Temporarily free first year',
     isPopular: false,
     description: 'For small teams and startups',
+    link: 'https://docs.low-ops.com/docs/quick-start/single-node-installation',
   },
   {
     value: 'professional',
