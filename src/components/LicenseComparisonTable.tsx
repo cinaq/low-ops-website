@@ -51,7 +51,9 @@ const LicenseComparisonTable = () => {
 
             {plan.free ? (
               <>
-                <h1 className="text-3xl font-bold mb-3"><span className="line-through">{plan.price}</span> Free**</h1>
+                <h1 className="text-3xl font-bold mb-3">
+                  <span className="line-through">{plan.price}</span> Free**
+                </h1>
                 <p className="font-light text-md text-gray-600 mb-3">
                   **Limited time offer: Free for first 3 months.
                 </p>
@@ -59,9 +61,7 @@ const LicenseComparisonTable = () => {
             ) : (
               <>
                 <h1 className="text-3xl font-bold mb-3">{plan.price}</h1>
-                <p className="font-light text-md text-gray-600 mb-3">
-                  {' '}
-                </p>
+                <p className="font-light text-md text-gray-600 mb-3"> </p>
               </>
             )}
             <p className="font-light text-md text-gray-600 mb-3">
@@ -97,7 +97,7 @@ const LicenseComparisonTable = () => {
           const value = plan.items[key as keyof typeof plan.items] || '-';
           const resultValue =
             valuesWithIcon[
-            value.toLowerCase() as keyof typeof valuesWithIcon
+              value.toLowerCase() as keyof typeof valuesWithIcon
             ] ?? value;
 
           return (
@@ -120,6 +120,68 @@ const LicenseComparisonTable = () => {
     <div className="flex flex-col gap-8">
       <div className="hidden lg:grid grid-cols-4">{renderPlans()}</div>
       <div className="hidden lg:grid grid-cols-4">{renderItems()}</div>
+      <div className="flex flex-col gap-20 lg:hidden">
+        {plans.map((plan, index) => (
+          <div key={index} className="flex flex-col gap-6">
+            <div className="flex flex-col justify-between gap-1 items-stretch h-full">
+              <div className="w-full">
+                <h3 className="flex items-center gap-4 text-md font-normal border-b mb-5 pb-2 w-full">
+                  {plan.label}
+                  {plan.isPopular && (
+                    <Badge variant="primaryOutline">Popular</Badge>
+                  )}
+                </h3>
+              </div>
+
+              {plan.free ? (
+                <>
+                  <h1 className="text-3xl font-bold mb-3">
+                    <span className="line-through">{plan.price}</span> Free**
+                  </h1>
+                  <p className="font-light text-md text-gray-600 mb-3">
+                    **Limited time offer: Free for first 3 months.
+                  </p>
+                  <p className="font-light text-md text-gray-600 mb-3">
+                    {plan.description}
+                  </p>
+                </>
+              ) : (
+                <>
+                  <h1 className="text-3xl font-bold mb-3">{plan.price}</h1>
+                  <p className="font-light text-md text-gray-600 mb-3">
+                    {plan.description}
+                  </p>
+                </>
+              )}
+
+              <Button className="mb-2 max-w-[200px]">Get Started</Button>
+            </div>
+            <div className="">
+              {Object.entries(plan.items).map(([key, value], i) => (
+                <div
+                  key={`${key}-${plan.value}`}
+                  className={cn(
+                    'flex items-center justify-between p-3 border-b border-gray-100',
+                    i % 2 === 0 ? 'bg-gray-50' : 'bg-white'
+                  )}
+                >
+                  <div className="text-gray-700 font-light">
+                    {capitalize(key)}
+                  </div>
+                  <div
+                    key={`${plan.value}-${key}`}
+                    className="text-gray-900 font-medium flex items-center justify-center gap-2"
+                  >
+                    {valuesWithIcon[
+                      value.toLowerCase() as keyof typeof valuesWithIcon
+                    ] ?? value}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };
