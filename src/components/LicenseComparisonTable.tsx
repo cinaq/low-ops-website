@@ -87,7 +87,7 @@ const LicenseComparisonTable = () => {
       <Fragment key={key}>
         <div
           className={cn(
-            'font-bold border-b py-3 border-gray-100 text-gray-700 pl-2',
+            'font-medium border-b py-3 border-gray-100 text-gray-600 pl-2',
             index % 2 === 0 ? 'bg-gray-50' : 'bg-white'
           )}
         >
@@ -165,7 +165,7 @@ const LicenseComparisonTable = () => {
                     i % 2 === 0 ? 'bg-gray-50' : 'bg-white'
                   )}
                 >
-                  <div className="text-gray-700 font-light">
+                  <div className="font-medium text-gray-600">
                     {capitalize(key)}
                   </div>
                   <div
