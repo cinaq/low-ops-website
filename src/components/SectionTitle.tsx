@@ -1,25 +1,27 @@
 import { cn } from '@/lib/utils';
 import { FC } from 'react';
+import TitleBadge from './TitleBadge';
 
 type TProps = {
+  subtitle?: string;
   title?: string;
   description: string;
   className?: string;
 };
 
 const SectionTitle: FC<TProps> = (props) => {
-  const { title, description, className } = props;
+  const { title, description, className, subtitle } = props;
 
   return (
-    <div className={cn('prose md:prose-md', className)}>
-      {!!title && (
-        <h2 className="text-center text-foreground text-md border border-blue-500 w-fit mx-auto px-4 py-0.5 rounded-lg bg-blue-100 mb-2">
-          {title}
-        </h2>
+    <div
+      className={cn(
+        'prose md:prose-md flex flex-col items-center justify-center gap-3',
+        className
       )}
-      <p className="text-center text-xl md:text-xl max-w-2xl mx-auto">
-        {description}
-      </p>
+    >
+      {subtitle && <TitleBadge title={subtitle} />}
+      <h2>{title}</h2>
+      <p className="font-sans font-light text-neutral-500">{description}</p>
     </div>
   );
 };

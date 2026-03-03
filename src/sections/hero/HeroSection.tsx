@@ -2,9 +2,8 @@
 
 import heroBg from '@/assets/hero-bg.png';
 import logsImage from '@/assets/logs.png';
-import starIcon from '@/assets/star.svg';
 import starsIcon from '@/assets/stars.svg';
-import { Badge } from '@/components/ui/badge';
+import TitleBadge from '@/components/TitleBadge';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { MailOpenIcon } from 'lucide-react';
@@ -20,25 +19,19 @@ const HeroSection: FC = () => {
       style={{ backgroundImage: `url(${heroBg.src})` }}
     >
       <div className="container flex flex-col h-full items-center justify-center">
-        <div className="mb-2">
-          <Badge
-            variant="primaryOutline"
-            className="rounded-full flex items-center gap-2 py-2 px-4 text-[18px] font-medium"
-          >
-            <Image src={starIcon} alt="Star" width={24} height={24} />
-            Create, Deploy & Launch
-          </Badge>
-        </div>
+        <TitleBadge title="Create, Deploy & Launch" />
         <div className="flex flex-col w-full items-center justify-center relative z-40">
           <HeroContent />
         </div>
         <div className="relative w-full max-w-[640px] mb-12">
           <div className="flex h-[59px] items-center overflow-hidden rounded-lg border border-primary bg-white shadow-xs mb-8">
-            <span className="flex shrink-0 items-center pl-3 text-primary">
+            <span className="flex pl-3 text-primary mb-1">
               <MailOpenIcon className="h-5 w-5" />
             </span>
             <Input
-              placeholder="Enter your email"
+              id="email"
+              name="email"
+              placeholder="Email address"
               className="h-full min-w-0 flex-1 rounded-none border-0 border-transparent bg-transparent pl-2 pr-3 focus-visible:ring-0 focus-visible:ring-offset-0"
             />
             <span className="flex shrink-0 items-center pr-1.5 text-primary">

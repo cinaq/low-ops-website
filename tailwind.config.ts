@@ -18,21 +18,21 @@ const config: Config = {
             color: 'var(--text-neutral-700)',
             h1: {
               fontSize: '70px',
-              lineHeight: '70px',
+              lineHeight: '90px',
               margin: '0',
-              fontWeight: '700',
+              fontWeight: '600',
               color: 'inherit',
             },
             h2: {
-              fontSize: '14px',
-              lineHeight: '20px',
+              fontSize: '40px',
+              lineHeight: '55px',
               margin: '0',
-              fontWeight: '500',
+              fontWeight: '600',
               color: 'inherit',
             },
             h3: {
-              fontSize: '26px',
-              lineHeight: '32px',
+              fontSize: '32px',
+              lineHeight: '45px',
               margin: '0',
               fontWeight: '600',
               color: 'inherit',
@@ -44,14 +44,6 @@ const config: Config = {
             h5: {
               margin: '0',
               color: 'inherit',
-            },
-          },
-        },
-        md: {
-          css: {
-            h3: {
-              fontSize: '24px',
-              lineHeight: '32px',
             },
           },
         },
