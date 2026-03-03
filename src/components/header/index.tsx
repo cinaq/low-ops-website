@@ -17,15 +17,20 @@ const Header: FC<TProps> = (props) => {
 
   // Renders
   return (
-    <header className={cn('absolute top-0 w-full z-50', classes)}>
+    <header
+      className={cn(
+        'absolute top-0 w-full z-50 border-b border-primary-25',
+        classes
+      )}
+    >
       <div className="container">
-        <div className="flex items-center justify-between py-3">
+        <div className="flex items-center justify-between py-4.5">
           <AppLogo />
           <HeaderNav />
           <MobileHeaderNav />
-          <div className="flex items-center justify-end gap-6">
+          <div className="flex items-center justify-end gap-8">
             <Socials />
-            <Button>Start free trial</Button>
+            <Button size="lg">Start free trial</Button>
           </div>
         </div>
       </div>

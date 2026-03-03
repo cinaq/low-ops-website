@@ -16,7 +16,7 @@ const Socials = () => {
               href={social.link}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-[20px] h-[20px] relative"
+              className="w-[23px] h-[23px] relative"
             >
               <Image
                 src={social.icon}
