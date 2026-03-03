@@ -11,7 +11,7 @@ const HeroContent = () => {
           {hero.titleHighlight}
         </span>
       </h1>
-      <p className="max-w-full lg:max-w-[900px] w-full text-center text-sm lg:text-[20px]">
+      <p className="max-w-full lg:max-w-[900px] w-full text-center text-sm lg:text-[20px] font-light">
         {hero.description}
       </p>
     </div>
