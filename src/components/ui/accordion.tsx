@@ -34,8 +34,8 @@ const AccordionTrigger = React.forwardRef<
       {...props}
     >
       {children}
-      <MinusCircle className="h-4 w-4 text-gray-400 shrink-0 transition-transform duration-200 hidden group-data-[state=open]:block" />
-      <PlusCircle className="h-4 w-4 text-gray-400 shrink-0 transition-transform duration-200 block group-data-[state=open]:hidden" />
+      <MinusCircle className="h-4 w-4 text-neutral-500 shrink-0 transition-transform duration-200 hidden group-data-[state=open]:block" />
+      <PlusCircle className="h-4 w-4 text-neutral-500 shrink-0 transition-transform duration-200 block group-data-[state=open]:hidden" />
     </AccordionPrimitive.Trigger>
   </AccordionPrimitive.Header>
 ));
@@ -47,7 +47,7 @@ const AccordionContent = React.forwardRef<
 >(({ className, children, ...props }, ref) => (
   <AccordionPrimitive.Content
     ref={ref}
-    className="overflow-hidden text-sm font-light text-gray-500 data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down"
+    className="overflow-hidden text-sm font-light text-muted-foreground data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down"
     {...props}
   >
     <div className={cn('pb-6 pt-0 text-base', className)}>{children}</div>

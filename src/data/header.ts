@@ -1,7 +1,7 @@
 export const menu = [
-
-  { name: 'Home', id: 'home', href: '', isPage: true },
-  { name: 'Partners', id: 'partners', href: 'partners', isPage: true },
-  { name: 'Pricing', id: 'pricing', href: 'pricing', isPage: true },
-  { name: 'Contact Us', id: 'contact-us', href: 'contact-us', isPage: true },
+  { name: 'Features', id: 'features', href: 'features' },
+  { name: 'Pricing', id: 'pricing', href: 'pricing' },
+  { name: 'Partners', id: 'partners', href: 'partners' },
+  { name: 'FAQ', id: 'faq', href: 'faq' },
+  { name: 'About Us', id: 'about', href: 'about' },
 ];

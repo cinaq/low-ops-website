@@ -1,28 +1,19 @@
 'use client';
 
 import { hero } from '@/data/hero';
-import { motion } from 'framer-motion';
 
 const HeroContent = () => {
   return (
     <div className="prose md:prose-md mb-6 md:mb-10 flex flex-col items-center justify-center">
-      <motion.h1
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.2 }}
-        className="text-center text-white max-w-[850px] text-5xl lg:text-7xl font-bold leading-tight"
-      >
-        {hero.title} <br />{' '}
-        <span className="text-primary-400">{hero.titleHighlight}</span>
-      </motion.h1>
-      <motion.p
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.2, duration: 0.2 }}
-        className="max-w-full lg:max-w-[850px] w-full text-center text-sm lg:text-xl font-light text-gray-50 leading-normal"
-      >
+      <h1 className="text-center max-w-[850px] text-5xl lg:text-7xl font-medium leading-[1.3]">
+        {hero.title} <br />
+        <span className="inline-block bg-primary rounded-md px-3 py-0 text-white leading-tight rotate-[-1.3deg]">
+          {hero.titleHighlight}
+        </span>
+      </h1>
+      <p className="max-w-full lg:max-w-[900px] w-full text-center text-sm lg:text-[20px]">
         {hero.description}
-      </motion.p>
+      </p>
     </div>
   );
 };

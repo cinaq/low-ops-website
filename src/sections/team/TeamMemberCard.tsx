@@ -1,7 +1,7 @@
-import Image from 'next/image';
-import { TeamMember } from '@/data/team';
-import linkedinIcon from '@/assets/linkedin2.svg';
 import githubIcon from '@/assets/github2.svg';
+import linkedinIcon from '@/assets/linkedin.svg';
+import { TeamMember } from '@/data/team';
+import Image from 'next/image';
 
 interface TeamMemberCardProps {
   member: TeamMember;
@@ -21,43 +21,43 @@ const TeamMemberCard = ({ member }: TeamMemberCardProps) => {
           />
         </div>
       </div>
-      
+
       <div className="p-6 w-full">
-        <h3 className="text-xl font-semibold text-gray-900">{member.name}</h3>
+        <h3 className="text-xl font-semibold text-foreground">{member.name}</h3>
         <p className="text-sm text-blue-600 mb-3">{member.position}</p>
-        <p className="text-gray-600 mb-4 text-sm">{member.bio}</p>
-        
+        <p className="text-muted-foreground mb-4 text-sm">{member.bio}</p>
+
         <div className="flex space-x-4">
           {member.social.linkedin && (
-            <a 
-              href={member.social.linkedin} 
-              target="_blank" 
+            <a
+              href={member.social.linkedin}
+              target="_blank"
               rel="noopener noreferrer"
               title="LinkedIn"
               className="w-[20px] h-[20px] relative"
             >
-              <Image 
-                src={linkedinIcon} 
-                alt="LinkedIn" 
-                fill 
-                className="object-contain invert" 
+              <Image
+                src={linkedinIcon}
+                alt="LinkedIn"
+                fill
+                className="object-contain invert"
               />
             </a>
           )}
-          
+
           {member.social.github && (
-            <a 
-              href={member.social.github} 
+            <a
+              href={member.social.github}
               title="GitHub"
-              target="_blank" 
+              target="_blank"
               rel="noopener noreferrer"
               className="w-[20px] h-[20px] relative"
             >
-              <Image 
-                src={githubIcon} 
-                alt="GitHub" 
-                fill 
-                className="object-contain invert" 
+              <Image
+                src={githubIcon}
+                alt="GitHub"
+                fill
+                className="object-contain invert"
               />
             </a>
           )}
@@ -67,4 +67,4 @@ const TeamMemberCard = ({ member }: TeamMemberCardProps) => {
   );
 };
 
-export default TeamMemberCard; 
+export default TeamMemberCard;

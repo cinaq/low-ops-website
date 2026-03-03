@@ -15,8 +15,10 @@ const PricingPage = () => {
               description="Simple, transparent pricing that grows with you."
               className="mb-2"
             />
-            <p className="text-center text-gray-500 font-normal text-md mb-20">
-              Our pricing is based on the total runtime memory allocated to your apps. We believe that reflects the value you are getting from Low-Ops. 
+            <p className="text-center text-muted-foreground font-normal text-md mb-20">
+              Our pricing is based on the total runtime memory allocated to your
+              apps. We believe that reflects the value you are getting from
+              Low-Ops.
             </p>
             <LicenseComparisonTable />
           </div>

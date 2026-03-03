@@ -15,29 +15,35 @@ const config: Config = {
         DEFAULT: {
           css: {
             maxWidth: '100%',
+            color: 'var(--text-neutral-700)',
             h1: {
-              fontSize: '42px',
-              lineHeight: '48px',
+              fontSize: '70px',
+              lineHeight: '70px',
               margin: '0',
               fontWeight: '700',
+              color: 'inherit',
             },
             h2: {
               fontSize: '14px',
               lineHeight: '20px',
               margin: '0',
               fontWeight: '500',
+              color: 'inherit',
             },
             h3: {
               fontSize: '26px',
               lineHeight: '32px',
               margin: '0',
               fontWeight: '600',
+              color: 'inherit',
             },
             h4: {
               margin: '0',
+              color: 'inherit',
             },
             h5: {
               margin: '0',
+              color: 'inherit',
             },
           },
         },
@@ -51,7 +57,8 @@ const config: Config = {
         },
       },
       fontFamily: {
-        sans: ['var(--font-sans)'],
+        sans: ['var(--font-dm-sans)'],
+        poppins: ['var(--font-poppins)'],
       },
       container: {
         center: true,
@@ -76,12 +83,12 @@ const config: Config = {
           100: '#B3C8FF',
           200: '#80A3FF',
           300: '#4D7FFF',
-          400: '#1F5EFF',
-          500: '#0041E6',
-          600: '#0032B3',
-          700: '#002480',
-          800: '#00164D',
-          900: '#00164D',
+          400: '#1A5AFF',
+          500: '#0B65F4',
+          600: '#0952C3',
+          700: '#073E92',
+          800: '#052B62',
+          900: '#031731',
           950: '#161B26',
         },
         secondary: {
@@ -103,6 +110,10 @@ const config: Config = {
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',
         ring: 'hsl(var(--ring))',
+        neutral: {
+          500: '#404A60',
+          700: '#222E48',
+        },
         chart: {
           '1': 'hsl(var(--chart-1))',
           '2': 'hsl(var(--chart-2))',

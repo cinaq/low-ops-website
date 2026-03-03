@@ -7,10 +7,7 @@ const HeaderNav: React.FC = () => {
   // Renders
   const renderMenu = () => {
     return menu.map((item) => (
-      <HeaderNavItem
-        key={item.name}
-        href={item.isPage ? `/${item?.href}` : `/#${item?.id}`}
-      >
+      <HeaderNavItem key={item.name} href={item.href}>
         {item.name}
       </HeaderNavItem>
     ));
@@ -22,7 +19,7 @@ const HeaderNav: React.FC = () => {
         initial={{ opacity: 0, y: -10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, ease: 'easeInOut' }}
-        className="flex items-center justify-end gap-7"
+        style={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-end', gap: '1.75rem' }}
       >
         {renderMenu()}
       </motion.ul>

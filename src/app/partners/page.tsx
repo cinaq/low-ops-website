@@ -37,14 +37,12 @@ const Item: FC<TProps> = (props) => {
       </div>
       {isDesktop && (
         <div className="hidden md:block flex-1 relative">
-          <motion.div
-            initial={{ opacity: 0, x: -100 }}
-            transition={{ duration: 0.5 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            className={cn(
-              'absolute inset-0',
-            )}
-          >
+          <div className="absolute inset-0">
+            <motion.div
+              initial={{ opacity: 0, x: -100 }}
+              transition={{ duration: 0.5 }}
+              whileInView={{ opacity: 1, x: 0 }}
+            >
             <a href={link} target="_blank" rel="noopener noreferrer" title={title}>
               <Image
                 src={imagePath}
@@ -61,7 +59,8 @@ const Item: FC<TProps> = (props) => {
                 blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAACklEQVR4nGMAAQAABQABDQottAAAAABJRU5ErkJggg=="
               />
             </a>
-          </motion.div>
+            </motion.div>
+          </div>
         </div>
       )}
     </div>

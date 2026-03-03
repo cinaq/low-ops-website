@@ -13,7 +13,7 @@ const SectionTitle: FC<TProps> = (props) => {
   return (
     <div className={cn('prose md:prose-md', className)}>
       {!!title && (
-        <h2 className="text-center text-black text-md border border-blue-500 w-fit mx-auto px-4 py-0.5 rounded-lg bg-blue-100 mb-2">
+        <h2 className="text-center text-foreground text-md border border-blue-500 w-fit mx-auto px-4 py-0.5 rounded-lg bg-blue-100 mb-2">
           {title}
         </h2>
       )}

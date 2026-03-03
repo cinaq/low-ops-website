@@ -205,12 +205,13 @@ const FormSection: React.FC = () => {
 
         <div className="relative justify-end hidden lg:flex w-1/2">
           <div className="absolute left-0 xl:left-[-100px] -top-4">
-            <motion.div
-              initial={{ opacity: 0, y: 100, x: 100 }}
-              transition={{ duration: 1 }}
-              whileInView={{ opacity: 1, y: 0, x: 0 }}
-              className="flex flex-col items-center gap-4 border-6 border-black rounded-xl relative overflow-hidden w-[1000px] h-[720px]"
-            >
+            <div className="flex flex-col items-center gap-4 border-6 border-black rounded-xl relative overflow-hidden w-[1000px] h-[720px]">
+              <motion.div
+                initial={{ opacity: 0, y: 100, x: 100 }}
+                transition={{ duration: 1 }}
+                whileInView={{ opacity: 1, y: 0, x: 0 }}
+                style={{ position: 'absolute', inset: 0 }}
+              >
               <Image
                 src={packagesImage}
                 alt="low-ops-packages"
@@ -221,7 +222,8 @@ const FormSection: React.FC = () => {
                 placeholder="blur"
                 blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAACklEQVR4nGMAAQAABQABDQottAAAAABJRU5ErkJggg=="
               />
-            </motion.div>
+              </motion.div>
+            </div>
           </div>
         </div>
       </div>

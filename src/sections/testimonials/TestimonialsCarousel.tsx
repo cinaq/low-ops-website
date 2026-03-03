@@ -24,14 +24,18 @@ const TestimonialsCarousel = () => {
             alt="quote-icon"
             className="m-0 w-10 md:w-auto"
           />
-          <p className="text-center text-xl md:text-2xl font-semibold text-gray-500">
+          <p className="text-center text-xl md:text-2xl font-semibold text-muted-foreground">
             {testimonial.text}
           </p>
 
           <div className="flex flex-col items-center">
             <Avatar className="mb-3">
               <AvatarFallback>
-                <User01 width={28} height={28} className="text-gray-500" />
+                <User01
+                  width={28}
+                  height={28}
+                  className="text-muted-foreground"
+                />
               </AvatarFallback>
             </Avatar>
             <p className="font-semibold m-0 text-base">{testimonial.author}</p>

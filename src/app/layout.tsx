@@ -1,8 +1,22 @@
 import { nextMetadata, structuredData } from '@/data/seo';
 import { GoogleAnalytics } from '@next/third-parties/google';
 import type { Metadata } from 'next';
+import { DM_Sans, Poppins } from 'next/font/google';
 import { ReactNode } from 'react';
 import './globals.css';
+
+const dmSans = DM_Sans({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-dm-sans',
+});
+
+const poppins = Poppins({
+  weight: ['400', '500', '600', '700'],
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-poppins',
+});
 
 export const metadata: Metadata = nextMetadata;
 
@@ -12,7 +26,7 @@ const RootLayout = (props: TProps) => {
   const { children } = props;
 
   return (
-    <html lang="en">
+    <html lang="en" className={`${dmSans.variable} ${poppins.variable}`}>
       <body>
         {children}
 
@@ -40,11 +54,18 @@ const RootLayout = (props: TProps) => {
                 b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";
                 s.parentNode.insertBefore(b, s);
               })(window.lintrk);
-            `
+            `,
           }}
         />
         <noscript>
-          <img height="1" width="1" className="hidden" alt="" src="https://px.ads.linkedin.com/collect/?pid=7447786&fmt=gif" />
+          {/* eslint-disable-next-line @next/next/no-img-element -- tracking pixel, no next/image */}
+          <img
+            height="1"
+            width="1"
+            className="hidden"
+            alt=""
+            src="https://px.ads.linkedin.com/collect/?pid=7447786&fmt=gif"
+          />
         </noscript>
       </body>
     </html>

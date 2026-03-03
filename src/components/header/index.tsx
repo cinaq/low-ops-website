@@ -1,9 +1,9 @@
 'use client';
 
 import { cn } from '@/lib/utils';
-import { motion } from 'framer-motion';
 import { FC } from 'react';
 import Socials from '../Socials';
+import { Button } from '../ui/button';
 import AppLogo from './AppLogo';
 import HeaderNav from './HeaderNav';
 import MobileHeaderNav from './MobileHeaderNav';
@@ -17,30 +17,16 @@ const Header: FC<TProps> = (props) => {
 
   // Renders
   return (
-    <header
-      className={cn('absolute top-0 w-full z-50 bg-primary-800', classes)}
-    >
+    <header className={cn('absolute top-0 w-full z-50', classes)}>
       <div className="container">
         <div className="flex items-center justify-between py-3">
-          <motion.div
-            initial={{ opacity: 0, x: -10 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.3, ease: 'easeInOut' }}
-            className="flex items-center gap-6"
-          >
-            <AppLogo />
-          </motion.div>
-
+          <AppLogo />
           <HeaderNav />
           <MobileHeaderNav />
-          <motion.div
-            initial={{ opacity: 0, x: 10 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.3, ease: 'easeInOut' }}
-            className="hidden lg:block"
-          >
+          <div className="flex items-center justify-end gap-6">
             <Socials />
-          </motion.div>
+            <Button>Start free trial</Button>
+          </div>
         </div>
       </div>
     </header>

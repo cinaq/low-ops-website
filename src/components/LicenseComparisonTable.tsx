@@ -13,6 +13,7 @@ const LicenseComparisonTable = () => {
   );
 
   // Hooks
+  // eslint-disable-next-line react-hooks/preserve-manual-memoization -- static icon mapping, memoization intentional
   const valuesWithIcon = useMemo(() => {
     return {
       yes: (
@@ -54,17 +55,17 @@ const LicenseComparisonTable = () => {
                 <h1 className="text-3xl font-bold mb-3">
                   <span className="line-through">{plan.price}</span> Free**
                 </h1>
-                <p className="font-light text-md text-gray-600 mb-3">
+                <p className="font-light text-md text-muted-foreground mb-3">
                   **Limited time offer: Free for first 3 months.
                 </p>
               </>
             ) : (
               <>
                 <h1 className="text-3xl font-bold mb-3">{plan.price}</h1>
-                <p className="font-light text-md text-gray-600 mb-3"> </p>
+                <p className="font-light text-md text-muted-foreground mb-3"> </p>
               </>
             )}
-            <p className="font-light text-md text-gray-600 mb-3">
+            <p className="font-light text-md text-muted-foreground mb-3">
               {plan.description}
             </p>
             {plan.link ? (
@@ -87,7 +88,7 @@ const LicenseComparisonTable = () => {
       <Fragment key={key}>
         <div
           className={cn(
-            'font-medium border-b py-3 border-gray-100 text-gray-600 pl-2',
+            'font-medium border-b py-3 border-gray-100 text-muted-foreground pl-2',
             index % 2 === 0 ? 'bg-gray-50' : 'bg-white'
           )}
         >
@@ -104,7 +105,7 @@ const LicenseComparisonTable = () => {
             <div
               key={`${plan.value}-${key}`}
               className={cn(
-                'border-b py-3 border-gray-100 text-gray-900 font-medium flex gap-2 pl-6',
+                'border-b py-3 border-gray-100 text-foreground font-medium flex gap-2 pl-6',
                 index % 2 === 0 ? 'bg-gray-50' : 'bg-white'
               )}
             >
@@ -138,17 +139,17 @@ const LicenseComparisonTable = () => {
                   <h1 className="text-3xl font-bold mb-3">
                     <span className="line-through">{plan.price}</span> Free**
                   </h1>
-                  <p className="font-light text-md text-gray-600 mb-3">
+                  <p className="font-light text-md text-muted-foreground mb-3">
                     **Limited time offer: Free for first 3 months.
                   </p>
-                  <p className="font-light text-md text-gray-600 mb-3">
+                  <p className="font-light text-md text-muted-foreground mb-3">
                     {plan.description}
                   </p>
                 </>
               ) : (
                 <>
                   <h1 className="text-3xl font-bold mb-3">{plan.price}</h1>
-                  <p className="font-light text-md text-gray-600 mb-3">
+                  <p className="font-light text-md text-muted-foreground mb-3">
                     {plan.description}
                   </p>
                 </>
@@ -165,12 +166,12 @@ const LicenseComparisonTable = () => {
                     i % 2 === 0 ? 'bg-gray-50' : 'bg-white'
                   )}
                 >
-                  <div className="font-medium text-gray-600">
+                  <div className="font-medium text-muted-foreground">
                     {capitalize(key)}
                   </div>
                   <div
                     key={`${plan.value}-${key}`}
-                    className="text-gray-900 font-medium flex items-center justify-center gap-2"
+                    className="text-foreground font-medium flex items-center justify-center gap-2"
                   >
                     {valuesWithIcon[
                       value.toLowerCase() as keyof typeof valuesWithIcon

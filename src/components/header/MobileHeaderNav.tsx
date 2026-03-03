@@ -25,9 +25,9 @@ const MobileHeaderNav = () => {
     return menu.map((item) => (
       <HeaderNavItem
         key={item.name}
-        href={item.isPage ? `/${item.href}` : `/#${item.id}`}
+        href={item.href}
         className={cn(
-          'flex items-center px-5 py-6 hover:bg-gray-50 hover:text-gray-700 active:bg-gray-50 text-lg text-gray-700 font-semibold'
+          'flex items-center px-5 py-6 hover:bg-gray-50 hover:text-foreground active:bg-gray-50 text-lg text-foreground font-semibold'
         )}
         onClick={handleClose}
       >
@@ -55,7 +55,7 @@ const MobileHeaderNav = () => {
       >
         <div>
           <div className="flex items-center justify-between p-4">
-            <AppLogo isDark />
+            <AppLogo />
             <Button
               variant="ghost"
               size="icon"

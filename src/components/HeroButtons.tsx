@@ -19,15 +19,18 @@ const HeroButtons: FC<TProps> = (props) => {
     <div
       className={cn('flex items-center justify-center gap-4 w-full', className)}
     >
-      <motion.a
+      <a
         href="https://hub.cinaq.com/low-ops-trial"
         target="_blank"
         rel="noopener noreferrer"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.2, delay: 0.4 }}
       >
-        <Button
+        <motion.span
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.2, delay: 0.4 }}
+          style={{ display: 'inline-block' }}
+        >
+          <Button
           size="lg"
           // variant="secondary"
           onClick={onClick}
@@ -37,7 +40,8 @@ const HeroButtons: FC<TProps> = (props) => {
           <LinkExternal01 className="w-5 h-5" />
           {hero.demoButton}
         </Button>
-      </motion.a>
+        </motion.span>
+      </a>
     </div>
   );
 };
