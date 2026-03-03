@@ -3,17 +3,57 @@ import {
   Building01,
   CoinsStacked01,
   Database01,
+  Flash,
   Grid01,
   LineChartUp01,
   Lock01,
   Package,
+  Rocket02,
   User01,
+  Wallet02,
 } from '@untitled-ui/icons-react';
 
 export const metadata = {
   title: 'Features',
-  description: 'Streamline your private cloud operations with your own comprehensive private app platform for secure, scalable deployment and management.',
+  description:
+    'Streamline your private cloud operations with your own comprehensive private app platform for secure, scalable deployment and management.',
 };
+
+export const topFeatures = [
+  {
+    title: 'Low costs & Simplicity',
+    description:
+      'Leveraging managed cloud platforms eliminates the need for heavy investments in infrastructure, slashing operational costs through pay-as-you-go models and built-in efficiencies.',
+    bullets: [
+      'Small teams manage infra effortlessly.',
+      'Unlimited resources & fast tech adoption.',
+      'Teams scale effortlessly with growth.',
+    ],
+    icon: Wallet02({}),
+  },
+  {
+    title: 'Accelerated Productivity',
+    description:
+      'Managed platforms free developers from infrastructure tasks to focus on features, speeding delivery and hitting deadlines.',
+    bullets: [
+      'Focus on core product development.',
+      'Onboarding boosts team growth.',
+      'Deployments enable instant releases.',
+    ],
+    icon: Rocket02({}),
+  },
+  {
+    title: 'Accelerated Time to Market',
+    description:
+      'Fast deployment cycles and scalable infrastructure enable on-time, on-budget application delivery.',
+    bullets: [
+      'Automated setup deploys in minutes.',
+      'Standard steps keep delivery steady.',
+      'No blocks—teams deploy freely.',
+    ],
+    icon: Flash({}),
+  },
+];
 
 export const features = [
   {
@@ -54,12 +94,14 @@ export const features = [
   },
   {
     title: 'Cost effective',
-    description: 'All applications start small and scale as needed. You only pay for what you use. Also there is no need to employ a platform engineering team or purchase expensive tools. ',
+    description:
+      'All applications start small and scale as needed. You only pay for what you use. Also there is no need to employ a platform engineering team or purchase expensive tools. ',
     icon: CoinsStacked01({}),
   },
   {
     title: 'Infrastructure',
-    description: 'Low-Ops is installed on any Kubernetes compatible infrastructure. This includes any cloud provider like AWS, GCP, Azure, or even on-premises.',
+    description:
+      'Low-Ops is installed on any Kubernetes compatible infrastructure. This includes any cloud provider like AWS, GCP, Azure, or even on-premises.',
     icon: Building01({}),
   },
   {

@@ -11,6 +11,23 @@
   }
 }
 
+ul,
+li,
+a,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  text-transform: none;
+}
+
 @utility text-balance {
   text-wrap: balance;
 }
@@ -29,7 +46,6 @@
 @layer base {
   :root {
     --background: 0 0% 100%;
-    /* Neutral 700 #222E48 - main text */
     --foreground: 221 36% 21%;
     --text-neutral-700: #222e48;
     --card: 0 0% 100%;
@@ -39,7 +55,6 @@
     --primary: 217 97% 50%;
     --primary-foreground: 210 40% 98%;
     --secondary: 210 40% 96.1%;
-    /* Neutral 500 #404A60 - secondary text */
     --secondary-foreground: 221 25% 31%;
     --muted: 210 40% 96.1%;
     --muted-foreground: 221 25% 31%;

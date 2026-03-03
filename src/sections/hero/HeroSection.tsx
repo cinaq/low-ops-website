@@ -51,12 +51,12 @@ const HeroSection: FC = () => {
             <span>Based on 10+ reviews.</span>
           </div>
         </div>
-        <div className="relative h-[800px] w-full max-w-[1200px]">
+        <div className="relative h-[600px] w-full max-w-[1200px] overflow-hidden">
           <Image
             src={logsImage}
             alt="Low-Ops Platform"
             fill
-            className="object-cover object-center"
+            className="object-cover object-top"
             sizes="100vw"
           />
         </div>

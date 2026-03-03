@@ -38,6 +38,9 @@ const config: Config = {
               color: 'inherit',
             },
             h4: {
+              fontSize: '24px',
+              lineHeight: '35px',
+              fontWeight: '600',
               margin: '0',
               color: 'inherit',
             },

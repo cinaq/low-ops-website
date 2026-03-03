@@ -66,7 +66,7 @@ const SolutionTabs = () => {
       <TabsTrigger
         key={tab.id}
         value={tab.id}
-        className="flex-1 flex items-center justify-start gap-2 rounded-md border px-4 py-2.5 text-md font-medium data-[state=active]:border-0 data-[state=active]:bg-primary-500 data-[state=active]:text-white data-[state=active]:shadow-none bg-white"
+        className="flex-1 flex items-center justify-start gap-2 rounded-md border px-4 py-2.5 text-md font-medium data-[state=active]:border-0 data-[state=active]:bg-primary-500 data-[state=active]:text-white data-[state=active]:shadow-none bg-white cursor-pointer hover:border-primary"
       >
         <span className="flex items-center justify-center rounded-sm bg-gray-100 border border-gray-200 p-2">
           <tab.icon className="size-5 text-primary" />
