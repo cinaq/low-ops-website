@@ -4,7 +4,7 @@ import { hero } from '@/data/hero';
 
 const HeroContent = () => {
   return (
-    <div className="prose md:prose-md mb-6 md:mb-10 flex flex-col items-center justify-center">
+    <div className="prose mb-6 md:mb-10 flex flex-col items-center justify-center gap-8">
       <h1 className="text-center max-w-[850px]">
         {hero.title} <br />
         <span className="inline-block bg-primary rounded-md px-3 py-0 text-white leading-tight rotate-[-1.3deg]">

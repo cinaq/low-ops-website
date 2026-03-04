@@ -1,3 +1,4 @@
+import Footer from '@/components/footer';
 import Header from '@/components/header';
 import CTASection from '@/sections/cta/CTASection';
 import FeaturesSection from '@/sections/features/FeaturesSection';
@@ -14,6 +15,7 @@ const Home = () => {
       <FeaturesSection />
       <TestimonialsSection />
       <CTASection />
+      <Footer />
     </>
   );
 };

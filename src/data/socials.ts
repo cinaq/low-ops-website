@@ -1,7 +1,9 @@
-import docsIcon from '@/assets/docs.svg';
-import githubIcon from '@/assets/github2.svg';
-import linkedinIcon from '@/assets/linkedin.svg';
-import youtubeIcon from '@/assets/youtube.svg';
+import {
+  PiFileDocLight,
+  PiGithubLogoLight,
+  PiLinkedinLogoLight,
+  PiYoutubeLogoLight,
+} from 'react-icons/pi';
 
 const DOCS_URL = process.env.NEXT_PUBLIC_DOCS_URL ?? 'https://docs.low-ops.com';
 
@@ -9,25 +11,25 @@ const socials = [
   {
     name: 'linkedin',
     link: 'https://www.linkedin.com/products/cinaq-lowops-platform/',
-    icon: linkedinIcon,
+    icon: (size?: number) => PiLinkedinLogoLight({ size: size ?? 26 }),
     showInHeader: true,
   },
   {
     name: 'youtube',
     link: 'https://www.youtube.com/playlist?list=PLj6NKZ2fu4uoT_D2sZSJtbT4cjT2RCOyW',
-    icon: youtubeIcon,
+    icon: (size?: number) => PiYoutubeLogoLight({ size: size ?? 26 }),
     showInHeader: false,
   },
   {
     name: 'github',
     link: 'https://github.com/low-ops/',
-    icon: githubIcon,
+    icon: (size?: number) => PiGithubLogoLight({ size: size ?? 26 }),
     showInHeader: false,
   },
   {
     name: 'docs',
     link: DOCS_URL,
-    icon: docsIcon,
+    icon: (size?: number) => PiFileDocLight({ size: size ?? 26 }),
     showInHeader: true,
   },
 ];

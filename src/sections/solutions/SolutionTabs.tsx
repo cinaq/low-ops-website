@@ -5,14 +5,13 @@ import deployDrawerImage from '@/assets/deploy-drawer.png';
 import envOverviewImage from '@/assets/env-overview.png';
 import { Card } from '@/components/ui/card';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { Check, CodeXml, Server, Target } from 'lucide-react';
 import Image, { StaticImageData } from 'next/image';
-import { FC } from 'react';
+import { PiCheckCircle, PiCode, PiHardDrives, PiTarget } from 'react-icons/pi';
 
 export type SolutionTabItem = {
   id: string;
   label: string;
-  icon: FC<{ className?: string }>;
+  icon: React.ReactNode;
   title: string;
   description: string;
   items: string[];
@@ -23,7 +22,7 @@ const SOLUTIONS: SolutionTabItem[] = [
   {
     id: 'app-developers',
     label: 'App Developers',
-    icon: CodeXml,
+    icon: PiCode({ size: 24, className: 'text-primary' }),
     imagePath: deployDrawerImage,
     title: 'Focus on building application we will take of the rest.',
     description:
@@ -33,7 +32,7 @@ const SOLUTIONS: SolutionTabItem[] = [
   {
     id: 'visionary-leaders',
     label: 'Visionary Leaders',
-    icon: Target,
+    icon: PiTarget({ size: 24, className: 'text-primary' }),
     imagePath: adminAppsTableImage,
     title: 'Ship faster with confidence. We handle the operations.',
     description:
@@ -47,7 +46,7 @@ const SOLUTIONS: SolutionTabItem[] = [
   {
     id: 'devops-engineers',
     label: 'DevOps Engineers',
-    icon: Server,
+    icon: PiHardDrives({ size: 24, className: 'text-primary' }),
     imagePath: envOverviewImage,
     title: 'Infrastructure as code. One platform for all environments.',
     description:
@@ -69,7 +68,7 @@ const SolutionTabs = () => {
         className="flex-1 flex items-center justify-start gap-2 rounded-md border px-4 py-2.5 text-md font-medium data-[state=active]:border-0 data-[state=active]:bg-primary-500 data-[state=active]:text-white data-[state=active]:shadow-none bg-white cursor-pointer hover:border-primary"
       >
         <span className="flex items-center justify-center rounded-sm bg-gray-100 border border-gray-200 p-2">
-          <tab.icon className="size-5 text-primary" />
+          {tab.icon}
         </span>
         {tab.label}
       </TabsTrigger>
@@ -87,10 +86,8 @@ const SolutionTabs = () => {
             </p>
             <ul className="grid gap-1 sm:grid-cols-2 p-0 m-0">
               {tab.items.map((item) => (
-                <li key={item} className="flex items-center gap-3">
-                  <span className="flex items-center justify-center rounded-full border border-primary w-[20px] h-[20px]">
-                    <Check className="size-3 text-primary" />
-                  </span>
+                <li key={item} className="flex items-center gap-2">
+                  <PiCheckCircle size={22} className="text-primary" />
                   <span className="font-sans font-medium text-neutral-500">
                     {item}
                   </span>

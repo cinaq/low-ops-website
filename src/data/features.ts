@@ -3,15 +3,17 @@ import {
   Building01,
   CoinsStacked01,
   Database01,
-  Flash,
   Grid01,
   LineChartUp01,
   Lock01,
   Package,
-  Rocket02,
   User01,
-  Wallet02,
 } from '@untitled-ui/icons-react';
+import {
+  PiCurrencyCircleDollarFill,
+  PiLightningFill,
+  PiRocketFill,
+} from 'react-icons/pi';
 
 export const metadata = {
   title: 'Features',
@@ -29,7 +31,7 @@ export const topFeatures = [
       'Unlimited resources & fast tech adoption.',
       'Teams scale effortlessly with growth.',
     ],
-    icon: Wallet02({}),
+    icon: PiCurrencyCircleDollarFill({ size: 32.5 }),
   },
   {
     title: 'Accelerated Productivity',
@@ -40,7 +42,7 @@ export const topFeatures = [
       'Onboarding boosts team growth.',
       'Deployments enable instant releases.',
     ],
-    icon: Rocket02({}),
+    icon: PiRocketFill({ size: 32.5 }),
   },
   {
     title: 'Accelerated Time to Market',
@@ -51,7 +53,7 @@ export const topFeatures = [
       'Standard steps keep delivery steady.',
       'No blocks—teams deploy freely.',
     ],
-    icon: Flash({}),
+    icon: PiLightningFill({ size: 32.5 }),
   },
 ];
 

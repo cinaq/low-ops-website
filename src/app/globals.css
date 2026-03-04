@@ -27,6 +27,7 @@ img {
   box-sizing: border-box;
   text-decoration: none;
   text-transform: none;
+  list-style: none;
 }
 
 @utility text-balance {

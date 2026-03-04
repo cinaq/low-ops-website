@@ -1,7 +1,6 @@
 'use client';
 
 import socials from '@/data/socials';
-import Image from 'next/image';
 import { Tooltip, TooltipContent, TooltipTrigger } from './ui/tooltip';
 
 const Socials = () => {
@@ -18,12 +17,7 @@ const Socials = () => {
               rel="noopener noreferrer"
               className="w-[23px] h-[23px] relative"
             >
-              <Image
-                src={social.icon}
-                alt={social.name}
-                fill
-                objectFit="cover"
-              />
+              {social.icon(26)}
             </a>
           </TooltipTrigger>
           <TooltipContent>
@@ -34,7 +28,7 @@ const Socials = () => {
   };
 
   return (
-    <div className="flex items-start gap-5 relative z-[999999]">
+    <div className="flex items-start gap-5 relative z-50">
       {renderSocials()}
     </div>
   );

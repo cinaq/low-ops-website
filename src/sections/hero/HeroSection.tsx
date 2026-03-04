@@ -1,22 +1,20 @@
 'use client';
 
-import heroBg from '@/assets/hero-bg.png';
 import logsImage from '@/assets/logs.png';
 import Stars from '@/components/Stars';
 import TitleBadge from '@/components/TitleBadge';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import { MailOpenIcon } from 'lucide-react';
 import Image from 'next/image';
 import { FC } from 'react';
+import { PiEnvelopeSimpleOpen } from 'react-icons/pi';
 import HeroContent from './HeroContent';
 
 const HeroSection: FC = () => {
   return (
     <section
-      className="w-full pt-[120px] md:pt-[180px] pb-[60px] min-h-[calc(100vh-150px)] relative overflow-hidden bg-cover bg-center bg-no-repeat"
+      className="w-full pt-[120px] md:pt-[180px] pb-[60px] min-h-[calc(100vh-150px)] relative overflow-hidden bg-cover bg-center bg-no-repeat bg-[url('/hero-bg.png')]"
       id="hero"
-      style={{ backgroundImage: `url(${heroBg.src})` }}
     >
       <div className="container flex flex-col h-full items-center justify-center">
         <TitleBadge title="Create, Deploy & Launch" />
@@ -25,8 +23,8 @@ const HeroSection: FC = () => {
         </div>
         <div className="relative w-full max-w-[640px] mb-12">
           <div className="flex h-[59px] items-center overflow-hidden rounded-lg border border-primary bg-white shadow-xs mb-8">
-            <span className="flex pl-3 text-primary mb-1">
-              <MailOpenIcon className="h-5 w-5" />
+            <span className="flex pl-3 text-primary">
+              <PiEnvelopeSimpleOpen size={22} />
             </span>
             <Input
               id="email"

@@ -1,6 +1,6 @@
 import SectionTitle from '@/components/SectionTitle';
 import { Button } from '@/components/ui/button';
-import { Award01, Send01, User03 } from '@untitled-ui/icons-react';
+import { PiAddressBook, PiPaperPlaneTilt, PiUser } from 'react-icons/pi';
 
 const CTASection = () => {
   return (
@@ -14,15 +14,15 @@ const CTASection = () => {
 
         <div className="flex items-center justify-center gap-4">
           <Button variant="primaryOutline">
-            <Award01 className="w-5 h-5" />
+            <PiAddressBook size={22} />
             VIP Access
           </Button>
           <Button variant="primaryOutline">
-            <Send01 className="w-5 h-5" />
+            <PiPaperPlaneTilt size={22} />
             Free Tier
           </Button>
           <Button variant="primaryOutline">
-            <User03 className="w-5 h-5" />
+            <PiUser size={22} />
             Personal Demo
           </Button>
         </div>

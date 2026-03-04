@@ -1,7 +1,6 @@
 import IconWrapper from '@/components/IconWrapper';
 import SectionTitle from '@/components/SectionTitle';
 import { topFeatures } from '@/data/features';
-import { Check } from 'lucide-react';
 import Image from 'next/image';
 import React from 'react';
 
@@ -9,6 +8,7 @@ import adminAppsTableImage from '@/assets/admin-apps-table.png';
 import envOverviewImage from '@/assets/env-overview.png';
 import packagesImage from '@/assets/packages.png';
 import { cn } from '@/lib/utils';
+import { PiCheckCircle } from 'react-icons/pi';
 
 const FEATURE_IMAGES = [
   adminAppsTableImage,
@@ -48,7 +48,7 @@ const FeaturesSection: React.FC = () => {
             <ul className="flex flex-col gap-3">
               {feature.bullets.map((bullet) => (
                 <li key={bullet} className="flex items-start gap-2">
-                  <Check className="w-5 h-5 text-primary" />
+                  <PiCheckCircle size={22} className="text-primary" />
                   <span className="text-base font-sans">{bullet}</span>
                 </li>
               ))}
