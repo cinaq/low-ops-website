@@ -1,11 +1,8 @@
-import { Briefcase02, Building07, Rocket02 } from '@untitled-ui/icons-react';
-
 export const plans = [
   {
     value: 'starter',
     label: 'Starter',
-    icon: Rocket02({ width: 24, height: 24 }),
-    price: '3,960 EUR',
+    price: '0 EUR',
     items: {
       'deployment model': 'Single (Virtual) Machine',
       scalability: 'Vertical',
@@ -17,16 +14,13 @@ export const plans = [
       storage: '1000 GB',
       users: '3',
     },
-    free: true,
     isPopular: false,
-    description: 'For small teams and startups',
     link: 'https://docs.low-ops.com/docs/quick-start/single-node-installation',
   },
   {
     value: 'professional',
     label: 'Professional',
-    icon: Briefcase02({ width: 24, height: 24 }),
-    price: '19,200+ EUR',
+    price: '1,200+ EUR',
     items: {
       'deployment model': 'Multi-node Kubernetes',
       scalability: 'Horizontal',
@@ -39,12 +33,10 @@ export const plans = [
       users: '10',
     },
     isPopular: true,
-    description: 'For growing teams and businesses',
   },
   {
     value: 'enterprise',
     label: 'Enterprise',
-    icon: Building07({ width: 24, height: 24 }),
     price: 'Quote',
     items: {
       'deployment model': 'Multi-node Kubernetes',
@@ -58,6 +50,5 @@ export const plans = [
       users: 'Unlimited',
     },
     isPopular: false,
-    description: 'For large teams and enterprises',
   },
 ];
