@@ -17,7 +17,7 @@ const HeaderNavItem: FC<TProps> = (props) => {
       <Link
         href={href}
         className={cn(
-          'hover:text-black transition-colors text-base duration-400',
+          'hover:text-black transition-colors text-base duration-400 cursor-pointer',
           className
         )}
         onClick={onClick}

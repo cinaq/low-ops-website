@@ -112,14 +112,14 @@ const Footer: FC<TProps> = (props) => {
             <h4>Contact Us</h4>
             <div className="flex flex-col gap-3">
               <div className="flex items-center gap-3 font-sans">
-                <span className="w-10 h-10 rounded-full bg-primary/2 border border-primary/50 flex items-center justify-center text-primary shrink-0">
-                  <PiEnvelopeSimpleOpen size={24} />
+                <span className="w-10 h-10 rounded-full bg-primary/5 border border-primary/50 flex items-center justify-center text-primary shrink-0">
+                  <PiEnvelopeSimpleOpen size={22} />
                 </span>
                 <span>low-ops@cinaq.com</span>
               </div>
               <div className="flex items-center gap-3 font-sans">
-                <span className="w-10 h-10 rounded-full bg-primary/2 border border-primary/50 flex items-center justify-center text-primary shrink-0">
-                  <PiMapPinLine size={24} />
+                <span className="w-10 h-10 rounded-full bg-primary/5 border border-primary/50 flex items-center justify-center text-primary shrink-0">
+                  <PiMapPinLine size={22} />
                 </span>
                 <span>
                   Bajonetstraat 50, 3014 ZK, Rotterdam, The Netherlands
@@ -131,7 +131,7 @@ const Footer: FC<TProps> = (props) => {
         </div>
       </div>
 
-      <div className="py-8 border-t border-primary/30">
+      <div className="py-8 border-t border-primary/25">
         <div className="container flex flex-col sm:flex-row items-center justify-between gap-4">
           <span className="font-sans">
             Copyright ©2026 LowOps All Rights Reserved.
