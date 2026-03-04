@@ -45,6 +45,9 @@ const config: Config = {
               color: 'inherit',
             },
             h5: {
+              fontSize: '16px',
+              lineHeight: '25px',
+              fontWeight: '600',
               margin: '0',
               color: 'inherit',
             },

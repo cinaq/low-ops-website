@@ -2,7 +2,7 @@
 
 import heroBg from '@/assets/hero-bg.png';
 import logsImage from '@/assets/logs.png';
-import starsIcon from '@/assets/stars.svg';
+import Stars from '@/components/Stars';
 import TitleBadge from '@/components/TitleBadge';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -41,13 +41,7 @@ const HeroSection: FC = () => {
 
           <div className="flex justify-center items-center gap-2 font-light">
             <span>Excellent</span>
-            <Image
-              src={starsIcon}
-              alt="Low-Ops Platform"
-              width={100}
-              height={100}
-              className="object-contain object-center"
-            />
+            <Stars />
             <span>Based on 10+ reviews.</span>
           </div>
         </div>
