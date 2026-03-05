@@ -1,4 +1,11 @@
-export const faq = [
+export const faqMetadata = {
+  subtitle: 'Need Help? Start Here',
+  title: 'Find the Answers You Need',
+  description:
+    'We understand that you may have questions. That’s why we’ve compiled this comprehensive FAQs section to address your concerns.',
+};
+
+export const faqData = [
   {
     title: 'Who is Low-Ops for?',
     description:

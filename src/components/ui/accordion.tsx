@@ -4,7 +4,7 @@ import * as AccordionPrimitive from '@radix-ui/react-accordion';
 import * as React from 'react';
 
 import { cn } from '@/lib/utils';
-import { MinusCircle, PlusCircle } from 'lucide-react';
+import { Minus, Plus } from 'lucide-react';
 
 const Accordion = AccordionPrimitive.Root;
 
@@ -20,10 +20,16 @@ const AccordionItem = React.forwardRef<
 ));
 AccordionItem.displayName = 'AccordionItem';
 
+type AccordionTriggerProps = React.ComponentPropsWithoutRef<
+  typeof AccordionPrimitive.Trigger
+> & {
+  hideDefaultIcon?: boolean;
+};
+
 const AccordionTrigger = React.forwardRef<
   React.ElementRef<typeof AccordionPrimitive.Trigger>,
-  React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Trigger>
->(({ className, children, ...props }, ref) => (
+  AccordionTriggerProps
+>(({ className, children, hideDefaultIcon, ...props }, ref) => (
   <AccordionPrimitive.Header className="flex">
     <AccordionPrimitive.Trigger
       ref={ref}
@@ -34,8 +40,12 @@ const AccordionTrigger = React.forwardRef<
       {...props}
     >
       {children}
-      <MinusCircle className="h-4 w-4 text-neutral-500 shrink-0 transition-transform duration-200 hidden group-data-[state=open]:block" />
-      <PlusCircle className="h-4 w-4 text-neutral-500 shrink-0 transition-transform duration-200 block group-data-[state=open]:hidden" />
+      {!hideDefaultIcon && (
+        <>
+          <Minus className="h-4 w-4 text-neutral-500 shrink-0 transition-transform duration-200 hidden group-data-[state=open]:block" />
+          <Plus className="h-4 w-4 text-neutral-500 shrink-0 transition-transform duration-200 block group-data-[state=open]:hidden" />
+        </>
+      )}
     </AccordionPrimitive.Trigger>
   </AccordionPrimitive.Header>
 ));
