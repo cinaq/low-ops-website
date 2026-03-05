@@ -19,7 +19,7 @@ const FaqSection: React.FC = () => {
       >
         <AccordionTrigger
           hideDefaultIcon
-          className="rounded-t-lg px-6 py-3.5 hover:opacity-100 data-[state=open]:text-white data-[state=open]:bg-primary"
+          className="rounded-t-lg px-6 py-3.5 hover:opacity-100 data-[state=open]:text-white data-[state=open]:bg-primary cursor-pointer"
         >
           <span className="group-data-[state=open]:text-white text-lg">
             {item.title}

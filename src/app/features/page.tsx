@@ -3,6 +3,7 @@ import Header from '@/components/header';
 import CTASection from '@/sections/cta/CTASection';
 import FeaturesSection from '@/sections/features/FeaturesSection';
 import SectionHero from '../../components/SectionHero';
+import RoadmapSection from '@/sections/features/RoadmapSection';
 
 const FeaturesPage = () => {
   return (
@@ -10,6 +11,7 @@ const FeaturesPage = () => {
       <Header />
       <SectionHero title="Features" />
       <FeaturesSection />
+      <RoadmapSection />
       <CTASection />
       <Footer />
     </>

@@ -12,11 +12,11 @@ import {
 import AppLogo from '../header/AppLogo';
 
 const QUICK_LINKS = [
-  { label: 'Features', href: '/#features' },
+  { label: 'Features', href: '/features' },
   { label: 'Pricing', href: '/pricing' },
   { label: 'Partners', href: '/partners' },
-  { label: 'FAQ', href: '/#faq' },
-  { label: 'About Us', href: '/contact-us' },
+  { label: 'FAQ', href: '/faq' },
+  { label: 'About Us', href: '/about-us' },
 ];
 
 const DECORATIVE_LABELS = [
@@ -103,9 +103,6 @@ const Footer: FC<TProps> = (props) => {
           <div className="flex flex-col gap-4 justify-self-center">
             <h4>Quick Link</h4>
             <ul className="flex flex-col gap-2">{renderQuickLinks()}</ul>
-            {/* <div className="flex items-center gap-1 mt-1 text-primary-400">
-              <span className="border-t border-dashed border-primary-300 w-12" />
-            </div> */}
           </div>
 
           <div className="flex flex-col gap-4">
