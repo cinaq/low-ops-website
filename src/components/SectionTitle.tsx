@@ -20,8 +20,10 @@ const SectionTitle: FC<TProps> = (props) => {
       )}
     >
       {subtitle && <TitleBadge title={subtitle} />}
-      <h2>{title}</h2>
-      <p className="font-sans font-light text-neutral-500">{description}</p>
+      <h2 className="max-w-2xl text-center">{title}</h2>
+      <p className="font-sans font-light text-neutral-500 max-w-2xl text-center">
+        {description}
+      </p>
     </div>
   );
 };
