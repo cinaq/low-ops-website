@@ -1,21 +1,19 @@
 import Footer from '@/components/footer';
 import Header from '@/components/header';
-import ContactSection from '@/sections/contact/ContactSection';
-import FormSection from '@/sections/form/FormSection';
-import TeamSection from '@/sections/team/TeamSection';
+import SectionHero from '@/components/SectionHero';
+import AboutUsSection from '@/sections/about-us/AboutUsSection';
+import CTASection from '@/sections/cta/CTASection';
 
 const AboutUsPage = () => {
   return (
     <>
-      <Header classes="border-b border-gray-100" />
-      <main className="min-h-[calc(100vh-108px)] sm:min-h-screen w-full pt-[120px] pb-[40px]">
-        <section id="contact-us" className="pt-8 pb-18">
-          <TeamSection />
-          <FormSection />
-          <ContactSection />
-        </section>
+      <Header />
+      <main>
+        <SectionHero title="About Us" />
+        <AboutUsSection />
+        <CTASection />
       </main>
-      <Footer classes="border-t border-gray-100" />
+      <Footer />
     </>
   );
 };

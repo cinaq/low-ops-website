@@ -1,7 +1,7 @@
+import xiwenImage from '@/assets/xiwen-lowops.png';
 import Footer from '@/components/footer';
 import Header from '@/components/header';
 import Image from 'next/image';
-import profileSteven from '@/assets/xiwen.png';
 
 const Page = () => {
   return (
@@ -12,7 +12,7 @@ const Page = () => {
           <div className="relative w-full h-64 flex items-center justify-center">
             <div className="rounded-full overflow-hidden h-48 w-48 relative">
               <Image
-                src={profileSteven.src}
+                src={xiwenImage.src}
                 alt="Steven (Xiwen) Cheng, CEO & Founder"
                 fill
                 className="object-cover"
@@ -28,11 +28,12 @@ const Page = () => {
           </p>
           <p className="text-center">
             If you have any questions, please contact me at{' '}
-            <a href="mailto:steven@cinaq.com">steven@cinaq.com</a>.
+            <a href="mailto:steven@cinaq.com" className="text-primary">
+              steven@cinaq.com
+            </a>
+            .
           </p>
-          <p className="text-center text-sm py-4">
-            Steven
-          </p>
+          <p className="text-center text-sm py-4">Steven</p>
         </div>
       </main>
       <Footer classes="border-t border-gray-100" />
