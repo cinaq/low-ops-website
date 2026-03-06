@@ -20,15 +20,13 @@ const AppLogo: FC<TProps> = (props) => {
   const width = size ? SIZES[size as keyof typeof SIZES] : SIZES.default;
 
   return (
-    <Link href="/" className={cn('relative')}>
+    <Link href="/" className={cn('relative block')}>
       <Image
         src={logo}
         alt="Low-Ops Platform"
         quality={100}
-        priority
         width={width}
-        height={width / 2}
-        className="object-contain object-center"
+        className="object-contain h-auto m-0"
         placeholder="blur"
         blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAACklEQVR4nGMAAQAABQABDQottAAAAABJRU5ErkJggg=="
       />

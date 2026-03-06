@@ -7,17 +7,18 @@ type TProps = {
   children: ReactNode;
   className?: string;
   onClick?: () => void;
+  liClassName?: string;
 };
 
 const HeaderNavItem: FC<TProps> = (props) => {
-  const { href, children, className, onClick } = props;
+  const { href, children, className, onClick, liClassName } = props;
 
   return (
-    <li>
+    <li className={cn(liClassName)}>
       <Link
         href={href}
         className={cn(
-          'hover:text-black transition-colors text-base duration-400 cursor-pointer',
+          'hover:text-neutral-500 transition-colors duration-400 cursor-pointer',
           className
         )}
         onClick={onClick}

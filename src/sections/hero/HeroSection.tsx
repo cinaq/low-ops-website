@@ -37,7 +37,7 @@ const HeroSection: FC = () => {
             </span>
           </div>
 
-          <div className="flex justify-center items-center gap-2 font-light">
+          <div className="justify-center items-center gap-2 font-light hidden md:flex">
             <span>Excellent</span>
             <Stars />
             <span>Based on 10+ reviews.</span>

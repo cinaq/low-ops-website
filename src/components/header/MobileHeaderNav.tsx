@@ -2,8 +2,8 @@
 
 import { menu } from '@/data/header';
 import { cn } from '@/lib/utils';
-import { Menu01, XClose } from '@untitled-ui/icons-react';
 import { useState } from 'react';
+import { PiList, PiX } from 'react-icons/pi';
 import { Button } from '../ui/button';
 import AppLogo from './AppLogo';
 import HeaderNavItem from './HeaderNavItem';
@@ -26,10 +26,11 @@ const MobileHeaderNav = () => {
       <HeaderNavItem
         key={item.name}
         href={item.href}
-        className={cn(
-          'flex items-center px-5 py-6 hover:bg-gray-50 hover:text-foreground active:bg-gray-50 text-lg text-foreground font-semibold'
-        )}
         onClick={handleClose}
+        className={cn(
+          'flex items-center hover:bg-gray-50 active:bg-gray-50 text-lg font-medium'
+        )}
+        liClassName="p-6"
       >
         {item.name}
       </HeaderNavItem>
@@ -42,10 +43,10 @@ const MobileHeaderNav = () => {
         onClick={handleToggle}
         variant="ghost"
         size="icon"
-        className="flex lg:hidden text-white"
+        className="flex lg:hidden"
         aria-label="Open menu"
       >
-        <Menu01 width={28} height={28} />
+        <PiList size={28} />
       </Button>
       <div
         className={cn(
@@ -54,7 +55,7 @@ const MobileHeaderNav = () => {
         )}
       >
         <div>
-          <div className="flex items-center justify-between p-4">
+          <div className="flex items-center justify-between p-6">
             <AppLogo />
             <Button
               variant="ghost"
@@ -62,13 +63,12 @@ const MobileHeaderNav = () => {
               onClick={handleToggle}
               aria-label="Close menu"
             >
-              <XClose />
+              <PiX size={24} />
             </Button>
           </div>
           <nav className="py-4">
             <ul className="flex flex-col">{renderMenu()}</ul>
           </nav>
-          {/* <Socials /> */}
         </div>
       </div>
     </>

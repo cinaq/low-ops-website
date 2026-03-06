@@ -37,7 +37,7 @@ const Item: FC<TProps> = (props) => {
   return (
     <div
       className={cn(
-        'flex prose items-stretch min-h-auto md:min-h-[520px] gap-0 md:gap-10',
+        'flex prose md:prose-md items-stretch min-h-auto md:min-h-[520px] gap-0 md:gap-10',
         isEven ? 'flex-row' : 'flex-row-reverse'
       )}
     >
@@ -63,20 +63,20 @@ const Item: FC<TProps> = (props) => {
               whileInView={{ opacity: 1, x: 0 }}
               style={{ position: 'absolute', inset: 0 }}
             >
-            <Image
-              src={imagePath}
-              alt={title}
-              quality={80}
-              className={cn(
-                'm-0 object-cover object-bottom rounded-sm',
-                isEven ? 'object-left-top' : 'object-right-top'
-              )}
-              fill
-              sizes="auto"
-              loading="lazy"
-              placeholder="blur"
-              blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAACklEQVR4nGMAAQAABQABDQottAAAAABJRU5ErkJggg=="
-            />
+              <Image
+                src={imagePath}
+                alt={title}
+                quality={80}
+                className={cn(
+                  'm-0 object-cover object-bottom rounded-sm',
+                  isEven ? 'object-left-top' : 'object-right-top'
+                )}
+                fill
+                sizes="auto"
+                loading="lazy"
+                placeholder="blur"
+                blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAACklEQVR4nGMAAQAABQABDQottAAAAABJRU5ErkJggg=="
+              />
             </motion.div>
           </div>
         </div>

@@ -25,25 +25,27 @@ const TopFeaturesSection: React.FC = () => {
         <div
           key={feature.title}
           className={cn(
-            'grid grid-cols-1 lg:grid-cols-[3fr_5fr] gap-3 lg:gap-6 items-center prose',
-            isReversed && 'lg:grid-cols-[5fr_3fr] prose-md'
+            'grid grid-cols-1 lg:grid-cols-[3fr_5fr] gap-3 lg:gap-6',
+            isReversed && 'lg:grid-cols-[5fr_3fr]'
           )}
         >
           <div
             className={cn(
-              'w-full rounded-lg border border-primary/20 overflow-hidden bg-primary/1 h-full p-8 flex flex-col gap-4',
+              'w-full rounded-lg border border-primary/20 bg-primary/1 h-full p-4 lg:p-8 flex flex-col gap-2 lg:gap-4',
               isReversed && 'lg:order-2'
             )}
           >
             <span className="flex items-center justify-center bg-primary border-0 text-white w-12 h-12 rounded-lg mb-4 [&>svg]:text-white">
               {feature.icon}
             </span>
-            <h4>{feature.title}</h4>
-            <p className="text-sm text-neutral-500 font-sans">
-              {feature.description}
-            </p>
+            <div className="prose md:prose-md flex flex-col gap-2 lg:gap-4">
+              <h4>{feature.title}</h4>
+              <p className="text-sm text-neutral-500 font-sans">
+                {feature.description}
+              </p>
+            </div>
             <span className="block" />
-            <ul className="flex flex-col gap-3">
+            <ul className="flex flex-col gap-2 md:gap-3 p-0">
               {feature.bullets.map((bullet) => (
                 <li key={bullet} className="flex items-start gap-2">
                   <PiCheckCircle size={22} className="text-primary" />
@@ -53,7 +55,12 @@ const TopFeaturesSection: React.FC = () => {
             </ul>
           </div>
 
-          <div className={isReversed ? 'lg:order-1' : undefined}>
+          <div
+            className={cn(
+              'hidden lg:block overflow-hidden',
+              isReversed ? 'lg:order-1' : undefined
+            )}
+          >
             <div className="relative w-full rounded-lg border border-primary/20 overflow-hidden bg-primary/1 aspect-5/3 h-full p-8">
               <Image
                 src={imageSrc}

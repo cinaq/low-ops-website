@@ -15,7 +15,7 @@ const FaqSection: React.FC = () => {
       <AccordionItem
         key={item.title}
         value={item.title}
-        className="border border-primary/20 rounded-lg bg-primary/5 font-sans text-lg font-medium group-data-[state=open]:bg-primary prose"
+        className="border border-primary/20 rounded-lg bg-primary/5 font-sans text-lg font-medium group-data-[state=open]:bg-primary prose md:prose-md"
       >
         <AccordionTrigger
           hideDefaultIcon

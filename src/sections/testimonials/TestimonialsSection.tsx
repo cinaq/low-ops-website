@@ -28,13 +28,13 @@ const TestimonialsSection: React.FC = () => {
     return TESTIMONIAL_CARDS.map((card) => (
       <article
         key={card.nameOrCompany}
-        className="rounded-lg border px-6 py-8 flex flex-col gap-6 border-primary/20 prose bg-[linear-gradient(to_bottom_left,hsl(var(--primary)/0.2)_0%,hsl(var(--primary)/0)_33%,hsl(var(--primary)/0)_80%,hsl(var(--primary)/0.1)_100%)] break-inside-avoid mb-6"
+        className="rounded-lg border px-4 lg:px-6 py-6 lg:py-8 flex flex-col gap-3 lg:gap-6 border-primary/20 bg-[linear-gradient(to_bottom_left,hsl(var(--primary)/0.2)_0%,hsl(var(--primary)/0)_33%,hsl(var(--primary)/0)_80%,hsl(var(--primary)/0.1)_100%)] break-inside-avoid mb-6"
       >
-        <div className="flex flex-col gap-1">
+        <div className="flex flex-col gap-1 prose md:prose-md">
           <h5>{card.nameOrCompany}</h5>
           <p className="font-sans text-sm">{card.role}</p>
         </div>
-        <div className="border-b border-dashed border-neutral-200" />
+        <div className="border-b border-dashed border-primary-200" />
         <p className="text-lg font-sans font-light">{card.quote}</p>
         <Stars />
       </article>

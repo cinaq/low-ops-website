@@ -8,7 +8,7 @@ const PartnersSection = () => {
     return partnersData.map((partner) => (
       <Card
         key={partner.title}
-        className="prose flex flex-col justify-between gap-4"
+        className="prose md:prose-md flex flex-col justify-between gap-4"
       >
         <Image
           src={partner.imagePath}

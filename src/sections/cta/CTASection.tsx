@@ -4,15 +4,15 @@ import { PiAddressBook, PiPaperPlaneTilt, PiUser } from 'react-icons/pi';
 
 const CTASection = () => {
   return (
-    <section className="py-20 md:py-28">
-      <div className="container flex flex-col items-center gap-6 md:gap-10 bg-primary/5 rounded-lg p-20 border border-primary/20">
+    <section className="py-20 md:py-28 px-4">
+      <div className="container flex flex-col items-center gap-6 md:gap-10 bg-primary/5 rounded-lg p-10 lg:p-20 border border-primary/20">
         <SectionTitle
           subtitle="Get Started Today"
           title="Ready to supercharge your workflow?"
           description="Join hundreds of teams already shipping faster with streamlined collaboration, automated pipelines, and real-time visibility."
         />
 
-        <div className="flex items-center justify-center gap-4">
+        <div className="flex items-center justify-center gap-4 flex-col lg:flex-row">
           <Button variant="primaryOutline">
             <PiAddressBook size={22} />
             VIP Access

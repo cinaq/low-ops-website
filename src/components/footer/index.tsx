@@ -38,7 +38,7 @@ const Footer: FC<TProps> = (props) => {
       <li key={link.href}>
         <Link
           href={link.href}
-          className="font-sans hover:text-primary transition-colors flex items-center gap-1 font-light"
+          className="font-sans hover:text-primary transition-colors flex items-center gap-1 font-light no-underline"
         >
           <PiCaretRightLight size={16} />
           {link.label}
@@ -89,10 +89,10 @@ const Footer: FC<TProps> = (props) => {
           </div>
         ))} */}
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-8 lg:gap-12 relative z-10 prose">
-          <div className="flex flex-col gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12 relative z-10 w-full">
+          <div className="flex flex-col gap-4 lg:gap-6 prose md:prose-md">
             <AppLogo size="small" />
-            <p className="text-xl font-sans max-w-md font-light">
+            <p className="text-md lg:text-xl font-sans max-w-md font-light">
               Low-Ops is an Internal Developer Platform (IDP) designed to
               streamline the deployment and management of applications for
               private clouds and on-premises environments.
@@ -100,12 +100,14 @@ const Footer: FC<TProps> = (props) => {
             <div className="flex gap-3">{renderSocials()}</div>
           </div>
 
-          <div className="flex flex-col gap-4 justify-self-center">
+          <div className="flex flex-col gap-2 md:gap-4 justify-self-start md:justify-self-center prose md:prose-md">
             <h4>Quick Link</h4>
-            <ul className="flex flex-col gap-2">{renderQuickLinks()}</ul>
+            <ul className="flex flex-col gap-1 md:gap-2 p-0">
+              {renderQuickLinks()}
+            </ul>
           </div>
 
-          <div className="flex flex-col gap-4">
+          <div className="flex flex-col gap-4 prose md:prose-md">
             <h4>Contact Us</h4>
             <div className="flex flex-col gap-3">
               <div className="flex items-center gap-3 font-sans">
@@ -129,7 +131,7 @@ const Footer: FC<TProps> = (props) => {
       </div>
 
       <div className="py-8 border-t border-primary/25">
-        <div className="container flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div className="container flex flex-col lg:flex-row items-center justify-between gap-4">
           <span className="font-sans">
             Copyright ©2026 LowOps All Rights Reserved.
           </span>

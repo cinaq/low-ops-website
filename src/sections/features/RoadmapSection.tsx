@@ -76,7 +76,7 @@ const RoadmapSection = () => {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10 w-full max-w-6xl mx-auto">
             {roadmapSteps.map((step, index) => (
-              <div key={step.step} className="relative prose">
+              <div key={step.step} className="relative prose md:prose-md">
                 <div
                   className={cn(
                     'absolute flex items-center gap-8 justify-center text-center max-w-[300px]',

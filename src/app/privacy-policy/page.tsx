@@ -11,7 +11,7 @@ const PrivacyPolicyPage = () => {
             Privacy Policy
           </h1>
 
-          <div className="max-w-4xl mx-auto prose prose-gray">
+          <div className="max-w-4xl mx-auto prose md:prose-md">
             <p className="text-muted-foreground">
               Last Updated: <strong>27th June 2025</strong>
             </p>

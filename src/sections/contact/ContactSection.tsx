@@ -10,7 +10,7 @@ const ContactSection: React.FC = () => {
       <div className="container flex flex-col items-center gap-12 md:gap-20">
         <SectionTitle title="Contact" description="Our contact information" />
 
-        <div className="flex flex-col lg:flex-row items-center justify-between gap-10 w-full prose">
+        <div className="flex flex-col lg:flex-row items-center justify-between gap-10 w-full prose md:prose-md">
           <ContactItem {...contactInfo[0]} />
           <ContactItem {...contactInfo[1]} />
         </div>

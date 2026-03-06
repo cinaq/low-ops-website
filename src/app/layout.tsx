@@ -28,7 +28,7 @@ const RootLayout = (props: TProps) => {
 
   return (
     <html lang="en" className={`${dmSans.variable} ${poppins.variable}`}>
-      <body>
+      <body className="font-poppins text-neutral-700">
         {children}
 
         <script

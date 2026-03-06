@@ -7,8 +7,7 @@ const Stars = () => {
       src={starsIcon}
       alt="Low-Ops Platform"
       width={100}
-      height={50}
-      className="object-contain object-center"
+      className="object-contain object-center h-auto"
     />
   );
 };
