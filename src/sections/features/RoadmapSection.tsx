@@ -16,8 +16,8 @@ const WavyLineSvg = () => (
       <path
         d="M10.5 101.173C41.1181 133.359 125.042 197.831 215.792 198.233C239.55 200.077 304.434 193.204 373.902 150.96C413.89 124.474 497.981 68.4843 514.444 56.4147C538.872 38.1426 601.38 2.20182 655.99 4.61575C699.993 2.93946 814.703 27.3471 921.515 138.388C944.604 161.019 1013.47 203.463 1104.22 192.198C1141.86 189.852 1235.02 168.26 1306.5 100.67"
         stroke="#222E48"
-        stroke-width="5"
-        stroke-linecap="round"
+        strokeWidth="5"
+        strokeLinecap="round"
       />
     </g>
     <defs>
@@ -62,7 +62,7 @@ const WavyLineSvg = () => (
 
 const RoadmapSection = () => {
   return (
-    <section id="features" className="py-20 md:py-28 bg-primary/5">
+    <section id="roadmap" className="py-20 md:py-28 bg-primary/5">
       <div className="container relative flex flex-col items-center gap-12 md:gap-20">
         <SectionTitle
           subtitle="Simple Steps to Success"
