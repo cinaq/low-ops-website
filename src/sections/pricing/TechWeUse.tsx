@@ -1,5 +1,6 @@
 'use client';
 
+import techWeUseImage from '@/assets/tech-we-use.png';
 import {
   Tooltip,
   TooltipContent,
@@ -10,9 +11,18 @@ import { cn } from '@/lib/utils';
 import Image from 'next/image';
 
 const TechWeUse = () => {
+  const renderTechWeUseImage = () => {
+    return (
+      <div className="relative w-full overflow-hidden h-[200px] sm:h-[300px] md:h-[350px] lg:h-[500px] xl:h-[600px] block 2xl:hidden">
+        <Image src={techWeUseImage} alt="tech-we-use" />
+      </div>
+    );
+  };
+
   return (
     <div className="flex flex-col items-center gap-12 w-full">
-      <div className="relative w-full overflow-hidden h-[700px]">
+      {renderTechWeUseImage()}
+      <div className="relative w-full overflow-hidden h-[700px] hidden 2xl:block">
         <div
           className="absolute left-1/2 top-full aspect-square w-[85%] -translate-x-1/2 -translate-y-1/2 rounded-full border border-primary"
           aria-hidden
