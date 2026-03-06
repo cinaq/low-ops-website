@@ -4,8 +4,8 @@ import { plans } from '@/data/plans';
 import { capitalize, cn } from '@/lib/utils';
 import { Check, X } from 'lucide-react';
 import { Fragment, useMemo } from 'react';
-import { Badge } from './ui/badge';
 import { Button } from './ui/button';
+import { Card } from './ui/card';
 
 const PricingComparisonTable = () => {
   const allKeys = Array.from(
@@ -152,52 +152,58 @@ const PricingComparisonTable = () => {
     ));
   };
 
-  return (
-    <div className="flex flex-col border border-primary/20 rounded-lg">
-      <div className="hidden lg:grid grid-cols-4">{renderPlans()}</div>
-      <div className="hidden lg:grid grid-cols-4">{renderItems()}</div>
-      <div className="flex flex-col gap-20 lg:hidden">
-        {plans.map((plan, index) => (
-          <div key={index} className="flex flex-col gap-6">
-            <div className="flex flex-col justify-between gap-1 items-stretch h-full">
-              <div className="w-full">
-                <h3 className="flex items-center gap-4 text-md font-normal border-b mb-5 pb-2 w-full">
-                  {plan.label}
-                  {plan.isPopular && (
-                    <Badge variant="primaryOutline">Popular</Badge>
-                  )}
-                </h3>
-              </div>
-
-              <Button className="mb-2 max-w-[200px]">Get Started</Button>
-            </div>
-            <div className="">
-              {Object.entries(plan.items).map(([key, value], i) => (
-                <div
-                  key={`${key}-${plan.value}`}
-                  className={cn(
-                    'flex items-center justify-between p-3 border-b border-gray-100',
-                    i % 2 === 0 ? 'bg-gray-50' : 'bg-white'
-                  )}
-                >
-                  <div className="font-medium text-muted-foreground">
-                    {capitalize(key)}
-                  </div>
-                  <div
-                    key={`${plan.value}-${key}`}
-                    className="text-foreground font-medium flex items-center justify-center gap-2"
-                  >
-                    {valuesWithIcon[
-                      value.toLowerCase() as keyof typeof valuesWithIcon
-                    ] ?? value}
-                  </div>
-                </div>
-              ))}
-            </div>
+  const renderMobilePlans = () => {
+    return plans.map((plan, index) => (
+      <Card
+        key={index}
+        className="flex flex-col gap-6 w-full prose md:prose-md"
+      >
+        <div className="flex flex-col items-center justify-center gap-3 h-full">
+          <div className="w-full flex flex-col items-center justify-center">
+            <h3>{plan.label}</h3>
+            <h2 className="text-neutral-500">{plan.price}</h2>
           </div>
-        ))}
+
+          <Button variant="primaryOutline" className="mb-2 w-full">
+            Get Started
+          </Button>
+        </div>
+        <div className="">
+          {Object.entries(plan.items).map(([key, value]) => (
+            <div
+              key={`${key}-${plan.value}`}
+              className={cn(
+                'flex items-center justify-between p-3 border-b border-primary/20'
+              )}
+            >
+              <div className="font-medium text-muted-foreground">
+                {capitalize(key)}
+              </div>
+              <div
+                key={`${plan.value}-${key}`}
+                className="text-foreground font-medium flex items-center justify-center gap-2"
+              >
+                {valuesWithIcon[
+                  value.toLowerCase() as keyof typeof valuesWithIcon
+                ] ?? value}
+              </div>
+            </div>
+          ))}
+        </div>
+      </Card>
+    ));
+  };
+
+  return (
+    <>
+      <div className="flex flex-col border border-primary/20 rounded-lg">
+        <div className="hidden lg:grid grid-cols-4">{renderPlans()}</div>
+        <div className="hidden lg:grid grid-cols-4">{renderItems()}</div>
       </div>
-    </div>
+      <div className="flex flex-col items-center gap-10 lg:gap-20 lg:hidden w-full">
+        {renderMobilePlans()}
+      </div>
+    </>
   );
 };
 

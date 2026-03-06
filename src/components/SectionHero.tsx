@@ -10,7 +10,10 @@ const SectionHero = (props: TProps) => {
   const { title } = props;
 
   return (
-    <section id="features" className="py-20 md:py-40 bg-primary/5">
+    <section
+      id="features"
+      className="pt-30 pb-20 md:pt-40 md:pb-40 bg-primary/5"
+    >
       <div className="container flex flex-col items-center gap-2">
         <p className="text-[56px] font-medium">{capitalize(title)}</p>
 

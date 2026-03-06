@@ -8,7 +8,7 @@ export const roadmapSteps = [
       'Create your account and complete the initial configuration in minutes.',
     Icon: PiUserPlusFill,
     iconPosition: 'below' as const,
-    positionClasses: `top-[142px]`,
+    positionClasses: `xl:top-[142px]`,
   },
   {
     step: '02',
@@ -17,7 +17,7 @@ export const roadmapSteps = [
       'Tailor the platform to your needs and optimize your workflow.',
     Icon: PiGaugeFill,
     iconPosition: 'above' as const,
-    positionClasses: `top-[16px] right-[45px]`,
+    positionClasses: `xl:top-[16px] xl:right-[45px]`,
   },
   {
     step: '03',
@@ -25,6 +25,6 @@ export const roadmapSteps = [
     description: 'Go live with confidence and grow with our support.',
     Icon: PiThumbsUpFill,
     iconPosition: 'below' as const,
-    positionClasses: `top-[138px] right-[25px]`,
+    positionClasses: `xl:top-[138px] xl:right-[25px]`,
   },
 ];

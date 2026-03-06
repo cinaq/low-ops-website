@@ -4,7 +4,7 @@ import SectionTitle from '@/components/SectionTitle';
 const PricingSection = () => {
   return (
     <section id="features" className="py-20 md:py-28 bg-white">
-      <div className="container flex flex-col items-center gap-12 md:gap-20">
+      <div className="container flex flex-col items-center gap-12 lg:gap-20">
         <SectionTitle
           subtitle="Affordable Packages"
           title="Flexible options for every budget"

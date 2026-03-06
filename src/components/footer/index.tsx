@@ -69,7 +69,7 @@ const Footer: FC<TProps> = (props) => {
         classes
       )}
     >
-      <div className="relative container py-28">
+      <div className="relative container py-14 lg:py-28">
         {/* {DECORATIVE_LABELS.map((item) => (
           <div
             key={item.text}
