@@ -27,10 +27,10 @@ const SectionHero = (props: TProps) => {
           <span className="text-primary">{capitalize(title)}</span>
         </div>
 
-        <div className="absolute -top-10 left-10">
+        <div className="absolute -top-10 left-10 hidden lg:block">
           <FirstDecoration />
         </div>
-        <div className="absolute top-2 right-10">
+        <div className="absolute top-2 right-10 hidden lg:block">
           <SecondDecoration />
         </div>
       </div>

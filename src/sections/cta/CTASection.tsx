@@ -37,20 +37,20 @@ const CTASection = () => {
           </a>
         </div>
 
-        <div className="absolute -top-[150px] -left-[230px] tranform rotate-180 text-primary/50">
+        <div className="absolute -top-[150px] -left-[230px] tranform rotate-180 text-primary/50 hidden md:block">
           <SpiderWebIcon />
         </div>
-        <div className="absolute -bottom-[150px] -right-[230px] text-primary/50">
+        <div className="absolute -bottom-[150px] -right-[230px] text-primary/50 hidden md:block">
           <SpiderWebIcon />
         </div>
-        <div className="absolute top-10 right-10">
+        <div className="absolute top-10 right-10 hidden md:block">
           <CircleRectangleIcon />
         </div>
 
-        <div className="absolute top-1/2 -translate-y-1/2 left-10">
+        <div className="absolute top-1/2 -translate-y-1/2 left-10 hidden xl:block">
           <FirstDecoration />
         </div>
-        <div className="absolute top-1/2 -translate-y-1/2 right-10">
+        <div className="absolute top-1/2 -translate-y-1/2 right-10 hidden xl:block">
           <SecondDecoration />
         </div>
       </div>

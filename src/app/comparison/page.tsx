@@ -9,8 +9,10 @@ const ComparisonPage = () => {
     <>
       <Header />
       <SectionHero title="Comparison" />
-      <ComparisonSection />
-      <CTASection />
+      <main>
+        <ComparisonSection />
+        <CTASection />
+      </main>
       <Footer />
     </>
   );

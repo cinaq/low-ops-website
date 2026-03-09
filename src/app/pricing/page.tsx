@@ -10,9 +10,11 @@ const PricingPage = () => {
     <>
       <Header />
       <SectionHero title="Pricing" />
-      <PricingSection />
-      <TechWeUseSection />
-      <CTASection />
+      <main>
+        <PricingSection />
+        <TechWeUseSection />
+        <CTASection />
+      </main>
       <Footer />
     </>
   );
