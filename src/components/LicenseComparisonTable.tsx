@@ -156,7 +156,7 @@ const PricingComparisonTable = () => {
     return plans.map((plan, index) => (
       <Card
         key={index}
-        className="flex flex-col gap-6 w-full prose md:prose-md"
+        className="flex flex-col gap-6 w-full prose md:prose-md bg-transparent"
       >
         <div className="flex flex-col items-center justify-center gap-3 h-full">
           <div className="w-full flex flex-col items-center justify-center">
@@ -164,9 +164,11 @@ const PricingComparisonTable = () => {
             <h2 className="text-neutral-500">{plan.price}</h2>
           </div>
 
-          <Button variant="primaryOutline" className="mb-2 w-full">
-            Get Started
-          </Button>
+          <a href={plan.link} target="_blank" rel="noopener noreferrer">
+            <Button variant="primaryOutline" className="mb-2 w-full">
+              Get Started
+            </Button>
+          </a>
         </div>
         <div className="">
           {Object.entries(plan.items).map(([key, value]) => (

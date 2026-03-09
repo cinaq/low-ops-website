@@ -27,11 +27,13 @@ const Header: FC<TProps> = (props) => {
         <div className="flex items-center justify-between py-4.5">
           <AppLogo />
           <HeaderNav />
-          <div className="flex items-center justify-end gap-8">
+          <div className="flex items-center justify-end gap-4 lg:gap-8">
             <Socials />
-            <Button size="lg" className="hidden lg:block">
-              Start free trial
-            </Button>
+            <a href="#cta">
+              <Button size="lg" className="hidden lg:block">
+                Start free trial
+              </Button>
+            </a>
             <MobileHeaderNav />
           </div>
         </div>

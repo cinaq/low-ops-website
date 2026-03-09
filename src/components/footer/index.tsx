@@ -1,5 +1,6 @@
 'use client';
 
+import { DECORATIVE_LABELS, QUICK_LINKS } from '@/data/footer';
 import socials from '@/data/socials';
 import { cn } from '@/lib/utils';
 import Link from 'next/link';
@@ -9,22 +10,8 @@ import {
   PiEnvelopeSimpleOpen,
   PiMapPinLine,
 } from 'react-icons/pi';
+import DecorativeLabel from '../DecorativeLabel';
 import AppLogo from '../header/AppLogo';
-
-const QUICK_LINKS = [
-  { label: 'Features', href: '/features' },
-  { label: 'Pricing', href: '/pricing' },
-  { label: 'Partners', href: '/partners' },
-  { label: 'FAQ', href: '/faq' },
-  { label: 'About Us', href: '/about-us' },
-];
-
-const DECORATIVE_LABELS = [
-  { text: 'Automation', position: 'top-8 left-8', arrow: 'up-right' },
-  { text: 'Cost Effective', position: 'bottom-8 left-8', arrow: 'up-right' },
-  { text: 'Security', position: 'top-8 right-8', arrow: 'up-left' },
-  { text: 'Self-Service', position: 'bottom-8 right-8', arrow: 'up-left' },
-] as const;
 
 type TProps = {
   classes?: string;
@@ -64,30 +51,21 @@ const Footer: FC<TProps> = (props) => {
 
   return (
     <footer
+      id="footer"
       className={cn(
         'w-full bg-cover bg-center bg-no-repeat bg-[url("/footer-bg.png")]',
         classes
       )}
     >
       <div className="relative container py-14 lg:py-28">
-        {/* {DECORATIVE_LABELS.map((item) => (
-          <div
+        {DECORATIVE_LABELS.map((item) => (
+          <DecorativeLabel
+            text={item.text}
+            planePosition={item.planePosition}
+            classes={item.classes}
             key={item.text}
-            className={cn(
-              'absolute hidden lg:flex items-center gap-1.5',
-              item.position
-            )}
-          >
-            {item.arrow === 'up-right' ? (
-              <ArrowUpRight className="w-4 h-4 text-primary-500 shrink-0" />
-            ) : (
-              <ArrowUpLeft className="w-4 h-4 text-primary-500 shrink-0" />
-            )}
-            <span className="bg-primary-500 text-white text-xs font-medium px-2.5 py-1 rounded">
-              {item.text}
-            </span>
-          </div>
-        ))} */}
+          />
+        ))}
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12 relative z-10 w-full">
           <div className="flex flex-col gap-4 lg:gap-6 prose md:prose-md">
@@ -136,12 +114,6 @@ const Footer: FC<TProps> = (props) => {
             Copyright ©2026 LowOps All Rights Reserved.
           </span>
           <nav className="flex flex-wrap items-center justify-center gap-x-6 gap-y-1 font-sans">
-            <Link
-              href="/contact-us"
-              className="hover:text-primary transition-colors"
-            >
-              Help & Support
-            </Link>
             <Link
               href="/privacy-policy"
               className="hover:text-primary transition-colors"

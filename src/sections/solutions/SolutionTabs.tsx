@@ -1,8 +1,8 @@
 'use client';
 
-import adminAppsTableImage from '@/assets/admin-apps-table.png';
-import deployDrawerImage from '@/assets/deploy-drawer.png';
-import envOverviewImage from '@/assets/env-overview.png';
+import adminAppsTableImage from '@/assets/admin-apps-screenshot.png';
+import deployDrawerImage from '@/assets/deploy-screenshot.png';
+import envOverviewImage from '@/assets/env-overview-screenshot.png';
 import { Card } from '@/components/ui/card';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import Image, { StaticImageData } from 'next/image';
