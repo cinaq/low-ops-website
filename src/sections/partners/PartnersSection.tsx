@@ -27,12 +27,12 @@ const PartnersSection = () => {
   return (
     <section id="features" className="py-20 md:py-28 bg-white">
       <div className="container">
-        <SectionTitle
+        {/* <SectionTitle
           subtitle={partnersMetadata.subtitle}
           title={partnersMetadata.title}
           description={partnersMetadata.description}
           className="mb-10"
-        />
+        /> */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full max-w-6xl mx-auto">
           {renderPartners()}
         </div>

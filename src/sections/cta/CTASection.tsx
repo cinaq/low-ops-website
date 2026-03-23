@@ -12,24 +12,24 @@ const CTASection = () => {
       <div className="container flex flex-col items-center gap-6 md:gap-10 bg-primary/5 rounded-lg p-10 lg:p-20 border border-primary/20 relative overflow-hidden">
         <SectionTitle
           subtitle="Get Started Today"
-          title="Ready to supercharge your workflow?"
-          description="Join hundreds of teams already shipping faster with streamlined collaboration, automated pipelines, and real-time visibility."
+          title="Deploy and manage your applications in minutes"
+          description="Join our community shipping faster with streamlined workflows, automated pipelines, and real-time visibility."
         />
 
         <div className="flex items-center justify-center gap-4 flex-col lg:flex-row">
-          <a href="#" target="_blank" rel="noopener noreferrer">
+          <a href="https://portal.app.low-ops.com" target="_blank" rel="noopener noreferrer">
+            <Button>
+              <PiPaperPlaneTilt size={22} />
+              Access Free Tier Now
+            </Button>
+          </a>
+          <a href="https://hub.cinaq.com/low-ops-vip" target="_blank" rel="noopener noreferrer">
             <Button variant="primaryOutline">
               <PiAddressBook size={22} />
-              VIP Access
+              No Google account? Request VIP Access
             </Button>
           </a>
-          <a href="#" target="_blank" rel="noopener noreferrer">
-            <Button variant="primaryOutline">
-              <PiPaperPlaneTilt size={22} />
-              Free Tier
-            </Button>
-          </a>
-          <a href="#" target="_blank" rel="noopener noreferrer">
+          <a href="https://hub.cinaq.com/low-ops-personal-demo" target="_blank" rel="noopener noreferrer">
             <Button variant="primaryOutline">
               <PiUser size={22} />
               Personal Demo

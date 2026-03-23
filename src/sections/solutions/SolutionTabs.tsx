@@ -20,16 +20,6 @@ export type SolutionTabItem = {
 
 const SOLUTIONS: SolutionTabItem[] = [
   {
-    id: 'app-developers',
-    label: 'App Developers',
-    icon: PiCode({ size: 24, className: 'text-primary' }),
-    imagePath: deployDrawerImage,
-    title: 'Focus on building application we will take of the rest.',
-    description:
-      'Low-Ops take care of all aspect of application development. Whether it is application logs, monitoring, database, storage or infrastructure like crash recovery, ci/ci, replicas, deploy.',
-    items: ['Self-service LCM', 'Ease of use', 'Any app frameworks'],
-  },
-  {
     id: 'visionary-leaders',
     label: 'Visionary Leaders',
     icon: PiTarget({ size: 24, className: 'text-primary' }),
@@ -44,8 +34,18 @@ const SOLUTIONS: SolutionTabItem[] = [
     ],
   },
   {
-    id: 'devops-engineers',
-    label: 'DevOps Engineers',
+    id: 'app-developers',
+    label: 'App Developers',
+    icon: PiCode({ size: 24, className: 'text-primary' }),
+    imagePath: deployDrawerImage,
+    title: 'Focus on building application we will take of the rest.',
+    description:
+      'Low-Ops take care of all aspect of application development. Whether it is application logs, monitoring, database, storage or infrastructure like crash recovery, ci/ci, replicas, deploy.',
+    items: ['Self-service LCM', 'Ease of use', 'Any app frameworks'],
+  },
+  {
+    id: 'platform-engineers',
+    label: 'Platform Engineers',
     icon: PiHardDrives({ size: 24, className: 'text-primary' }),
     imagePath: envOverviewImage,
     title: 'Infrastructure as code. One platform for all environments.',

@@ -5,13 +5,13 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from '@/components/ui/accordion';
-import { faqData, faqMetadata } from '@/data/faq';
+import { faqDataTechnical, faqDataStrategic } from '@/data/faq';
 import React from 'react';
 import { PiMinusBold, PiPlusBold } from 'react-icons/pi';
 
 const FaqSection: React.FC = () => {
-  const renderFaqItems = () => {
-    return faqData.map((item) => (
+  const renderFaqItems = (data: any) => {
+    return data.map((item) => (
       <AccordionItem
         key={item.title}
         value={item.title}
@@ -47,9 +47,9 @@ const FaqSection: React.FC = () => {
     <section className="py-20 md:py-28" id="faq">
       <div className="container flex flex-col items-center gap-12 md:gap-20">
         <SectionTitle
-          subtitle={faqMetadata.subtitle}
-          title={faqMetadata.title}
-          description={faqMetadata.description}
+          subtitle=""
+          title="Strategic"
+          description=""
         />
 
         <Accordion
@@ -57,7 +57,17 @@ const FaqSection: React.FC = () => {
           collapsible
           className="w-full grid grid-cols-1 lg:grid-cols-2 gap-4 items-start"
         >
-          {renderFaqItems()}
+          {renderFaqItems(faqDataStrategic)}
+        </Accordion>
+
+        <SectionTitle
+          subtitle=""
+          title="Technical"
+          description=""
+        />
+
+        <Accordion type="single" collapsible className="w-full grid grid-cols-1 lg:grid-cols-2 gap-4 items-start">
+          {renderFaqItems(faqDataTechnical)}
         </Accordion>
       </div>
     </section>

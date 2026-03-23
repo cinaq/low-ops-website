@@ -24,6 +24,7 @@ const TeamMemberCard = ({ member }: TeamMemberCardProps) => {
       <div className="p-6 w-full bg-white rounded-lg flex flex-col items-center gap-1 absolute bottom-2 left-0 right-0 mx-auto max-w-70 translate-y-0 opacity-100 border border-primary/30 transition-all duration-300 [@media(hover:hover)]:opacity-0 [@media(hover:hover)]:translate-y-3 [@media(hover:hover)]:group-hover:opacity-100 [@media(hover:hover)]:group-hover:translate-y-0">
         <h5 className="font-semibold">{member.name}</h5>
         <p className="text-sm font-sans font-light">{member.position}</p>
+        <p className="text-sm font-sans font-light">{member.bio}</p>
 
         <div className="flex items-center gap-2 pt-2">
           {member.social.linkedin && (

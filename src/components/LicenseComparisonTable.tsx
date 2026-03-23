@@ -84,7 +84,7 @@ const PricingComparisonTable = () => {
                   variant={plan.isPopular ? 'secondary' : 'primaryOutline'}
                   className={'mb-2 w-full'}
                 >
-                  Install Now
+                  Start Now
                 </Button>
               </a>
             ) : (

@@ -31,7 +31,7 @@ const Header: FC<TProps> = (props) => {
             <Socials />
             <a href="#cta">
               <Button size="lg" className="hidden lg:block">
-                Start free trial
+                Free Access
               </Button>
             </a>
             <MobileHeaderNav />

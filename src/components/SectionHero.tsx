@@ -6,32 +6,25 @@ import SecondDecoration from './SecondDecortion';
 
 type TProps = {
   title: string;
+  description: string;
+  image: string;
 };
 
 const SectionHero = (props: TProps) => {
-  const { title } = props;
+  const { title, description, image } = props;
 
   return (
     <section
-      id="features"
-      className="pt-30 pb-20 md:pt-40 md:pb-40 bg-primary/5"
+      id={title}
+      className="relative pt-30 pb-20 md:pt-40 md:pb-40 bg-primary/5 bg-cover bg-center bg-no-repeat"
+      style={{ backgroundImage: `url(${image})` }}
     >
-      <div className="container flex flex-col items-center gap-2 relative">
+      <div className="absolute inset-0 bg-white/80" />
+      <div className="container relative z-10 flex flex-col items-center gap-2">
         <p className="text-[56px] font-medium">{capitalize(title)}</p>
 
         <div className="flex items-center justify-center gap-1">
-          <Link href="/" className="hover:text-primary transition-colors">
-            Home
-          </Link>
-          <PiCaretRight size={14} />
-          <span className="text-primary">{capitalize(title)}</span>
-        </div>
-
-        <div className="absolute -top-10 left-10 hidden lg:block">
-          <FirstDecoration />
-        </div>
-        <div className="absolute top-2 right-10 hidden lg:block">
-          <SecondDecoration />
+          {description}
         </div>
       </div>
     </section>

@@ -28,7 +28,7 @@ const HeroSection: FC = () => {
       id="hero"
     >
       <div className="container flex flex-col h-full items-center justify-center">
-        <TitleBadge title="Create, Deploy & Launch" />
+        <TitleBadge title="Deploy your vibe coded app in your secure private cloud" />
         <div className="flex flex-col w-full items-center justify-center relative z-40">
           <HeroContent />
           {renderDecorativeLabels()}
@@ -36,12 +36,7 @@ const HeroSection: FC = () => {
         <div className="relative w-full max-w-[640px] mb-12">
           <div className="flex items-center justify-center gap-4 mb-8">
             <a href="#cta">
-              <Button size="lg">Get started</Button>
-            </a>
-            <a href="#footer">
-              <Button size="lg" variant="primaryOutline">
-                Contact us
-              </Button>
+              <Button size="lg">Get Started</Button>
             </a>
           </div>
 
