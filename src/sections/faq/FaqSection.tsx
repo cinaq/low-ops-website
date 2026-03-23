@@ -10,7 +10,7 @@ import React from 'react';
 import { PiMinusBold, PiPlusBold } from 'react-icons/pi';
 
 const FaqSection: React.FC = () => {
-  const renderFaqItems = (data: any) => {
+  const renderFaqItems = (data: typeof faqDataStrategic | typeof faqDataTechnical) => {
     return data.map((item) => (
       <AccordionItem
         key={item.title}
