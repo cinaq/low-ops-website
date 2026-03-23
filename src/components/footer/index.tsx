@@ -111,7 +111,7 @@ const Footer: FC<TProps> = (props) => {
       <div className="py-8 border-t border-primary/25">
         <div className="container flex flex-col lg:flex-row items-center justify-between gap-4">
           <span className="font-sans">
-            Copyright ©2026 LowOps All Rights Reserved.
+            Copyright ©2026 LowOps All Rights Reserved. A product of <a href="https://cinaq.com" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">CINAQ</a>
           </span>
           <nav className="flex flex-wrap items-center justify-center gap-x-6 gap-y-1 font-sans">
             <Link
