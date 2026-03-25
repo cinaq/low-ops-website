@@ -1,9 +1,9 @@
 import type { Metadata } from 'next';
 
 export const nextMetadata: Metadata = {
-  title: 'Internal Developer Platform for Private Clouds | Low-Ops',
+  title: 'App incubation platform for Private Clouds | Low-Ops',
   description:
-    'Deploy and manage your applications on a secure, scalable private cloud infrastructure. Perfect for medium to large organizations.',
+    'Deploy and manage your (vibe coded) applications on a secure, scalable private cloud infrastructure. Perfect for medium to large organizations.',
   keywords: [
     'mendix',
     'private',
@@ -55,7 +55,7 @@ export const nextMetadata: Metadata = {
     canonical: `https://low-ops.com`,
   },
   openGraph: {
-    title: 'Low-Ops: IDP for Private Cloud Infrastructure',
+    title: 'Low-Ops: App incubation platform for Private Clouds',
     description:
       'Manage applications development, deployment, scaling, and security with Low-Ops IDP for private clouds. Deliver applications with top-notch developer experience while adhering to industry best practices.',
     url: 'https://low-ops.com',
@@ -66,7 +66,7 @@ export const nextMetadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Low-Ops: Private Cloud Infrastructure',
+    title: 'Low-Ops: App incubation platform for Private Clouds',
     description:
       'Manage applications development, deployment, scaling, and security with Low-Ops IDP for private clouds.',
     images: ['https://low-ops.com/preview.png'],
@@ -86,7 +86,7 @@ export const structuredData = {
     description: 'Free trial available',
   },
   description:
-    'Low-Ops is an Internal Developer Platform (IDP) for private clouds, managing applications development, deployment, scaling, and security. Set up your private cloud in 10 minutes.',
+    'Low-Ops is an app incubation platform for private clouds, managing applications development, deployment, scaling, and security. Set up your private cloud in 10 minutes.',
   featureList:
     'Application management, Private cloud infrastructure, Automated deployment, Scaling, Security, Mendix',
   screenshot: 'https://low-ops.com/_next/static/media/logs.6d4a4cbd.png',

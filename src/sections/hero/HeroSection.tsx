@@ -9,6 +9,7 @@ import { DECORATIVE_LABELS } from '@/data/footer';
 import Image from 'next/image';
 import { FC } from 'react';
 import HeroContent from './HeroContent';
+import { hero } from '@/data/hero';
 
 const HeroSection: FC = () => {
   const renderDecorativeLabels = () => {
@@ -28,7 +29,7 @@ const HeroSection: FC = () => {
       id="hero"
     >
       <div className="container flex flex-col h-full items-center justify-center">
-        <TitleBadge title="Deploy your vibe coded app in your secure private cloud" />
+        <TitleBadge title={hero.subtitle} />
         <div className="flex flex-col w-full items-center justify-center relative z-40">
           <HeroContent />
           {renderDecorativeLabels()}
@@ -40,11 +41,6 @@ const HeroSection: FC = () => {
             </a>
           </div>
 
-          <div className="justify-center items-center gap-2 font-light hidden md:flex">
-            <span>Excellent</span>
-            <Stars />
-            <span>Based on 10+ reviews.</span>
-          </div>
         </div>
         <div className="relative h-[600px] w-full max-w-[1200px] overflow-hidden">
           <Image

@@ -24,9 +24,9 @@ const SOLUTIONS: SolutionTabItem[] = [
     label: 'Visionary Leaders',
     icon: PiTarget({ size: 24, className: 'text-primary' }),
     imagePath: adminAppsTableImage,
-    title: 'Ship faster with confidence. We handle the operations.',
+    title: 'Foster innovation without compromising security and compliance.',
     description:
-      'Spend time on product and strategy. Low-Ops manages deployment, scaling, monitoring and recovery so your team can focus on what matters.',
+      'Everyone in your organization has ideas to improve the business. These ideas are now a few AI prompts away. Once the app is built, it has to be deployed for others to use. Today this app would land either in public cloud where the security and compliance is not guaranteed or on-premises where the cost and complexity is high. Low-Ops gives you the best of both worlds.',
     items: [
       'Sovereignty & standard architecture',
       'Security Compliance & Zero trust',
@@ -38,19 +38,19 @@ const SOLUTIONS: SolutionTabItem[] = [
     label: 'App Developers',
     icon: PiCode({ size: 24, className: 'text-primary' }),
     imagePath: deployDrawerImage,
-    title: 'Focus on building application we will take of the rest.',
+    title: 'Focus on the solution without distractions',
     description:
-      'Low-Ops take care of all aspect of application development. Whether it is application logs, monitoring, database, storage or infrastructure like crash recovery, ci/ci, replicas, deploy.',
+      'The complexity of apps are supposed to be the business logic. Understanding the core problem and solve it with code should be the focus. You should not be bothered with infrastructure details or wait for simple change requestst to be approved and processed. Low-ops addresses these with standard app Lifecycle Management workflows and self-service that implements best practices.',
     items: ['Self-service LCM', 'Ease of use', 'Any app frameworks'],
   },
   {
     id: 'platform-engineers',
-    label: 'Platform Engineers',
+    label: 'Platform Engineers, SRE and DevOps engineers',
     icon: PiHardDrives({ size: 24, className: 'text-primary' }),
     imagePath: envOverviewImage,
-    title: 'Infrastructure as code. One platform for all environments.',
+    title: 'Free up your time to focus on the big picture',
     description:
-      'Define once, deploy anywhere. Low-Ops unifies dev, staging and production with consistent tooling and automation.',
+      'The number of apps is growing fast. However your platform is often designed for teams of 5-6 engineers. This means you are spending too much time on infrastructure and operations instead of focusing on the core business logic. Low-ops provides an all-in-one app platform as a service to non-developers to build and ship apps within the boundaries of your networks.',
     items: [
       'Low Maintenance',
       'Standard apps work out of box',
