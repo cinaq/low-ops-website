@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 
 export const nextMetadata: Metadata = {
-  title: 'App incubation platform for Private Clouds | Low-Ops',
+  title: 'Low-Ops: Secure incubation platform for App creators',
   description:
     'Deploy and manage your (vibe coded) applications on a secure, scalable private cloud infrastructure. Perfect for medium to large organizations.',
   keywords: [

@@ -40,7 +40,7 @@ const PricingComparisonTable = () => {
           <div
             key={index}
             className={cn(
-              'flex flex-col items-center justify-between gap-3 h-full p-8 prose md:prose-md',
+              'text-center flex flex-col items-center justify-between gap-3 h-full p-8 prose md:prose-md',
               plan.isPopular ? 'bg-primary text-white' : 'undefined',
               index === 0 ? 'bg-primary/5' : undefined
             )}
@@ -67,7 +67,7 @@ const PricingComparisonTable = () => {
                 plan.isPopular ? 'text-white' : undefined
               )}
             >
-              Billed annually
+              {plan.description}
             </p>
 
             {plan.link ? (
