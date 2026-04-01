@@ -71,8 +71,8 @@ const Footer: FC<TProps> = (props) => {
           <div className="flex flex-col gap-4 lg:gap-6 prose md:prose-md">
             <AppLogo size="small" />
             <p className="text-md lg:text-xl font-sans max-w-md font-light">
-              Low-Ops is an Internal Developer Platform (IDP) designed to
-              streamline the deployment and management of applications for
+              Low-Ops is an all-in-one Application Platform designed to
+              streamline the deployment and management of apps for
               private clouds and on-premises environments.
             </p>
             <div className="flex gap-3">{renderSocials()}</div>

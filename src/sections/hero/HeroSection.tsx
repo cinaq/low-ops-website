@@ -1,8 +1,7 @@
 'use client';
 
-import logsImage from '@/assets/logs.png';
+import storyImage from '@/assets/story.jpg';
 import DecorativeLabel from '@/components/DecorativeLabel';
-import Stars from '@/components/Stars';
 import TitleBadge from '@/components/TitleBadge';
 import { Button } from '@/components/ui/button';
 import { DECORATIVE_LABELS } from '@/data/footer';
@@ -25,14 +24,14 @@ const HeroSection: FC = () => {
 
   return (
     <section
-      className="w-full pt-[120px] md:pt-[180px] pb-[60px] min-h-[calc(100vh-150px)] relative overflow-hidden bg-cover bg-center bg-no-repeat bg-[url('/hero-bg.png')]"
+      className="w-full pt-[120px] md:pt-[180px] pb-[60px] min-h-[calc(100vh-150px)] relative overflow-hidden bg-cover bg-center bg-no-repeat"
       id="hero"
     >
       <div className="container flex flex-col h-full items-center justify-center">
         <TitleBadge title={hero.subtitle} />
         <div className="flex flex-col w-full items-center justify-center relative z-40">
           <HeroContent />
-          {renderDecorativeLabels()}
+          {/* {renderDecorativeLabels()} */}
         </div>
         <div className="relative w-full max-w-[640px] mb-12">
           <div className="flex items-center justify-center gap-4 mb-8">
@@ -42,13 +41,12 @@ const HeroSection: FC = () => {
           </div>
 
         </div>
-        <div className="relative h-[600px] w-full max-w-[1200px] overflow-hidden">
+        <div className="relative h-[400px] w-full max-w-[1200px]">
           <Image
-            src={logsImage}
+            src={storyImage}
             alt="Low-Ops Platform"
-            fill
             className="object-cover object-top"
-            sizes="100vw"
+            sizes="200vw"
           />
         </div>
       </div>
