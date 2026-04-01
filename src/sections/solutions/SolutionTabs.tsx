@@ -35,7 +35,7 @@ const SOLUTIONS: SolutionTabItem[] = [
   },
   {
     id: 'app-developers',
-    label: 'App Developers',
+    label: 'App Creators',
     icon: PiCode({ size: 24, className: 'text-primary' }),
     imagePath: deployDrawerImage,
     title: 'Focus on the solution without distractions',
