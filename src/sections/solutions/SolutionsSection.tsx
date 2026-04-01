@@ -9,7 +9,7 @@ const SolutionsSection: FC = () => {
         <SectionTitle
           subtitle="You have created a fantastic app"
           title="IT says: we don't have time to deploy and manage it."
-          description="Most organizations are not ready to handle high influx of small apps. As a result there is a high risk insecure apps end up in public clouds. Waiting to be hacked."
+          description="Most organizations are not ready to handle high influx of small innovative apps. As a result there is a high risk insecure apps end up in public clouds. Waiting to be hacked."
           className="mb-10 md:mb-12"
         />
         <SolutionTabs />
