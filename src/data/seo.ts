@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 
 export const nextMetadata: Metadata = {
-  title: 'Low-Ops: Secure incubation platform for App creators',
+  title: 'Low-Ops: App platform for everyone',
   description:
     'Deploy and manage your (vibe coded) applications on a secure, scalable private cloud infrastructure. Perfect for medium to large organizations.',
   keywords: [
@@ -55,9 +55,9 @@ export const nextMetadata: Metadata = {
     canonical: `https://low-ops.com`,
   },
   openGraph: {
-    title: 'Low-Ops: App incubation platform for Private Clouds',
+    title: 'Low-Ops: App platform for everyone',
     description:
-      'Manage applications development, deployment, scaling, and security with Low-Ops IDP for private clouds. Deliver applications with top-notch developer experience while adhering to industry best practices.',
+      'Manage applications development, deployment, scaling, and security with Low-Ops for private clouds. Deliver applications with top-notch developer experience while adhering to industry best practices.',
     url: 'https://low-ops.com',
     siteName: 'Low-Ops',
     type: 'website',
@@ -66,9 +66,9 @@ export const nextMetadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Low-Ops: App incubation platform for Private Clouds',
+    title: 'Low-Ops: App platform for everyone',
     description:
-      'Manage applications development, deployment, scaling, and security with Low-Ops IDP for private clouds.',
+      'Manage applications development, deployment, scaling, and security with Low-Ops for private clouds.',
     images: ['https://low-ops.com/preview.png'],
   },
 };
@@ -86,7 +86,7 @@ export const structuredData = {
     description: 'Free trial available',
   },
   description:
-    'Low-Ops is an app incubation platform for private clouds, managing applications development, deployment, scaling, and security. Set up your private cloud in 10 minutes.',
+    'Low-Ops is an all-in-one app platform for everyone, managing apps development, deployment, scaling, and security. Set up your private cloud in 10 minutes.',
   featureList:
     'Application management, Private cloud infrastructure, Automated deployment, Scaling, Security, Mendix',
   screenshot: 'https://low-ops.com/_next/static/media/logs.6d4a4cbd.png',
