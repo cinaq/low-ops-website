@@ -45,7 +45,7 @@ const SOLUTIONS: SolutionTabItem[] = [
   },
   {
     id: 'platform-engineers',
-    label: 'Platform Engineers, SRE and DevOps engineers',
+    label: 'Platform, SRE and DevOps engineers',
     icon: PiHardDrives({ size: 24, className: 'text-primary' }),
     imagePath: envOverviewImage,
     title: 'Free up your time to focus on the big picture',
