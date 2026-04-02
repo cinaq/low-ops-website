@@ -33,14 +33,6 @@ const HeroSection: FC = () => {
           <HeroContent />
           {/* {renderDecorativeLabels()} */}
         </div>
-        <div className="relative w-full max-w-[640px] mb-12">
-          <div className="flex items-center justify-center gap-4 mb-8">
-            <a href="#cta">
-              <Button size="lg">Get Started</Button>
-            </a>
-          </div>
-
-        </div>
         <div className="relative h-[400px] w-full max-w-[1200px]">
           <Image
             src={storyImage}
@@ -48,6 +40,14 @@ const HeroSection: FC = () => {
             className="object-cover object-top"
             sizes="200vw"
           />
+        </div>
+        <div className="relative w-full max-w-[640px] mb-12">
+          <div className="flex items-center justify-center gap-4 mb-8">
+            <a href="#cta">
+              <Button size="lg">Get Started</Button>
+            </a>
+          </div>
+
         </div>
       </div>
     </section>
