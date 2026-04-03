@@ -13,6 +13,8 @@ const PROMPTS = [
 const PromptSection: FC = () => {
   const [promptText, setPromptText] = useState('');
   const reduceMotion = useReducedMotion();
+  const MotionDiv = motion.div as any;
+  const MotionSpan = motion.span as any;
 
   useEffect(() => {
     let isCancelled = false;
@@ -64,7 +66,7 @@ const PromptSection: FC = () => {
     <section className="relative flex w-full min-h-[calc(100vh-176px)] items-center overflow-hidden bg-[#0A0D14] py-10 md:py-12">
       <div className="pointer-events-none absolute inset-0">
         <div className="absolute inset-0 bg-gradient-to-b from-[#0A0D14] via-[#0B101B] to-[#090C12]" />
-        <motion.div
+        <MotionDiv
           aria-hidden="true"
           className="absolute -top-16 left-[8%] h-64 w-64 rounded-full bg-[#4C80FF]/20 blur-3xl"
           animate={
@@ -78,7 +80,7 @@ const PromptSection: FC = () => {
           }
           transition={{ duration: 8.5, repeat: Infinity, ease: 'easeInOut' }}
         />
-        <motion.div
+        <MotionDiv
           aria-hidden="true"
           className="absolute right-[9%] top-10 h-56 w-56 rounded-full bg-[#15D89D]/15 blur-3xl"
           animate={
@@ -97,7 +99,7 @@ const PromptSection: FC = () => {
       </div>
 
       <div className="container relative z-10 w-full">
-        <motion.div
+        <MotionDiv
           className="mx-auto mb-4 w-full max-w-4xl px-8 py-4 text-center md:mb-5 md:px-12 md:py-6"
           initial={{ opacity: 0, y: reduceMotion ? 0 : 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -107,8 +109,8 @@ const PromptSection: FC = () => {
             <span className="font-semibold text-white">Secure</span> private platform for{' '}
             <span className="font-semibold text-[#4C80FF]">app creators</span>
           </p>
-        </motion.div>
-        <motion.div
+        </MotionDiv>
+        <MotionDiv
           className="relative mx-auto w-full max-w-4xl overflow-hidden rounded-2xl border border-[#303749] bg-[#0E1422]/95 shadow-[0_24px_60px_-24px_rgba(0,0,0,0.8)] backdrop-blur md:rounded-3xl"
           initial={{ opacity: 0, y: reduceMotion ? 0 : 26, scale: reduceMotion ? 1 : 0.98 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
@@ -140,7 +142,7 @@ const PromptSection: FC = () => {
                 <span className="text-[#7AF7C4]">$</span>
                 <span className="text-[#A2B4DA]"></span>
                 <span className="text-[#DDE6FF]">{promptText}</span>
-                <motion.span
+                <MotionSpan
                   aria-hidden="true"
                   className="inline-block h-4 w-2 animate-pulse rounded-[2px] bg-[#8EB1FF]"
                   animate={reduceMotion ? undefined : { opacity: [1, 0.25, 1] }}
@@ -160,7 +162,7 @@ const PromptSection: FC = () => {
               </a>
             </div>
           </div>
-        </motion.div>
+        </MotionDiv>
       </div>
     </section>
   );

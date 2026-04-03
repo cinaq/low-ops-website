@@ -62,6 +62,8 @@ const SOLUTIONS: SolutionTabItem[] = [
 
 const SolutionTabs = () => {
   const reduceMotion = useReducedMotion();
+  const MotionDiv = motion.div as any;
+  const MotionLi = motion.li as any;
 
   const renderSolutionsTabs = () => {
     return SOLUTIONS.map((tab) => (
@@ -81,13 +83,13 @@ const SolutionTabs = () => {
   const renderSolutionsContent = () => {
     return SOLUTIONS.map((tab) => (
       <TabsContent key={tab.id} value={tab.id} className="mt-8">
-        <motion.div
+        <MotionDiv
           className="grid gap-8 lg:grid-cols-[1fr_1.2fr] lg:gap-10 px-0 py-0 xl:px-14 xl:py-8"
           initial={{ opacity: 0, y: reduceMotion ? 0 : 14 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.35, ease: 'easeOut' }}
         >
-          <motion.div
+          <MotionDiv
             className="flex flex-col gap-6 py-2 lg:py-4 prose md:prose-md"
             initial={{ opacity: 0, x: reduceMotion ? 0 : -10 }}
             animate={{ opacity: 1, x: 0 }}
@@ -99,7 +101,7 @@ const SolutionTabs = () => {
             </p>
             <ul className="grid gap-1 lg:grid-cols-2 p-0 m-0">
               {tab.items.map((item, index) => (
-                <motion.li
+                <MotionLi
                   key={item}
                   className="flex items-center gap-2"
                   initial={{ opacity: 0, y: reduceMotion ? 0 : 8 }}
@@ -110,11 +112,11 @@ const SolutionTabs = () => {
                   <span className="font-sans font-medium text-neutral-500">
                     {item}
                   </span>
-                </motion.li>
+                </MotionLi>
               ))}
             </ul>
-          </motion.div>
-          <motion.div
+          </MotionDiv>
+          <MotionDiv
             className="relative max-w-full max-h-[350px] border border-gray-200 rounded-xl overflow-hidden"
             initial={{ opacity: 0, x: reduceMotion ? 0 : 12, scale: reduceMotion ? 1 : 0.99 }}
             animate={{ opacity: 1, x: 0, scale: 1 }}
@@ -127,8 +129,8 @@ const SolutionTabs = () => {
               quality={100}
               className="object-cover object-center transition-transform duration-500 hover:scale-[1.02]"
             />
-          </motion.div>
-        </motion.div>
+          </MotionDiv>
+        </MotionDiv>
       </TabsContent>
     ));
   };

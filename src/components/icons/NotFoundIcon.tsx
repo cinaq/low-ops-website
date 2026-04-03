@@ -26,21 +26,21 @@ const NotFoundIcon = ({ className }: { className?: string }) => {
         d="M479.508 363.431L515.771 397.181L552.034 363.431"
         stroke="#FFAB00"
         strokeWidth="0.291"
-        stroke-miterlimit="10"
+        strokeMiterlimit="10"
         stroke-linecap="round"
       />
       <path
         d="M526.102 387.418L552.044 411.684"
         stroke="#FFAB00"
         strokeWidth="0.291"
-        stroke-miterlimit="10"
+        strokeMiterlimit="10"
         stroke-linecap="round"
       />
       <path
         d="M479.508 411.684L505.45 387.418"
         stroke="#FFAB00"
         strokeWidth="0.291"
-        stroke-miterlimit="10"
+        strokeMiterlimit="10"
         stroke-linecap="round"
       />
       <path
@@ -51,14 +51,14 @@ const NotFoundIcon = ({ className }: { className?: string }) => {
         d="M547.848 360.084L556.216 368.452"
         stroke="#FFAB00"
         strokeWidth="0.291"
-        stroke-miterlimit="10"
+        strokeMiterlimit="10"
         stroke-linecap="round"
       />
       <path
         d="M556.216 360.084L547.848 368.452"
         stroke="#FFAB00"
         strokeWidth="0.291"
-        stroke-miterlimit="10"
+        strokeMiterlimit="10"
         stroke-linecap="round"
       />
       <path
@@ -257,7 +257,7 @@ const NotFoundIcon = ({ className }: { className?: string }) => {
         d="M220.652 271.667L253.568 304.859"
         stroke="#EF6820"
         strokeWidth="0.291"
-        stroke-miterlimit="10"
+        strokeMiterlimit="10"
         stroke-linecap="round"
       />
       <path
@@ -328,21 +328,21 @@ const NotFoundIcon = ({ className }: { className?: string }) => {
         d="M403.925 40.7222L401.414 78.9341"
         stroke="black"
         strokeWidth="0.291"
-        stroke-miterlimit="10"
+        strokeMiterlimit="10"
         stroke-linecap="round"
       />
       <path
         d="M427.351 47.6951L425.398 75.0291"
         stroke="black"
         strokeWidth="0.291"
-        stroke-miterlimit="10"
+        strokeMiterlimit="10"
         stroke-linecap="round"
       />
       <path
         d="M442.691 58.294L442.133 66.3826"
         stroke="black"
         strokeWidth="0.291"
-        stroke-miterlimit="10"
+        strokeMiterlimit="10"
         stroke-linecap="round"
       />
       <path
@@ -377,49 +377,49 @@ const NotFoundIcon = ({ className }: { className?: string }) => {
         d="M369.891 75.8659L375.748 104.316L384.117 104.037L393.88 133.881"
         stroke="black"
         strokeWidth="0.291"
-        stroke-miterlimit="10"
+        strokeMiterlimit="10"
         stroke-linecap="round"
       />
       <path
         d="M362.641 76.9816L346.741 91.4853L351.204 94.5535L338.094 104.595"
         stroke="black"
         strokeWidth="0.291"
-        stroke-miterlimit="10"
+        strokeMiterlimit="10"
         stroke-linecap="round"
       />
       <path
         d="M383.555 75.587L395.27 91.7643L400.013 90.3697L409.497 101.805"
         stroke="black"
         strokeWidth="0.291"
-        stroke-miterlimit="10"
+        strokeMiterlimit="10"
         stroke-linecap="round"
       />
       <path
         d="M383.555 45.4637L399.455 21.1978"
         stroke="black"
         strokeWidth="0.291"
-        stroke-miterlimit="10"
+        strokeMiterlimit="10"
         stroke-linecap="round"
       />
       <path
         d="M362.082 46.8583L346.461 24.8237"
         stroke="black"
         strokeWidth="0.291"
-        stroke-miterlimit="10"
+        strokeMiterlimit="10"
         stroke-linecap="round"
       />
       <path
         d="M374.074 46.8582V33.1912"
         stroke="black"
         strokeWidth="0.291"
-        stroke-miterlimit="10"
+        strokeMiterlimit="10"
         stroke-linecap="round"
       />
       <path
         d="M350.081 345.023C346.176 338.329 363.192 321.594 388.018 307.09C412.845 292.865 435.997 286.45 439.902 293.144"
         stroke="black"
         strokeWidth="0.291"
-        stroke-miterlimit="10"
+        strokeMiterlimit="10"
         stroke-linecap="round"
       />
       <path
@@ -430,42 +430,42 @@ const NotFoundIcon = ({ className }: { className?: string }) => {
         d="M378.257 283.939C378.257 283.939 388.02 305.974 357.336 328.009"
         stroke="white"
         strokeWidth="0.291"
-        stroke-miterlimit="10"
+        strokeMiterlimit="10"
         stroke-linecap="round"
       />
       <path
         d="M392.198 280.314C392.198 280.314 396.382 298.722 390.803 308.206C385.224 317.689 370.44 332.193 365.977 345.023"
         stroke="white"
         strokeWidth="0.291"
-        stroke-miterlimit="10"
+        strokeMiterlimit="10"
         stroke-linecap="round"
       />
       <path
         d="M403.082 280.871C403.082 280.871 400.013 307.647 432.371 308.484"
         stroke="white"
         strokeWidth="0.291"
-        stroke-miterlimit="10"
+        strokeMiterlimit="10"
         stroke-linecap="round"
       />
       <path
         d="M393.602 358.132C393.602 358.132 402.249 334.424 427.633 340.281"
         stroke="white"
         strokeWidth="0.291"
-        stroke-miterlimit="10"
+        strokeMiterlimit="10"
         stroke-linecap="round"
       />
       <path
         d="M374.344 352.275C374.344 352.275 387.733 307.927 432.365 322.43"
         stroke="white"
         strokeWidth="0.291"
-        stroke-miterlimit="10"
+        strokeMiterlimit="10"
         stroke-linecap="round"
       />
       <path
         d="M439.899 293.144C443.804 299.838 426.789 316.573 401.962 331.077C377.136 345.302 353.983 351.717 350.078 345.023"
         stroke="black"
         strokeWidth="0.291"
-        stroke-miterlimit="10"
+        strokeMiterlimit="10"
         stroke-linecap="round"
       />
     </svg>
