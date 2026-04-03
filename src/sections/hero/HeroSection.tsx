@@ -1,26 +1,16 @@
 'use client';
 
 import storyImage from '@/assets/story.jpg';
-import DecorativeLabel from '@/components/DecorativeLabel';
 import TitleBadge from '@/components/TitleBadge';
 import { Button } from '@/components/ui/button';
-import { DECORATIVE_LABELS } from '@/data/footer';
+import { motion, useReducedMotion } from 'framer-motion';
 import Image from 'next/image';
 import { FC } from 'react';
 import HeroContent from './HeroContent';
 import { hero } from '@/data/hero';
 
 const HeroSection: FC = () => {
-  const renderDecorativeLabels = () => {
-    return DECORATIVE_LABELS.map((label) => (
-      <DecorativeLabel
-        key={label.text}
-        text={label.text}
-        classes={label.classes}
-        planePosition={label.planePosition}
-      />
-    ));
-  };
+  const reduceMotion = useReducedMotion();
 
   return (
     <section
@@ -28,27 +18,53 @@ const HeroSection: FC = () => {
       id="hero"
     >
       <div className="container flex flex-col h-full items-center justify-center">
-        <TitleBadge title={hero.subtitle} />
-        <div className="flex flex-col w-full items-center justify-center relative z-40">
+        <motion.div
+          initial={{ opacity: 0, y: reduceMotion ? 0 : 14 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.5 }}
+          transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
+        >
+          <TitleBadge title={hero.subtitle} />
+        </motion.div>
+        <motion.div
+          className="flex flex-col w-full items-center justify-center relative z-40"
+          initial={{ opacity: 0, y: reduceMotion ? 0 : 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.35 }}
+          transition={{ duration: 0.65, delay: 0.08, ease: [0.22, 1, 0.36, 1] }}
+        >
           <HeroContent />
-          {/* {renderDecorativeLabels()} */}
-        </div>
-        <div className="relative h-[400px] w-full max-w-[1200px]">
+        </motion.div>
+        <motion.div
+          className="relative h-[400px] w-full max-w-[1200px]"
+          initial={{ opacity: 0, y: reduceMotion ? 0 : 26, scale: reduceMotion ? 1 : 0.98 }}
+          whileInView={{ opacity: 1, y: 0, scale: 1 }}
+          viewport={{ once: true, amount: 0.25 }}
+          transition={{ duration: 0.7, delay: 0.12, ease: [0.22, 1, 0.36, 1] }}
+        >
           <Image
             src={storyImage}
             alt="Low-Ops Platform"
             className="object-cover object-top"
             sizes="200vw"
           />
-        </div>
-        <div className="relative w-full max-w-[640px] mb-12">
+        </motion.div>
+        <motion.div
+          className="relative w-full max-w-[640px] mb-12"
+          initial={{ opacity: 0, y: reduceMotion ? 0 : 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.4 }}
+          transition={{ duration: 0.55, delay: 0.18, ease: [0.22, 1, 0.36, 1] }}
+        >
           <div className="flex items-center justify-center gap-4 mb-8">
             <a href="#cta">
-              <Button size="lg">Get Started</Button>
+              <motion.div whileHover={reduceMotion ? undefined : { y: -2 }} whileTap={{ scale: 0.98 }}>
+                <Button size="lg">Get Started</Button>
+              </motion.div>
             </a>
           </div>
 
-        </div>
+        </motion.div>
       </div>
     </section>
   );

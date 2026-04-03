@@ -5,6 +5,7 @@ import deployDrawerImage from '@/assets/deploy-screenshot.png';
 import envOverviewImage from '@/assets/env-overview-screenshot.png';
 import { Card } from '@/components/ui/card';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { motion, useReducedMotion } from 'framer-motion';
 import Image, { StaticImageData } from 'next/image';
 import { PiCheckCircle, PiCode, PiHardDrives, PiTarget } from 'react-icons/pi';
 
@@ -60,6 +61,8 @@ const SOLUTIONS: SolutionTabItem[] = [
 ];
 
 const SolutionTabs = () => {
+  const reduceMotion = useReducedMotion();
+
   const renderSolutionsTabs = () => {
     return SOLUTIONS.map((tab) => (
       <TabsTrigger
@@ -78,32 +81,54 @@ const SolutionTabs = () => {
   const renderSolutionsContent = () => {
     return SOLUTIONS.map((tab) => (
       <TabsContent key={tab.id} value={tab.id} className="mt-8">
-        <div className="grid gap-8 lg:grid-cols-[1fr_1.2fr] lg:gap-10 px-0 py-0 xl:px-14 xl:py-8">
-          <div className="flex flex-col gap-6 py-2 lg:py-4 prose md:prose-md">
+        <motion.div
+          className="grid gap-8 lg:grid-cols-[1fr_1.2fr] lg:gap-10 px-0 py-0 xl:px-14 xl:py-8"
+          initial={{ opacity: 0, y: reduceMotion ? 0 : 14 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.35, ease: 'easeOut' }}
+        >
+          <motion.div
+            className="flex flex-col gap-6 py-2 lg:py-4 prose md:prose-md"
+            initial={{ opacity: 0, x: reduceMotion ? 0 : -10 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.4, delay: 0.06, ease: 'easeOut' }}
+          >
             <h3>{tab.title}</h3>
             <p className="font-sans text-base font-normal leading-relaxed text-neutral-500 m-0">
               {tab.description}
             </p>
             <ul className="grid gap-1 lg:grid-cols-2 p-0 m-0">
-              {tab.items.map((item) => (
-                <li key={item} className="flex items-center gap-2">
+              {tab.items.map((item, index) => (
+                <motion.li
+                  key={item}
+                  className="flex items-center gap-2"
+                  initial={{ opacity: 0, y: reduceMotion ? 0 : 8 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.24, delay: 0.12 + index * 0.05 }}
+                >
                   <PiCheckCircle size={22} className="text-primary shrink-0" />
                   <span className="font-sans font-medium text-neutral-500">
                     {item}
                   </span>
-                </li>
+                </motion.li>
               ))}
             </ul>
-          </div>
-          <div className="relative max-w-full max-h-[350px] border border-gray-200 rounded-xl overflow-hidden">
+          </motion.div>
+          <motion.div
+            className="relative max-w-full max-h-[350px] border border-gray-200 rounded-xl overflow-hidden"
+            initial={{ opacity: 0, x: reduceMotion ? 0 : 12, scale: reduceMotion ? 1 : 0.99 }}
+            animate={{ opacity: 1, x: 0, scale: 1 }}
+            transition={{ duration: 0.45, delay: 0.08, ease: 'easeOut' }}
+            whileHover={reduceMotion ? undefined : { y: -2 }}
+          >
             <Image
               src={tab.imagePath}
               alt={tab.title}
               quality={100}
-              className="object-cover object-center"
+              className="object-cover object-center transition-transform duration-500 hover:scale-[1.02]"
             />
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </TabsContent>
     ));
   };
