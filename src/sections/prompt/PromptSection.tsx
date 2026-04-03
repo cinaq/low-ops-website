@@ -1,8 +1,7 @@
  'use client';
 
-import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
-import { Sparkles } from 'lucide-react';
+import { Terminal } from 'lucide-react';
 import { FC, useEffect, useState } from 'react';
 
 const PROMPTS = [
@@ -60,49 +59,63 @@ const PromptSection: FC = () => {
   }, []);
 
   return (
-    <section className="relative flex w-full min-h-[calc(100vh-176px)] items-center overflow-hidden bg-[#F5FAFF] py-10 md:py-12">
+    <section className="relative flex w-full min-h-[calc(100vh-176px)] items-center overflow-hidden bg-[#0A0D14] py-10 md:py-12">
       <div className="pointer-events-none absolute inset-0">
-        <div className="absolute inset-0 bg-gradient-to-b from-[#EFF7FF] via-[#F5FAFF] to-[#FCFEFF]" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_25%,rgba(109,168,255,0.45),transparent_44%),radial-gradient(circle_at_80%_18%,rgba(82,128,255,0.4),transparent_46%),radial-gradient(circle_at_52%_100%,rgba(30,178,255,0.34),transparent_50%)]" />
-        <div className="absolute -top-28 left-[18%] h-[24rem] w-[24rem] rounded-full bg-[#72B7FF]/30 blur-[120px]" />
-        <div className="absolute -top-24 right-[16%] h-[22rem] w-[22rem] rounded-full bg-[#788BFF]/28 blur-[110px]" />
-        <div className="absolute -bottom-28 left-1/2 h-[24rem] w-[24rem] -translate-x-1/2 rounded-full bg-[#3EC9FF]/22 blur-[120px]" />
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(30,95,224,0.08)_1px,transparent_1px),linear-gradient(to_bottom,rgba(30,95,224,0.08)_1px,transparent_1px)] bg-[size:42px_42px] opacity-20" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_62%,rgba(9,31,82,0.04)_100%)]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0A0D14] via-[#0B101B] to-[#090C12]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_22%_20%,rgba(76,128,255,0.26),transparent_42%),radial-gradient(circle_at_80%_14%,rgba(21,216,157,0.18),transparent_40%),radial-gradient(circle_at_50%_100%,rgba(38,106,255,0.2),transparent_46%)]" />
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(166,177,204,0.08)_1px,transparent_1px),linear-gradient(to_bottom,rgba(166,177,204,0.08)_1px,transparent_1px)] bg-[size:36px_36px] opacity-30" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_56%,rgba(0,0,0,0.45)_100%)]" />
       </div>
 
       <div className="container relative z-10 w-full">
         <div className="mx-auto mb-4 w-full max-w-4xl px-8 py-4 text-center md:mb-5 md:px-12 md:py-6">
-          <p className="text-lg leading-relaxed text-neutral-600 md:text-3xl">
-            Low-Ops simplifies{' '}
-            <span className="font-semibold text-[#1E5FE0]">provisioning</span>,{' '}
-            <span className="font-semibold text-[#1E5FE0]">deployment</span>, and{' '}
-            <span className="font-semibold text-[#1E5FE0]">management</span> of apps
-            in your private cloud.
+          <p className="text-lg leading-relaxed text-[#D0D8E7] md:text-3xl">
+            Secure private platform for app creators
           </p>
         </div>
-        <div className="relative mx-auto w-full max-w-4xl overflow-hidden rounded-2xl border border-[#CFE0FF] bg-linear-to-r from-[#F7FAFF] via-white to-[#EEF5FF] p-4 shadow-[0_16px_50px_-24px_rgba(20,103,255,0.5)] md:rounded-3xl md:p-6">
-          <div className="pointer-events-none absolute -left-10 -top-12 h-40 w-40 rounded-full bg-[#5A9BFF]/15 blur-3xl" />
-          <div className="pointer-events-none absolute -bottom-14 -right-6 h-40 w-40 rounded-full bg-[#2D75FF]/20 blur-3xl" />
-
-          <div className="relative mb-3 flex items-center gap-2">
-            <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-[#2D75FF]/10 text-[#2D75FF]">
-              <Sparkles className="h-4 w-4" />
-            </span>
+        <div className="relative mx-auto w-full max-w-4xl overflow-hidden rounded-2xl border border-[#303749] bg-[#0E1422]/95 shadow-[0_24px_60px_-24px_rgba(0,0,0,0.8)] backdrop-blur md:rounded-3xl">
+          <div className="border-b border-[#2A3142] bg-[#131B2A] px-4 py-3 md:px-5">
+            <div className="flex items-center justify-between gap-3">
+              <div className="flex items-center gap-2">
+                <span className="h-2.5 w-2.5 rounded-full bg-[#FF5F56]" />
+                <span className="h-2.5 w-2.5 rounded-full bg-[#FFBD2E]" />
+                <span className="h-2.5 w-2.5 rounded-full bg-[#27C93F]" />
+              </div>
+              <span className="text-xs font-medium tracking-[0.16em] text-[#8E9ABB] uppercase">
+                
+              </span>
+            </div>
           </div>
 
-          <div className="relative flex flex-col gap-3 md:flex-row md:items-center">
-            <Input
-              value={promptText}
-              readOnly
-              aria-label="AI prompt"
-              className="h-12 rounded-xl border-[#CFE0FF] bg-white pr-4 text-base shadow-none focus-visible:ring-[#2D75FF]"
-            />
-            <a href="https://portal.app.low-ops.com" target="_blank" rel="noopener noreferrer">
-              <Button size="lg" className="h-12 rounded-xl px-6 md:shrink-0">
-                Go
-              </Button>
-            </a>
+          <div className="p-4 md:p-6">
+            <span className="mb-3 inline-flex items-center gap-2 rounded-full border border-[#2A3550] bg-[#10192B] px-3 py-1 text-xs font-medium text-[#B8C5E2]">
+              <Terminal className="h-3.5 w-3.5" />
+              AI Agent
+            </span>
+
+            <div className="rounded-xl border border-[#2A3550] bg-[#0A1120] p-4 font-mono md:p-5">
+              <div className="mb-2 text-xs text-[#6E7EA6]">~/workspace/low-ops</div>
+              <div className="flex min-h-8 flex-wrap items-center gap-2 text-sm md:text-base">
+                <span className="text-[#7AF7C4]">$</span>
+                <span className="text-[#A2B4DA]"></span>
+                <span className="text-[#DDE6FF]">{promptText}</span>
+                <span
+                  aria-hidden="true"
+                  className="inline-block h-4 w-2 animate-pulse rounded-[2px] bg-[#8EB1FF]"
+                />
+              </div>
+            </div>
+
+            <div className="mt-4 flex justify-end">
+              <a href="https://portal.app.low-ops.com" target="_blank" rel="noopener noreferrer">
+                <Button
+                  size="lg"
+                  className="h-11 rounded-lg border border-[#3A4B72] bg-[#1A2742] px-6 font-medium text-[#E2EAFF] hover:bg-[#24365E]"
+                >
+                  Start now
+                </Button>
+              </a>
+            </div>
           </div>
         </div>
       </div>
