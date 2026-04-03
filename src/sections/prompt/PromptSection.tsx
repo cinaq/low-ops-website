@@ -103,8 +103,9 @@ const PromptSection: FC = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
         >
-          <p className="text-lg leading-relaxed text-[#D0D8E7] md:text-3xl">
-            Secure private platform for app creators
+          <p className="text-2xl leading-relaxed text-[#D0D8E7] md:text-6xl">
+            <span className="font-semibold text-white">Secure</span> private platform for{' '}
+            <span className="font-semibold text-[#4C80FF]">app creators</span>
           </p>
         </motion.div>
         <motion.div
