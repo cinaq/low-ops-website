@@ -8,7 +8,10 @@ const ComparisonPage = () => {
   return (
     <>
       <Header />
-      <SectionHero title="Comparison" image="" description="We compare Low-Ops with other platforms to help you choose the perfect fit for your needs."/>
+      <SectionHero
+        title="Comparison"
+        description="We compare Low-Ops with other platforms to help you choose the perfect fit for your needs."
+      />
       <main>
         <ComparisonSection />
         <CTASection />
