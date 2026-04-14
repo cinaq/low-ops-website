@@ -1,5 +1,6 @@
 import { capitalize } from '@/lib/utils';
 import GradientBg from './GradientBg';
+import Reveal from './animations/Reveal';
 
 type TProps = {
   title: string;
@@ -16,13 +17,17 @@ const SectionHero = (props: TProps) => {
     >
       <GradientBg />
       <div className="container relative z-10 flex flex-col items-center gap-2">
-        <p className="text-[56px] font-medium text-white">
-          {capitalize(title)}
-        </p>
+        <Reveal>
+          <h2 className="text-[56px] font-medium text-white">
+            {capitalize(title)}
+          </h2>
+        </Reveal>
 
-        <div className="flex items-center justify-center gap-1 text-white/70 font-light max-w-2xl text-center">
-          {description}
-        </div>
+        <Reveal delay={0.1}>
+          <p className="flex items-center justify-center gap-1 text-white/70 font-light max-w-2xl text-center">
+            {description}
+          </p>
+        </Reveal>
       </div>
     </section>
   );
