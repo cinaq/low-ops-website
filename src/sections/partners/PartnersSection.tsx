@@ -1,6 +1,5 @@
-import SectionTitle from '@/components/SectionTitle';
 import { Card } from '@/components/ui/card';
-import { partnersData, partnersMetadata } from '@/data/partners';
+import { partnersData } from '@/data/partners';
 import Image from 'next/image';
 
 const PartnersSection = () => {

@@ -1,10 +1,10 @@
+import Reveal from '@/components/animations/Reveal';
 import Footer from '@/components/footer';
 import Header from '@/components/header';
-import Reveal from '@/components/animations/Reveal';
 import CTASection from '@/sections/cta/CTASection';
 import TopFeaturesSection from '@/sections/features/TopFeaturesSection';
 import HeroSection from '@/sections/hero/HeroSection';
-import PromptSection from '@/sections/prompt/PromptSection';
+import StepsSection from '@/sections/hero/StepsSection';
 import SolutionsSection from '@/sections/solutions/SolutionsSection';
 import TestimonialsSection from '@/sections/testimonials/TestimonialsSection';
 
@@ -14,10 +14,10 @@ const Home = () => {
       <Header />
       <main>
         <Reveal y={0}>
-          <PromptSection />
+          <HeroSection />
         </Reveal>
         <Reveal delay={0.05}>
-          <HeroSection />
+          <StepsSection />
         </Reveal>
         <Reveal delay={0.08}>
           <SolutionsSection />

@@ -5,7 +5,8 @@ import deployDrawerImage from '@/assets/deploy-screenshot.png';
 import envOverviewImage from '@/assets/env-overview-screenshot.png';
 import { Card } from '@/components/ui/card';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { motion, useReducedMotion } from 'framer-motion';
+import { MotionDiv, MotionLi } from '@/components/motion-primitives';
+import { useReducedMotion } from 'framer-motion';
 import Image, { StaticImageData } from 'next/image';
 import { PiCheckCircle, PiCode, PiHardDrives, PiTarget } from 'react-icons/pi';
 
@@ -62,8 +63,6 @@ const SOLUTIONS: SolutionTabItem[] = [
 
 const SolutionTabs = () => {
   const reduceMotion = useReducedMotion();
-  const MotionDiv = motion.div as any;
-  const MotionLi = motion.li as any;
 
   const renderSolutionsTabs = () => {
     return SOLUTIONS.map((tab) => (

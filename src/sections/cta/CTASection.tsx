@@ -4,6 +4,7 @@ import CircleRectangleIcon from '@/components/icons/CircleRectangleIcon';
 import SecondDecoration from '@/components/SecondDecortion';
 import SectionTitle from '@/components/SectionTitle';
 import { Button } from '@/components/ui/button';
+import data from '@/data';
 import { PiAddressBook, PiPaperPlaneTilt, PiUser } from 'react-icons/pi';
 
 const CTASection = () => {
@@ -17,19 +18,31 @@ const CTASection = () => {
         />
 
         <div className="flex items-center justify-center gap-4 flex-col lg:flex-row">
-          <a href="https://portal.app.low-ops.com" target="_blank" rel="noopener noreferrer">
+          <a
+            href={data.cta.freeAccessLink}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <Button>
               <PiPaperPlaneTilt size={22} />
               Access Free Tier Now
             </Button>
           </a>
-          <a href="https://hub.cinaq.com/low-ops-vip" target="_blank" rel="noopener noreferrer">
+          <a
+            href={data.cta.vipAccessLink}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <Button variant="primaryOutline">
               <PiAddressBook size={22} />
               No Google account? Request VIP Access
             </Button>
           </a>
-          <a href="https://hub.cinaq.com/low-ops-personal-demo" target="_blank" rel="noopener noreferrer">
+          <a
+            href={data.cta.personalDemoLink}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <Button variant="primaryOutline">
               <PiUser size={22} />
               Personal Demo

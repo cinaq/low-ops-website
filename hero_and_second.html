@@ -1,0 +1,356 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Low-Ops — hero + second section</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'system-ui', 'sans-serif'],
+              mono: ['IBM Plex Mono', 'monospace'],
+            },
+            keyframes: {
+              'hero-pulse': {
+                '0%, 100%': { opacity: '1' },
+                '50%': { opacity: '0.3' },
+              },
+              'hero-blink': {
+                '0%, 100%': { opacity: '1' },
+                '50%': { opacity: '0' },
+              },
+            },
+            animation: {
+              'hero-pulse': 'hero-pulse 1.5s ease-in-out infinite',
+              'hero-blink': 'hero-blink 1s step-end infinite',
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="m-0 box-border font-sans antialiased">
+    <h2 class="sr-only">Low-Ops redesigned hero and second section</h2>
+
+    <!-- ══ HERO ══ -->
+    <div
+      class="relative overflow-hidden bg-[#05101f] px-6 text-white box-border"
+    >
+      <div
+        class="pointer-events-none absolute inset-0 bg-size-[56px_56px] bg-[linear-gradient(rgba(30,100,255,0.06)_1px,transparent_1px),linear-gradient(90deg,rgba(30,100,255,0.06)_1px,transparent_1px)]"
+      ></div>
+      <div
+        class="pointer-events-none absolute -left-[150px] -top-[200px] h-[700px] w-[700px] rounded-full bg-[radial-gradient(circle,rgba(29,78,216,0.32)_0%,transparent_65%)]"
+      ></div>
+      <div
+        class="pointer-events-none absolute -right-[100px] -top-[60px] h-[500px] w-[500px] rounded-full bg-[radial-gradient(circle,rgba(6,182,212,0.16)_0%,transparent_65%)]"
+      ></div>
+      <div
+        class="pointer-events-none absolute bottom-20 left-1/2 h-[300px] w-[600px] -translate-x-1/2 rounded-full bg-[radial-gradient(ellipse,rgba(99,102,241,0.12)_0%,transparent_70%)]"
+      ></div>
+
+      <div
+        class="relative z-2 mx-auto box-border flex max-w-[1100px] flex-col items-center pb-[90px] pt-[110px] text-center"
+      >
+        <div
+          class="mb-9 inline-flex items-center gap-2 rounded-full border border-[rgba(99,102,241,0.45)] bg-[rgba(99,102,241,0.1)] px-4 py-1.5 text-xs font-medium tracking-wide text-indigo-300"
+        >
+          <span
+            class="h-1.5 w-1.5 shrink-0 rounded-full bg-indigo-400 shadow-[0_0_8px_#818cf8]"
+          ></span>
+          Now with MCP &amp; Claude Plugin — AI-native ops
+        </div>
+
+        <h1
+          class="mb-7 max-w-[860px] text-[clamp(52px,7.5vw,96px)] font-extrabold leading-[1.04] tracking-[-3px]"
+        >
+          <span class="text-slate-100">Secure private</span><br />
+          <span class="text-slate-100">platform for </span
+          ><span class="text-blue-500">app</span>
+          <span class="text-cyan-400">creators</span>
+        </h1>
+
+        <p
+          class="mb-11 max-w-[520px] text-lg font-normal leading-[1.7] text-slate-500"
+        >
+          Deploy and manage your apps in your own private cloud. Built for teams
+          who move fast and ship often.
+        </p>
+
+        <div class="mb-[72px] flex items-center gap-[14px]">
+          <button
+            type="button"
+            class="cursor-pointer rounded-[9px] border-0 bg-blue-600 px-9 py-[15px] text-base font-bold tracking-[-0.2px] text-white shadow-[0_0_32px_rgba(37,99,235,0.45)] transition-all duration-150 hover:bg-blue-500 hover:shadow-[0_0_48px_rgba(59,130,246,0.6)]"
+          >
+            Free Access →
+          </button>
+          <button
+            type="button"
+            class="cursor-pointer rounded-[9px] border border-slate-400/25 bg-transparent px-7 py-[15px] text-[15px] font-medium text-slate-400 transition-all duration-150 hover:border-slate-400/50 hover:text-slate-200"
+          >
+            Personal Demo
+          </button>
+        </div>
+
+        <div
+          class="w-full max-w-[820px] overflow-hidden rounded-[14px] border border-[rgba(59,130,246,0.18)] bg-[#0d1829] shadow-[0_0_100px_rgba(37,99,235,0.2),0_40px_80px_rgba(0,0,0,0.6)]"
+        >
+          <div
+            class="flex items-center gap-[7px] border-b border-[rgba(59,130,246,0.12)] bg-[#0a1220] px-5 py-[13px]"
+          >
+            <div class="h-3 w-3 shrink-0 rounded-full bg-[#ff5f57]"></div>
+            <div class="h-3 w-3 shrink-0 rounded-full bg-[#febc2e]"></div>
+            <div class="h-3 w-3 shrink-0 rounded-full bg-[#28c840]"></div>
+            <span class="ml-3 flex-1 font-mono text-[11px] text-slate-700"
+              >~/workspace/low-ops</span
+            >
+            <span
+              class="inline-flex items-center gap-[5px] rounded border border-green-400/30 bg-[rgba(74,222,128,0.08)] px-2 py-0.5 font-mono text-[10px] text-green-400"
+              ><span
+                class="h-[5px] w-[5px] shrink-0 animate-hero-pulse rounded-full bg-green-400"
+              ></span
+              >MCP Active</span
+            >
+          </div>
+          <div
+            class="overflow-x-auto px-8 py-6 font-mono text-[13px] leading-[2.1]"
+          >
+            <div class="whitespace-nowrap">
+              <span class="text-cyan-400">$</span>
+              <span class="text-slate-200"
+                >low-ops deploy --app inventory-app --env production</span
+              >
+            </div>
+            <div class="whitespace-nowrap">
+              <span class="text-slate-700"
+                >&nbsp; ✦ Connecting to Low-Ops MCP...</span
+              >
+              <span class="text-green-400">connected</span>
+            </div>
+            <div class="whitespace-nowrap">
+              <span class="text-slate-700">&nbsp; ✦ Building image...</span>
+              <span class="text-blue-400">layer cache hit 94%</span>
+            </div>
+            <div class="whitespace-nowrap">
+              <span class="text-slate-700">&nbsp; ✦ Pre-flight checks...</span>
+              <span class="text-green-400">all clear</span>
+            </div>
+            <div class="whitespace-nowrap">
+              <span class="text-green-400">&nbsp; ✓ inventory-app</span
+              ><span class="text-slate-700"> live in </span
+              ><span class="text-blue-400">8.3s</span
+              ><span class="text-slate-700"> → </span
+              ><span class="text-cyan-400"
+                >https://inventory-app.low-ops.com</span
+              >
+            </div>
+            <div class="whitespace-nowrap">
+              <span class="text-violet-400">&nbsp; ◈ Claude:</span
+              ><span class="text-slate-700">
+                2 replicas healthy · zero downtime · auto-scaled</span
+              >
+            </div>
+            <div class="whitespace-nowrap">&nbsp;</div>
+            <div class="whitespace-nowrap">
+              <span class="text-cyan-400">$</span>
+              <span
+                class="inline-block h-[14px] w-[9px] animate-hero-blink align-middle bg-blue-500"
+              ></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ BRIDGE ══ -->
+    <div class="h-[90px] bg-linear-to-b from-[#05101f] to-white"></div>
+
+    <!-- ══ SECOND SECTION ══ -->
+    <div class="box-border bg-white px-6 pb-[100px] pt-20">
+      <div class="mx-auto max-w-[900px] text-center">
+        <div
+          class="mb-6 inline-flex items-center gap-[7px] rounded-full border-[1.5px] border-blue-600 bg-blue-600/5 px-4 py-[5px] text-xs font-semibold text-blue-600"
+        >
+          <div
+            class="flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-blue-600 text-[9px] font-extrabold text-white"
+          >
+            ★
+          </div>
+          Build with Claude Code, Cursor AI or by hand
+        </div>
+
+        <h2
+          class="mb-4 text-[clamp(36px,5vw,64px)] font-extrabold leading-[1.08] tracking-[-2px] text-slate-900"
+        >
+          Share your app<br />
+          <em
+            class="inline-block rounded-md bg-blue-600 px-4 py-1 not-italic text-white"
+            >in 3 minutes</em
+          >
+        </h2>
+
+        <p
+          class="mx-auto mb-[72px] max-w-[560px] text-base leading-[1.7] text-slate-500"
+        >
+          Everything you need to deploy and manage apps in your own private
+          cloud. Perfect for proof of concept or MVPs to validate ideas quickly
+          with zero friction.
+        </p>
+
+        <!-- 3-step flow -->
+        <div
+          class="mb-16 box-border grid w-full max-w-full grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)_auto_minmax(0,1fr)] items-start justify-items-center gap-x-[clamp(4px,2vw,12px)] max-[700px]:flex max-[700px]:flex-col max-[700px]:items-center max-[700px]:gap-0"
+        >
+          <!-- Step 1 -->
+          <div
+            class="flex min-w-0 w-full max-w-[200px] flex-col items-center gap-5 max-[700px]:max-w-[280px]"
+          >
+            <div
+              class="relative box-border flex h-[110px] w-[110px] shrink-0 items-center justify-center rounded-3xl border border-[rgba(37,99,235,0.22)] bg-transparent"
+            >
+              <span
+                class="absolute -right-2.5 -top-2.5 z-1 box-border flex h-[22px] w-[22px] items-center justify-center rounded-full border border-blue-600 bg-white text-[10px] font-bold text-blue-600"
+                >1</span
+              >
+              <svg
+                class="relative z-0 block h-14 w-14 max-w-full shrink-0 text-blue-600"
+                stroke="currentColor"
+                fill="currentColor"
+                stroke-width="0"
+                viewBox="0 0 256 256"
+                xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true"
+              >
+                <path
+                  d="M208,104a79.86,79.86,0,0,1-30.59,62.92A24.29,24.29,0,0,0,168,186v6a8,8,0,0,1-8,8H96a8,8,0,0,1-8-8v-6a24.11,24.11,0,0,0-9.3-19A79.87,79.87,0,0,1,48,104.45C47.76,61.09,82.72,25,126.07,24A80,80,0,0,1,208,104Z"
+                  opacity="0.2"
+                ></path>
+                <path
+                  d="M176,232a8,8,0,0,1-8,8H88a8,8,0,0,1,0-16h80A8,8,0,0,1,176,232Zm40-128a87.55,87.55,0,0,1-33.64,69.21A16.24,16.24,0,0,0,176,186v6a16,16,0,0,1-16,16H96a16,16,0,0,1-16-16v-6a16,16,0,0,0-6.23-12.66A87.59,87.59,0,0,1,40,104.49C39.74,56.83,78.26,17.14,125.88,16A88,88,0,0,1,216,104Zm-16,0a72,72,0,0,0-73.74-72c-39,.92-70.47,33.39-70.26,72.39a71.65,71.65,0,0,0,27.64,56.3A32,32,0,0,1,96,186v6h64v-6a32.15,32.15,0,0,1,12.47-25.35A71.65,71.65,0,0,0,200,104Zm-16.11-9.34a57.6,57.6,0,0,0-46.56-46.55,8,8,0,0,0-2.66,15.78c16.57,2.79,30.63,16.85,33.44,33.45A8,8,0,0,0,176,104a9,9,0,0,0,1.35-.11A8,8,0,0,0,183.89,94.66Z"
+                ></path>
+              </svg>
+            </div>
+            <div
+              class="max-w-[140px] text-center text-sm leading-normal text-slate-500"
+            >
+              <strong class="mb-1 block text-[15px] font-bold text-slate-900"
+                >Idea</strong
+              >
+              John is fed up with excel sheets
+            </div>
+          </div>
+
+          <!-- Arrow -->
+          <div
+            class="flex shrink-0 items-center justify-center pb-10 max-[700px]:rotate-90 max-[700px]:py-3 max-[700px]:pb-5"
+          >
+            <div
+              class="relative h-0.5 w-10 max-[700px]:w-9 rounded-sm bg-blue-100 after:absolute after:-right-px after:-top-1 after:border-y-[5px] after:border-l-8 after:border-solid after:border-y-transparent after:border-l-blue-600 after:content-['']"
+            ></div>
+          </div>
+
+          <!-- Step 2 -->
+          <div
+            class="flex min-w-0 w-full max-w-[200px] flex-col items-center gap-5 max-[700px]:max-w-[280px]"
+          >
+            <div
+              class="relative box-border flex h-[110px] w-[110px] shrink-0 items-center justify-center rounded-3xl border border-[rgba(37,99,235,0.22)] bg-transparent"
+            >
+              <span
+                class="absolute -right-2.5 -top-2.5 z-1 box-border flex h-[22px] w-[22px] items-center justify-center rounded-full border border-blue-600 bg-white text-[10px] font-bold text-blue-600"
+                >2</span
+              >
+              <svg
+                class="relative z-0 block h-14 w-14 max-w-full shrink-0 text-blue-600"
+                stroke="currentColor"
+                fill="currentColor"
+                stroke-width="0"
+                viewBox="0 0 256 256"
+                xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true"
+              >
+                <path
+                  d="M224,56V200a8,8,0,0,1-8,8H40a8,8,0,0,1-8-8V56a8,8,0,0,1,8-8H216A8,8,0,0,1,224,56Z"
+                  opacity="0.2"
+                ></path>
+                <path
+                  d="M128,128a8,8,0,0,1-3,6.25l-40,32a8,8,0,1,1-10-12.5L107.19,128,75,102.25a8,8,0,1,1,10-12.5l40,32A8,8,0,0,1,128,128Zm48,24H136a8,8,0,0,0,0,16h40a8,8,0,0,0,0-16Zm56-96V200a16,16,0,0,1-16,16H40a16,16,0,0,1-16-16V56A16,16,0,0,1,40,40H216A16,16,0,0,1,232,56ZM216,200V56H40V200H216Z"
+                ></path>
+              </svg>
+            </div>
+            <div
+              class="max-w-[140px] text-center text-sm leading-normal text-slate-500"
+            >
+              <strong class="mb-1 block text-[15px] font-bold text-slate-900"
+                >Development</strong
+              >
+              He builds an app with Claude Code
+            </div>
+          </div>
+
+          <!-- Arrow -->
+          <div
+            class="flex shrink-0 items-center justify-center pb-10 max-[700px]:rotate-90 max-[700px]:py-3 max-[700px]:pb-5"
+          >
+            <div
+              class="relative h-0.5 w-10 max-[700px]:w-9 rounded-sm bg-blue-100 after:absolute after:-right-px after:-top-1 after:border-y-[5px] after:border-l-8 after:border-solid after:border-y-transparent after:border-l-blue-600 after:content-['']"
+            ></div>
+          </div>
+
+          <!-- Step 3 -->
+          <div
+            class="flex min-w-0 w-full max-w-[200px] flex-col items-center gap-5 max-[700px]:max-w-[280px]"
+          >
+            <div
+              class="relative box-border flex h-[110px] w-[110px] shrink-0 items-center justify-center rounded-3xl border border-[rgba(37,99,235,0.22)] bg-transparent"
+            >
+              <span
+                class="absolute -right-2.5 -top-2.5 z-1 box-border flex h-[22px] w-[22px] items-center justify-center rounded-full border border-blue-600 bg-white text-[10px] font-bold text-blue-600"
+                >3</span
+              >
+              <svg
+                class="relative z-0 block h-14 w-14 max-w-full shrink-0 text-blue-600"
+                stroke="currentColor"
+                fill="currentColor"
+                stroke-width="0"
+                viewBox="0 0 256 256"
+                xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true"
+              >
+                <path
+                  d="M223.69,42.18l-58.22,192a8,8,0,0,1-14.92,1.25L108,148,20.58,105.45a8,8,0,0,1,1.25-14.92l192-58.22A8,8,0,0,1,223.69,42.18Z"
+                  opacity="0.2"
+                ></path>
+                <path
+                  d="M227.32,28.68a16,16,0,0,0-15.66-4.08l-.15,0L19.57,82.84a16,16,0,0,0-2.49,29.8L102,154l41.3,84.87A15.86,15.86,0,0,0,157.74,248q.69,0,1.38-.06a15.88,15.88,0,0,0,14-11.51l58.2-191.94c0-.05,0-.1,0-.15A16,16,0,0,0,227.32,28.68ZM157.83,231.85l-.05.14,0-.07-40.06-82.3,48-48a8,8,0,0,0-11.31-11.31l-48,48L24.08,98.25l-.07,0,.14,0L216,40Z"
+                ></path>
+              </svg>
+            </div>
+            <div
+              class="max-w-[140px] text-center text-sm leading-normal text-slate-500"
+            >
+              <strong class="mb-1 block text-[15px] font-bold text-slate-900"
+                >Ship it</strong
+              >
+              He shares the app with colleagues
+            </div>
+          </div>
+        </div>
+
+        <button
+          type="button"
+          class="cursor-pointer rounded-lg border-0 bg-blue-600 px-9 py-3.5 text-[15px] font-bold text-white shadow-[0_4px_20px_rgba(37,99,235,0.35)] transition-all duration-150 hover:bg-blue-700 hover:shadow-[0_6px_28px_rgba(37,99,235,0.5)]"
+        >
+          Get Started →
+        </button>
+      </div>
+    </div>
+  </body>
+</html>

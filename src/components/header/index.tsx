@@ -1,5 +1,6 @@
 'use client';
 
+import data from '@/data';
 import { cn } from '@/lib/utils';
 import { FC } from 'react';
 import Socials from '../Socials';
@@ -19,17 +20,21 @@ const Header: FC<TProps> = (props) => {
   return (
     <header
       className={cn(
-        'sticky top-0 w-full z-[999] bg-white border-b border-primary/20',
+        'sticky top-0 w-full z-90 bg-white border-b border-primary/20',
         classes
       )}
     >
       <div className="container">
-        <div className="flex items-center justify-between py-4.5">
+        <div className="flex items-center justify-between py-3">
           <AppLogo />
           <HeaderNav />
           <div className="flex items-center justify-end gap-4 lg:gap-8">
             <Socials />
-            <a href="#cta">
+            <a
+              href={data.cta.freeAccessLink}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <Button size="lg" className="hidden lg:block">
                 Free Access
               </Button>

@@ -1,5 +1,4 @@
 import PricingComparisonTable from '@/components/LicenseComparisonTable';
-import SectionTitle from '@/components/SectionTitle';
 
 const PricingSection = () => {
   return (

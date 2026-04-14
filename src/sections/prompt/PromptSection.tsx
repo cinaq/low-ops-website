@@ -1,7 +1,8 @@
- 'use client';
+'use client';
 
+import { MotionDiv, MotionSpan } from '@/components/motion-primitives';
 import { Button } from '@/components/ui/button';
-import { motion, useReducedMotion } from 'framer-motion';
+import { useReducedMotion } from 'framer-motion';
 import { Terminal } from 'lucide-react';
 import { FC, useEffect, useState } from 'react';
 
@@ -13,8 +14,6 @@ const PROMPTS = [
 const PromptSection: FC = () => {
   const [promptText, setPromptText] = useState('');
   const reduceMotion = useReducedMotion();
-  const MotionDiv = motion.div as any;
-  const MotionSpan = motion.span as any;
 
   useEffect(() => {
     let isCancelled = false;
@@ -65,7 +64,7 @@ const PromptSection: FC = () => {
   return (
     <section className="relative flex w-full min-h-[calc(100vh-176px)] items-center overflow-hidden bg-[#0A0D14] py-10 md:py-12">
       <div className="pointer-events-none absolute inset-0">
-        <div className="absolute inset-0 bg-gradient-to-b from-[#0A0D14] via-[#0B101B] to-[#090C12]" />
+        <div className="absolute inset-0 bg-linear-to-b from-[#0A0D14] via-[#0B101B] to-[#090C12]" />
         <MotionDiv
           aria-hidden="true"
           className="absolute -top-16 left-[8%] h-64 w-64 rounded-full bg-[#4C80FF]/20 blur-3xl"
@@ -106,13 +105,18 @@ const PromptSection: FC = () => {
           transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
         >
           <p className="text-2xl leading-relaxed text-[#D0D8E7] md:text-6xl">
-            <span className="font-semibold text-white">Secure</span> private platform for{' '}
+            <span className="font-semibold text-white">Secure</span> private
+            platform for{' '}
             <span className="font-semibold text-[#4C80FF]">app creators</span>
           </p>
         </MotionDiv>
         <MotionDiv
           className="relative mx-auto w-full max-w-4xl overflow-hidden rounded-2xl border border-[#303749] bg-[#0E1422]/95 shadow-[0_24px_60px_-24px_rgba(0,0,0,0.8)] backdrop-blur md:rounded-3xl"
-          initial={{ opacity: 0, y: reduceMotion ? 0 : 26, scale: reduceMotion ? 1 : 0.98 }}
+          initial={{
+            opacity: 0,
+            y: reduceMotion ? 0 : 26,
+            scale: reduceMotion ? 1 : 0.98,
+          }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
           transition={{ duration: 0.7, delay: 0.08, ease: [0.22, 1, 0.36, 1] }}
           whileHover={reduceMotion ? undefined : { y: -2 }}
@@ -124,9 +128,7 @@ const PromptSection: FC = () => {
                 <span className="h-2.5 w-2.5 rounded-full bg-[#FFBD2E]" />
                 <span className="h-2.5 w-2.5 rounded-full bg-[#27C93F]" />
               </div>
-              <span className="text-xs font-medium tracking-[0.16em] text-[#8E9ABB] uppercase">
-                
-              </span>
+              <span className="text-xs font-medium tracking-[0.16em] text-[#8E9ABB] uppercase"></span>
             </div>
           </div>
 
@@ -137,7 +139,9 @@ const PromptSection: FC = () => {
             </span>
 
             <div className="rounded-xl border border-[#2A3550] bg-[#0A1120] p-4 font-mono md:p-5">
-              <div className="mb-2 text-xs text-[#6E7EA6]">~/workspace/low-ops</div>
+              <div className="mb-2 text-xs text-[#6E7EA6]">
+                ~/workspace/low-ops
+              </div>
               <div className="flex min-h-8 flex-wrap items-center gap-2 text-sm md:text-base">
                 <span className="text-[#7AF7C4]">$</span>
                 <span className="text-[#A2B4DA]"></span>
@@ -146,13 +150,21 @@ const PromptSection: FC = () => {
                   aria-hidden="true"
                   className="inline-block h-4 w-2 animate-pulse rounded-[2px] bg-[#8EB1FF]"
                   animate={reduceMotion ? undefined : { opacity: [1, 0.25, 1] }}
-                  transition={{ duration: 1, repeat: Infinity, ease: 'easeInOut' }}
+                  transition={{
+                    duration: 1,
+                    repeat: Infinity,
+                    ease: 'easeInOut',
+                  }}
                 />
               </div>
             </div>
 
             <div className="mt-4 flex justify-end">
-              <a href="https://portal.app.low-ops.com" target="_blank" rel="noopener noreferrer">
+              <a
+                href="https://portal.app.low-ops.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <Button
                   size="lg"
                   className="h-11 rounded-lg border border-[#3A4B72] bg-[#1A2742] px-6 font-medium text-[#E2EAFF] hover:bg-[#24365E]"

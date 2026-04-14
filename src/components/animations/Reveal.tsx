@@ -1,6 +1,7 @@
 'use client';
 
-import { MotionProps, motion, useReducedMotion } from 'framer-motion';
+import { MotionDiv } from '@/components/motion-primitives';
+import { MotionProps, useReducedMotion } from 'framer-motion';
 import { PropsWithChildren } from 'react';
 
 type RevealProps = PropsWithChildren<{
@@ -12,7 +13,6 @@ type RevealProps = PropsWithChildren<{
 
 const Reveal = ({ children, delay = 0, y = 28, once = true, className }: RevealProps) => {
   const reduceMotion = useReducedMotion();
-  const MotionDiv = motion.div as any;
 
   const transition: MotionProps['transition'] = {
     duration: reduceMotion ? 0 : 0.55,
