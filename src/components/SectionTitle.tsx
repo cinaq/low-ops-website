@@ -15,7 +15,7 @@ const SectionTitle: FC<TProps> = (props) => {
   return (
     <div
       className={cn(
-        'prose md:prose-md flex flex-col items-center justify-center gap-3 mx-auto relative z-50',
+        'prose md:prose-md flex flex-col items-center justify-center gap-3 mx-auto relative z-20',
         className
       )}
     >

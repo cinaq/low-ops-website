@@ -20,7 +20,7 @@ const Header: FC<TProps> = (props) => {
   return (
     <header
       className={cn(
-        'sticky top-0 w-full z-90 bg-white border-b border-primary/20',
+        'sticky top-0 w-full z-40 bg-white border-b border-primary/20',
         classes
       )}
     >
