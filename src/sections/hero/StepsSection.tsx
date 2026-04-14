@@ -24,7 +24,7 @@ const StepsSection: FC = () => {
         <div className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-4 mb-10 py-10">
           <Reveal>
             <div className="flex-1 flex flex-col items-center justify-center text-center gap-3">
-              <div className="w-28 h-28 bg-yellow-50 rounded-xl flex items-center justify-center">
+              <div className="w-28 h-28 flex items-center justify-center bg-yellow-50 p-4 rounded-xl">
                 <Image src={lightBulb} alt="Light Bulb" />
               </div>
               <p>John is fed up with excel sheets</p>
@@ -42,7 +42,7 @@ const StepsSection: FC = () => {
 
           <Reveal delay={0.4}>
             <div className="flex-1 flex flex-col items-center justify-center text-center gap-3">
-              <div className="w-28 h-28 bg-blue-50 rounded-xl flex items-center justify-center">
+              <div className="w-28 h-28 flex items-center justify-center bg-blue-50 p-4 rounded-xl">
                 <Image src={coding} alt="Coding" />
               </div>
               <p>He builds an app with Claude Code</p>
@@ -60,7 +60,7 @@ const StepsSection: FC = () => {
 
           <Reveal delay={0.8}>
             <div className="flex-1 flex flex-col items-center justify-center text-center gap-3">
-              <div className="w-28 h-28 bg-green-50 rounded-xl flex items-center justify-center">
+              <div className="w-28 h-28 flex items-center justify-center bg-green-50 p-4 rounded-xl">
                 <Image src={share} alt="Share" />
               </div>
               <p>He shares the app with colleagues</p>
