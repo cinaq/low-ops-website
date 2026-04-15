@@ -13,11 +13,11 @@ const HeroTerminal = () => {
           MCP Active
         </span>
       </div>
-      <div className="overflow-x-auto px-8 py-6 font-mono text-[13px] leading-[2.1]">
+      <div className="overflow-x-auto px-8 py-6 font-mono text-[13px] leading-[2.1] text-left">
         <div className="whitespace-nowrap">
-          <span className="text-cyan-400">$</span>
+          <span className="text-cyan-400">$ </span>
           <span className="text-slate-200">
-            low-ops deploy --app inventory-app --env production
+            create and deploy inventory app called fairshare
           </span>
         </div>
         <div className="whitespace-nowrap">
@@ -31,27 +31,16 @@ const HeroTerminal = () => {
           <span className="text-blue-400">layer cache hit 94%</span>
         </div>
         <div className="whitespace-nowrap">
-          <span className="text-slate-700">&nbsp; ✦ Pre-flight checks... </span>
-          <span className="text-green-400">all clear</span>
-        </div>
-        <div className="whitespace-nowrap">
           <span className="text-green-400">&nbsp; ✓ inventory-app</span>
           <span className="text-slate-700"> live in </span>
-          <span className="text-blue-400">8.3s</span>
           <span className="text-slate-700"> → </span>
           <span className="text-cyan-400">
             https://inventory-app.low-ops.com
           </span>
         </div>
-        <div className="whitespace-nowrap">
-          <span className="text-violet-400">&nbsp; ◈ Claude: </span>
-          <span className="text-slate-700">
-            2 replicas healthy · zero downtime · auto-scaled
-          </span>
-        </div>
         <div className="whitespace-nowrap">&nbsp;</div>
         <div className="whitespace-nowrap">
-          <span className="text-cyan-400">$</span>
+          <span className="text-cyan-400">$ </span>
           <span className="inline-block h-[14px] w-[4px] animate-hero-blink align-middle bg-blue-500"></span>
         </div>
       </div>
