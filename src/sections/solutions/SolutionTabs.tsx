@@ -52,7 +52,7 @@ const SOLUTIONS: SolutionTabItem[] = [
     imagePath: envOverviewImage,
     title: 'Free up your time to focus on the big picture',
     description:
-      'The number of apps is growing fast. This means you are spending too much time on infrastructure and operations instead of focusing on the core business logic. Low-ops provides an all-in-one app platform as a service to non-developers to build and ship apps within the boundaries of your networks.',
+      'The number of apps is growing fast. This means you are spending too much time on infrastructure and operations instead of focusing on high impact projects. Low-ops provides an all-in-one app platform as a service to non-developers to build and ship apps within the boundaries of your networks.',
     items: [
       'Low Maintenance',
       'Standard apps work out of box',

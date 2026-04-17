@@ -24,18 +24,22 @@ const HeroTerminal = () => {
           <span className="text-slate-700">
             &nbsp; ✦ Connecting to Low-Ops MCP...
           </span>
-          <span className="text-green-400"> connected</span>
+          <span className="text-green-400"> Connected</span>
         </div>
         <div className="whitespace-nowrap">
-          <span className="text-slate-700">&nbsp; ✦ Building image... </span>
-          <span className="text-blue-400">layer cache hit 94%</span>
+          <span className="text-slate-700">&nbsp; ✦ Building app... </span>
+          <span className="text-green-400">Completed</span>
+        </div>
+        <div className="whitespace-nowrap">
+          <span className="text-slate-700">&nbsp; ✦ Creating deployment package... </span>
+          <span className="text-green-400">Completed</span>
         </div>
         <div className="whitespace-nowrap">
           <span className="text-green-400">&nbsp; ✓ inventory-app</span>
-          <span className="text-slate-700"> live in </span>
+          <span className="text-slate-700"> live at </span>
           <span className="text-slate-700"> → </span>
           <span className="text-cyan-400">
-            https://inventory-app.low-ops.com
+            https://fairshare-production.app.low-ops.com
           </span>
         </div>
         <div className="whitespace-nowrap">&nbsp;</div>
