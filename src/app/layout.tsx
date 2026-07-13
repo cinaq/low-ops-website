@@ -15,9 +15,12 @@ const RootLayout = ({ children }: RootLayoutProps) => {
   return (
     <html lang="en">
       <head>
-        <meta httpEquiv="refresh" content={`3;url=${REDIRECT_URL}`} />
+        {/* JS drives a ~5s animated hand-off; this is the no-JS fallback. */}
+        <noscript>
+          <meta httpEquiv="refresh" content={`5;url=${REDIRECT_URL}`} />
+        </noscript>
       </head>
-      <body style={{ margin: 0 }}>{children}</body>
+      <body style={{ margin: 0, background: '#05101f' }}>{children}</body>
     </html>
   );
 };
