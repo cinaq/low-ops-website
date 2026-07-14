@@ -46,7 +46,7 @@ const SCRIPT: ScriptLine[] = [
   { at: 3050, prefix: '✓', prefixColor: COLORS.green, text: 'ui + tests written', detail: '12/12 passing' },
   { at: 3550, typed: true, prefix: '>', prefixColor: COLORS.blue, text: 'deploy it to low-ops', textColor: '#fff' },
   { at: 4550, prefix: '✓', prefixColor: COLORS.green, text: 'deployed to your private cloud', detail: 'tls · autoscaling · zero ops' },
-  { at: 5100, prefix: '➜', prefixColor: COLORS.mint, text: 'live at plants.low-ops.app', textColor: COLORS.mint, detail: 'prompt → production in 42s' },
+  { at: 5100, prefix: '➜', prefixColor: COLORS.mint, text: 'live at plants.app.low-ops.com', textColor: COLORS.mint, detail: 'prompt → production in 42s' },
 ];
 
 // Demo length; the launch button takes over once the story has played.
