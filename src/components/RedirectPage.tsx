@@ -3,7 +3,9 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 
 const REDIRECT_URL = 'https://low-ops.ai';
-const REDIRECT_DELAY_MS = 5000;
+// The boot sequence is self-paced; nothing auto-redirects — the visitor
+// launches via the button once the agent reports ready.
+const BOOT_MS = 4700;
 
 // Brand palette sampled from low-ops.ai
 const COLORS = {
@@ -39,17 +41,18 @@ const LOG: LogLine[] = [
   { at: 2350, marker: '✓', markerColor: COLORS.green, text: 'analyzing infrastructure', detail: '0 incidents' },
   { at: 2950, marker: '✓', markerColor: COLORS.green, text: 'reconciling desired state', detail: 'drift: none' },
   { at: 3550, marker: '✓', markerColor: COLORS.green, text: 'optimizing operations', detail: 'ops load ↓ 98%' },
-  { at: 4200, marker: '→', markerColor: COLORS.blue, text: 'handing off to low-ops.ai', detail: '' },
+  { at: 4200, marker: '✓', markerColor: COLORS.mint, text: 'agent ready', detail: 'awaiting launch' },
 ];
 
 const RedirectPage = () => {
   const [typed, setTyped] = useState('');
   const [visibleLines, setVisibleLines] = useState(0);
   const [progress, setProgress] = useState(0);
+  const [booted, setBooted] = useState(false);
   const glowRef = useRef<HTMLDivElement | null>(null);
 
   const go = useCallback(() => {
-    window.location.replace(REDIRECT_URL);
+    window.location.assign(REDIRECT_URL);
   }, []);
 
   // Typewriter for the command prompt (finishes ~1s in).
@@ -71,22 +74,19 @@ const RedirectPage = () => {
     return () => timers.forEach(window.clearTimeout);
   }, []);
 
-  // Progress bar + final redirect.
+  // Progress bar tracks the boot sequence, then reveals the launch button.
   useEffect(() => {
     const start = performance.now();
     let raf = 0;
     const tick = (now: number) => {
-      const p = Math.min(1, (now - start) / REDIRECT_DELAY_MS);
+      const p = Math.min(1, (now - start) / BOOT_MS);
       setProgress(p);
       if (p < 1) raf = requestAnimationFrame(tick);
+      else setBooted(true);
     };
     raf = requestAnimationFrame(tick);
-    const redirect = window.setTimeout(go, REDIRECT_DELAY_MS);
-    return () => {
-      cancelAnimationFrame(raf);
-      window.clearTimeout(redirect);
-    };
-  }, [go]);
+    return () => cancelAnimationFrame(raf);
+  }, []);
 
   // Mouse-reactive glow behind the terminal.
   const onMouseMove = useCallback((e: React.MouseEvent) => {
@@ -182,18 +182,32 @@ const RedirectPage = () => {
         </div>
 
         <footer style={styles.footer}>
-          <div style={styles.progressTrack}>
-            <div style={{ ...styles.progressBar, width: `${progress * 100}%` }} />
-          </div>
-          <button type="button" onClick={go} style={styles.skip}>
-            Enter low-ops.ai now
-            <span aria-hidden style={{ marginLeft: 6 }}>→</span>
-          </button>
+          {booted ? (
+            <button
+              type="button"
+              onClick={go}
+              className="lo-cta"
+              style={styles.cta}
+            >
+              <span className="lo-cta-shine" aria-hidden />
+              <span style={styles.ctaLabel}>Launch low-ops.ai</span>
+              <span aria-hidden style={styles.ctaArrow}>→</span>
+            </button>
+          ) : (
+            <div style={styles.booting}>
+              <div style={styles.progressTrack}>
+                <div style={{ ...styles.progressBar, width: `${progress * 100}%` }} />
+              </div>
+              <span style={styles.bootingText}>
+                booting agent · {Math.round(progress * 100)}%
+              </span>
+            </div>
+          )}
         </footer>
       </section>
 
       <a href={REDIRECT_URL} style={styles.fallback}>
-        Trouble redirecting? Continue to low-ops.ai
+        or continue directly to low-ops.ai
       </a>
     </main>
   );
@@ -303,8 +317,14 @@ const styles: Record<string, React.CSSProperties> = {
   footer: {
     display: 'flex',
     alignItems: 'center',
-    gap: 14,
-    padding: '12px 16px 16px',
+    minHeight: 58,
+    padding: '10px 16px 18px',
+  },
+  booting: {
+    display: 'flex',
+    alignItems: 'center',
+    gap: 12,
+    width: '100%',
   },
   progressTrack: {
     flex: 1,
@@ -320,18 +340,34 @@ const styles: Record<string, React.CSSProperties> = {
     boxShadow: `0 0 12px ${COLORS.blue}`,
     transition: 'width 0.12s linear',
   },
-  skip: {
+  bootingText: {
     flexShrink: 0,
+    fontSize: 11.5,
+    color: COLORS.dim,
+    letterSpacing: 0.3,
+  },
+  cta: {
+    position: 'relative',
+    width: '100%',
     cursor: 'pointer',
     fontFamily: 'inherit',
-    fontSize: 12.5,
+    fontSize: 15,
+    fontWeight: 600,
     color: '#fff',
-    padding: '8px 14px',
-    borderRadius: 8,
-    border: `1px solid ${COLORS.border}`,
-    background: 'linear-gradient(180deg, rgba(76,128,255,0.22), rgba(76,128,255,0.10))',
-    transition: 'transform 0.15s ease, border-color 0.15s ease',
+    padding: '13px 18px',
+    borderRadius: 10,
+    border: '1px solid rgba(129,140,248,0.55)',
+    background: `linear-gradient(180deg, ${COLORS.blue}, #2f5fe0)`,
+    boxShadow: `0 10px 30px rgba(76,128,255,0.35), inset 0 1px 0 rgba(255,255,255,0.25)`,
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    gap: 8,
+    overflow: 'hidden',
+    transition: 'transform 0.15s ease, box-shadow 0.15s ease',
   },
+  ctaLabel: { position: 'relative', zIndex: 1 },
+  ctaArrow: { position: 'relative', zIndex: 1, transition: 'transform 0.2s ease' },
   fallback: {
     position: 'relative',
     fontSize: 12,
@@ -357,8 +393,35 @@ const CSS = `
     0%,100% { opacity: 0.15; transform: translateY(0); }
     50%     { opacity: 0.7;  transform: translateY(-10px); }
   }
+  @keyframes lo-cta-in {
+    from { opacity: 0; transform: translateY(10px) scale(0.98); }
+    to   { opacity: 1; transform: none; }
+  }
+  @keyframes lo-cta-glow {
+    0%,100% { box-shadow: 0 10px 30px rgba(76,128,255,0.30), inset 0 1px 0 rgba(255,255,255,0.25); }
+    50%     { box-shadow: 0 10px 42px rgba(76,128,255,0.60), inset 0 1px 0 rgba(255,255,255,0.25); }
+  }
+  @keyframes lo-shine {
+    0%   { transform: translateX(-140%) skewX(-18deg); }
+    60%,100% { transform: translateX(260%) skewX(-18deg); }
+  }
   .lo-caret { animation: lo-blink 1s steps(1) infinite; }
   .lo-pulse { animation: lo-pulse 1.8s ease-out infinite; }
+  .lo-cta {
+    animation: lo-cta-in 0.45s cubic-bezier(0.16,1,0.3,1) both,
+               lo-cta-glow 2.6s ease-in-out 0.5s infinite;
+  }
+  .lo-cta:hover { transform: translateY(-2px); }
+  .lo-cta:hover span:last-child { transform: translateX(4px); }
+  .lo-cta:active { transform: translateY(0); }
+  .lo-cta-shine {
+    position: absolute;
+    top: 0; left: 0;
+    width: 45%; height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.35), transparent);
+    animation: lo-shine 2.8s ease-in-out 0.8s infinite;
+    pointer-events: none;
+  }
   .lo-node {
     position: absolute;
     border-radius: 50%;
@@ -372,7 +435,8 @@ const CSS = `
   main button:hover { transform: translateY(-1px); border-color: #4c80ff !important; }
   main button:active { transform: translateY(0); }
   @media (prefers-reduced-motion: reduce) {
-    .lo-caret, .lo-pulse, .lo-node { animation: none !important; }
+    .lo-caret, .lo-pulse, .lo-node, .lo-cta-shine { animation: none !important; }
+    .lo-cta { animation: lo-cta-in 0.3s ease both !important; }
   }
 `;
 
