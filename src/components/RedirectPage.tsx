@@ -2,10 +2,7 @@
 
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 
-const REDIRECT_URL = 'https://low-ops.ai';
-// The boot sequence is self-paced; nothing auto-redirects — the visitor
-// launches via the button once the agent reports ready.
-const BOOT_MS = 4700;
+const SITE_URL = 'https://low-ops.ai';
 
 // Brand palette sampled from low-ops.ai
 const COLORS = {
@@ -23,66 +20,57 @@ const COLORS = {
   red: '#ff5f57',
 };
 
-type LogLine = {
-  /** ms after mount that this line starts revealing */
+type ScriptLine = {
+  /** ms after mount that this line starts */
   at: number;
-  /** leading glyph / status marker */
-  marker: string;
-  markerColor: string;
+  /** typewriter reveal (developer input) vs instant print (agent output) */
+  typed?: boolean;
+  /** leading glyph: `$` command, `>` prompt, `✓`/`✻`/`➜` agent output */
+  prefix: string;
+  prefixColor: string;
   text: string;
+  textColor?: string;
+  /** dim suffix, shown once the line is complete */
   detail?: string;
 };
 
-const PROMPT = '$ lowops agent --resume --target low-ops.ai';
+const CHAR_MS = 34;
 
-const LOG: LogLine[] = [
-  { at: 1150, marker: '◐', markerColor: COLORS.indigo, text: 'waking low-ops agent', detail: 'model: ops-4' },
-  { at: 1750, marker: '✓', markerColor: COLORS.green, text: 'authenticated', detail: 'region: auto' },
-  { at: 2350, marker: '✓', markerColor: COLORS.green, text: 'analyzing infrastructure', detail: '0 incidents' },
-  { at: 2950, marker: '✓', markerColor: COLORS.green, text: 'reconciling desired state', detail: 'drift: none' },
-  { at: 3550, marker: '✓', markerColor: COLORS.green, text: 'optimizing operations', detail: 'ops load ↓ 98%' },
-  { at: 4200, marker: '✓', markerColor: COLORS.mint, text: 'agent ready', detail: 'awaiting launch' },
+// The story: prompt Claude Code to build an app, then one more
+// prompt deploys it to Low-Ops. Prompt → app → production.
+const SCRIPT: ScriptLine[] = [
+  { at: 250, typed: true, prefix: '$', prefixColor: COLORS.mint, text: 'claude', textColor: '#fff' },
+  { at: 800, prefix: '✻', prefixColor: COLORS.indigo, text: 'Claude Code ready', detail: 'connected to your workspace' },
+  { at: 1250, typed: true, prefix: '>', prefixColor: COLORS.blue, text: 'build me a plant tracking app', textColor: '#fff' },
+  { at: 2550, prefix: '✓', prefixColor: COLORS.green, text: 'app scaffolded', detail: 'next.js · api · database' },
+  { at: 3050, prefix: '✓', prefixColor: COLORS.green, text: 'ui + tests written', detail: '12/12 passing' },
+  { at: 3550, typed: true, prefix: '>', prefixColor: COLORS.blue, text: 'deploy it to low-ops', textColor: '#fff' },
+  { at: 4550, prefix: '✓', prefixColor: COLORS.green, text: 'deployed to your private cloud', detail: 'tls · autoscaling · zero ops' },
+  { at: 5100, prefix: '➜', prefixColor: COLORS.mint, text: 'live at plants.low-ops.app', textColor: COLORS.mint, detail: 'prompt → production in 42s' },
 ];
 
+// Demo length; the launch button takes over once the story has played.
+const BOOT_MS = 5900;
+
 const RedirectPage = () => {
-  const [typed, setTyped] = useState('');
-  const [visibleLines, setVisibleLines] = useState(0);
-  const [progress, setProgress] = useState(0);
-  const [booted, setBooted] = useState(false);
+  const [elapsed, setElapsed] = useState(0);
   const glowRef = useRef<HTMLDivElement | null>(null);
 
+  const booted = elapsed >= BOOT_MS;
+  const progress = Math.min(1, elapsed / BOOT_MS);
+
   const go = useCallback(() => {
-    window.location.assign(REDIRECT_URL);
+    window.location.assign(SITE_URL);
   }, []);
 
-  // Typewriter for the command prompt (finishes ~1s in).
-  useEffect(() => {
-    let i = 0;
-    const id = window.setInterval(() => {
-      i += 1;
-      setTyped(PROMPT.slice(0, i));
-      if (i >= PROMPT.length) window.clearInterval(id);
-    }, 34);
-    return () => window.clearInterval(id);
-  }, []);
-
-  // Reveal boot log lines on schedule.
-  useEffect(() => {
-    const timers = LOG.map((line, idx) =>
-      window.setTimeout(() => setVisibleLines((n) => Math.max(n, idx + 1)), line.at),
-    );
-    return () => timers.forEach(window.clearTimeout);
-  }, []);
-
-  // Progress bar tracks the boot sequence, then reveals the launch button.
+  // One clock drives everything: typing, prints, and the progress bar.
   useEffect(() => {
     const start = performance.now();
     let raf = 0;
     const tick = (now: number) => {
-      const p = Math.min(1, (now - start) / BOOT_MS);
-      setProgress(p);
-      if (p < 1) raf = requestAnimationFrame(tick);
-      else setBooted(true);
+      const e = now - start;
+      setElapsed(e);
+      if (e < BOOT_MS + 50) raf = requestAnimationFrame(tick);
     };
     raf = requestAnimationFrame(tick);
     return () => cancelAnimationFrame(raf);
@@ -108,6 +96,9 @@ const RedirectPage = () => {
       })),
     [],
   );
+
+  // Caret lives on the most recently started line while the demo runs.
+  const activeIdx = SCRIPT.reduce((acc, line, idx) => (elapsed >= line.at ? idx : acc), -1);
 
   return (
     <main onMouseMove={onMouseMove} style={styles.root}>
@@ -135,14 +126,14 @@ const RedirectPage = () => {
       <div style={styles.scan} aria-hidden />
 
       {/* terminal */}
-      <section style={styles.window} aria-label="LowOps agent">
+      <section style={styles.window} aria-label="From prompt to production with Low-Ops">
         <header style={styles.titlebar}>
           <span style={{ ...styles.dot, background: COLORS.red }} />
           <span style={{ ...styles.dot, background: COLORS.amber }} />
           <span style={{ ...styles.dot, background: COLORS.green }} />
           <span style={styles.titletext}>
             <span style={styles.wordmark}>Low-Ops</span>
-            <span style={styles.titledim}>{' // autonomous ops agent'}</span>
+            <span style={styles.titledim}>{' // prompt → production'}</span>
           </span>
           <span style={styles.live}>
             <span className="lo-pulse" style={styles.livedot} /> live
@@ -150,34 +141,39 @@ const RedirectPage = () => {
         </header>
 
         <div style={styles.body}>
-          <div style={styles.cmdline}>
-            <span style={{ color: COLORS.mint }}>➜</span>
-            <span style={styles.cmd}>
-              {typed}
-              <span className="lo-caret" style={styles.caret} />
-            </span>
-          </div>
-
           <div style={styles.log}>
-            {LOG.map((line, idx) => (
-              <div
-                key={idx}
-                className="lo-line"
-                style={{
-                  ...styles.logline,
-                  opacity: idx < visibleLines ? 1 : 0,
-                  transform: idx < visibleLines ? 'none' : 'translateY(6px)',
-                }}
-              >
-                <span style={{ color: line.markerColor, width: 16, display: 'inline-block' }}>
-                  {line.marker}
-                </span>
-                <span style={{ color: COLORS.text }}>{line.text}</span>
-                {line.detail ? (
-                  <span style={styles.detail}>· {line.detail}</span>
-                ) : null}
-              </div>
-            ))}
+            {SCRIPT.map((line, idx) => {
+              const started = elapsed >= line.at;
+              const chars = !started
+                ? 0
+                : line.typed
+                  ? Math.min(line.text.length, Math.floor((elapsed - line.at) / CHAR_MS))
+                  : line.text.length;
+              const complete = started && chars >= line.text.length;
+              return (
+                <div
+                  key={idx}
+                  style={{
+                    ...styles.logline,
+                    opacity: started ? 1 : 0,
+                    transform: started ? 'none' : 'translateY(6px)',
+                  }}
+                >
+                  <span style={{ color: line.prefixColor, width: 16, display: 'inline-block', flexShrink: 0 }}>
+                    {line.prefix}
+                  </span>
+                  <span style={{ color: line.textColor ?? COLORS.text }}>
+                    {line.text.slice(0, chars)}
+                    {idx === activeIdx && !booted ? (
+                      <span className="lo-caret" style={styles.caret} />
+                    ) : null}
+                  </span>
+                  {line.detail && complete ? (
+                    <span style={styles.detail}>· {line.detail}</span>
+                  ) : null}
+                </div>
+              );
+            })}
           </div>
         </div>
 
@@ -199,16 +195,12 @@ const RedirectPage = () => {
                 <div style={{ ...styles.progressBar, width: `${progress * 100}%` }} />
               </div>
               <span style={styles.bootingText}>
-                booting agent · {Math.round(progress * 100)}%
+                agent at work · {Math.round(progress * 100)}%
               </span>
             </div>
           )}
         </footer>
       </section>
-
-      <a href={REDIRECT_URL} style={styles.fallback}>
-        or continue directly to low-ops.ai
-      </a>
     </main>
   );
 };
@@ -222,7 +214,6 @@ const styles: Record<string, React.CSSProperties> = {
     flexDirection: 'column',
     alignItems: 'center',
     justifyContent: 'center',
-    gap: '1.25rem',
     padding: '2rem',
     overflow: 'hidden',
     background: `radial-gradient(1200px 800px at 50% -10%, #0e1f3a 0%, ${COLORS.bg0} 55%, ${COLORS.bg1} 100%)`,
@@ -295,8 +286,6 @@ const styles: Record<string, React.CSSProperties> = {
   },
   livedot: { width: 7, height: 7, borderRadius: '50%', background: COLORS.mint, display: 'inline-block' },
   body: { padding: '18px 18px 8px', fontSize: 14, lineHeight: 1.9 },
-  cmdline: { display: 'flex', gap: 8, alignItems: 'baseline', flexWrap: 'wrap' },
-  cmd: { color: '#fff', wordBreak: 'break-word' },
   caret: {
     display: 'inline-block',
     width: 8,
@@ -306,14 +295,14 @@ const styles: Record<string, React.CSSProperties> = {
     transform: 'translateY(2px)',
     boxShadow: `0 0 8px ${COLORS.blue}`,
   },
-  log: { marginTop: 6, minHeight: 168 },
+  log: { minHeight: 214 },
   logline: {
     display: 'flex',
     alignItems: 'baseline',
     gap: 8,
     transition: 'opacity 0.4s ease, transform 0.4s ease',
   },
-  detail: { color: COLORS.dim, fontSize: 12.5 },
+  detail: { color: COLORS.dim, fontSize: 12.5, whiteSpace: 'nowrap' },
   footer: {
     display: 'flex',
     alignItems: 'center',
@@ -368,14 +357,6 @@ const styles: Record<string, React.CSSProperties> = {
   },
   ctaLabel: { position: 'relative', zIndex: 1 },
   ctaArrow: { position: 'relative', zIndex: 1, transition: 'transform 0.2s ease' },
-  fallback: {
-    position: 'relative',
-    fontSize: 12,
-    color: COLORS.dim,
-    textDecoration: 'none',
-    borderBottom: `1px dashed ${COLORS.dim}`,
-    paddingBottom: 1,
-  },
 };
 
 const CSS = `
@@ -431,9 +412,6 @@ const CSS = `
     animation-timing-function: ease-in-out;
     animation-iteration-count: infinite;
   }
-  main a:hover { color: #fff; border-color: #fff; }
-  main button:hover { transform: translateY(-1px); border-color: #4c80ff !important; }
-  main button:active { transform: translateY(0); }
   @media (prefers-reduced-motion: reduce) {
     .lo-caret, .lo-pulse, .lo-node, .lo-cta-shine { animation: none !important; }
     .lo-cta { animation: lo-cta-in 0.3s ease both !important; }
