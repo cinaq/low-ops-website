@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 import { ReactNode } from 'react';
 
 export const metadata: Metadata = {
-  title: 'Low-Ops // prompt to production',
-  description: 'Prompt Claude Code to build your app, deploy it to Low-Ops with one more prompt. Enter low-ops.ai.',
+  title: 'Low-Ops // the golden path',
+  description: 'Type an idea and watch it take the Golden Path — build, scan, ship, audit — into your own cloud. Enter low-ops.ai.',
   robots: 'noindex',
 };
 
